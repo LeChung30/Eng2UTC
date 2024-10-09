@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="link">#0085FF</color>
+    <color name="signup_btn">#EA5757</color>
+    <color name="login_with_google">#FF3636</color>
 </resources>
