@@ -5,4 +5,6 @@
     <color name="link">#0085FF</color>
     <color name="signup_btn">#EA5757</color>
     <color name="login_with_google">#FF3636</color>
+    <color name="top_narvibar">#95FFF9</color>
+
 </resources>
