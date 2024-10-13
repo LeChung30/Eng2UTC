@@ -1,46 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="" />
+    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/EngSecurity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/csv/cert_level.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/csv/topic.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/csv/vocabulary.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/key/CLI.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/key/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/actor.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/afraid.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/airport.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/angry.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/apartment.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/app.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/apple.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/art.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/artist.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/aunt.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/baby.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/banana.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/bank.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/beach.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/belt.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/bicycle.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/boat.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/bored.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/boss.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/bread.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/breakfast.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/brother.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/bus.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/cake.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/camera.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/car.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/cheese.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/chemistry.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/chicken.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/city.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/classroom.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/clothes.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/coffee.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/colleague.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/computer.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/confused.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/cook.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/country.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/cousin.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/daughter.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/device.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/digital.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/doctor.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/download.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/dress.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/electronic.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/engineer.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/exam.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/excited.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/farmer.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/father.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/firefighter.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/friend.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/geography.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/grandfather.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/grandmother.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/happy.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/hat.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/helicopter.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/history.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/homework.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/hotel.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/house.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/husband.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/internet.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/jacket.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/jeans.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/keyboard.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/lesson.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/library.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/literature.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/lorry.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/manager.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/math.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/mobile.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/mother.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/motorbike.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/mouse.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/museum.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/music.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/neighbor.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/nephew.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/nervous.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/niece.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/nurse.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/park.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/physics.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/plane.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/police.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/proud.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/restaurant.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/room.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/sad.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/scared.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/scarf.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/school.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/science.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/secretary.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/ship.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/shirt.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/shoes.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/singer.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/sister.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/skirt.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/smartphone.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/socks.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/software.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/son.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/student.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/subway.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/surprised.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/sweater.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/tablet.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/taxi.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/tea.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/teacher.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/technician.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/television.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/tie.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/tired.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/train.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/trator.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/trousers.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/truck.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/uncle.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/university.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/upset.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/van.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/waiter.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/waitress.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/watch.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/water.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/wife.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/mp3/worried.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sql/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xlsx/vocab.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/english.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirebaseController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceAccountKey.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/key/serviceAccountKey.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="backend" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "LeChung30"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LeChung30&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/LeChung30/Eng2UTC.git",
-    "accountId": "d12a5e7b-8f3d-4558-b0a6-97f07854c05e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LeChung30/Eng2UTC.git&quot;,
+    &quot;accountId&quot;: &quot;b2962025-6a11-432a-bd4f-7fa340716faf&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2nD5bPhPHM1j1aAULZPV2tN2dkB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "backend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.FirebaseController.executor&quot;: &quot;Run&quot;,
+    &quot;Python.english.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;firebase&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\js" />
+      <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\sql" />
+      <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\xlsx" />
+      <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\csv" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.FirebaseController">
+    <configuration name="FirebaseController" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Backend)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FirebaseController.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="english" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Backend)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/english.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.english" />
+      <item itemvalue="Python.FirebaseController" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.FirebaseController" />
+        <item itemvalue="Python.english" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-884f5ed5d46b-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.22855.92" />
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
       </set>
     </attachedChunks>
   </component>

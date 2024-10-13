@@ -1,35 +1,271 @@
-import firebase_admin
-from firebase_admin import credentials, db
+import uuid
 from datetime import datetime
+
+import firebase_admin
+import pandas as pd
+import pyrebase
+from firebase_admin import credentials, db
+
+import english as eng
+
+# upload file to firebase
+firebaseConfig = {
+    'apiKey': "AIzaSyAwW6pc0aQGXSA-ndqBPM3Gp8e5jqCaIB0",
+    'authDomain': "eng2utc.firebaseapp.com",
+    'databaseURL': "https://eng2utc-default-rtdb.firebaseio.com",
+    'projectId': "eng2utc",
+    'storageBucket': "eng2utc.appspot.com",
+    'messagingSenderId': "679823761990",
+    'appId': "1:679823761990:web:00cfe2a91e5d43440e6047",
+    'measurementId': "G-X9047FEREQ"
+}
+local_path_mp3 = 'data/mp3/'
+remote_path_mp3 = 'mp3/pronunciation/'
+firebase = pyrebase.initialize_app(firebaseConfig)
+auth = firebase.auth()
 
 # Khởi tạo Firebase Admin SDK
 def connect_firebase():
-    cred = credentials.Certificate('serviceAccountKey.json')  # Đường dẫn đến tệp JSON xác thực của bạn
+    file_path = 'data/key/serviceAccountKey.json'
+    cred = credentials.Certificate(file_path)  # Đường dẫn đến tệp JSON xác thực của bạn
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://eng2utc-default-rtdb.firebaseio.com/'  # Thay bằng tên cơ sở dữ liệu của bạn
     })
 
-def add_user(user_name, gender, is_active, image_link, password):
-    # Tạo dữ liệu người dùng
+
+def add_user(email, user_name, full_name, gender, is_active, image_link, hash_password):
+    user_id = str(uuid.uuid4())
     user_data = {
+        'USER_ID': user_id,
+        'EMAIL': email,
         'USER_NAME': user_name,
+        'FULL_NAME': full_name,
         'GENDER': gender,
         'IS_ACTIVE': is_active,
-        'CREATED_DATE': datetime.now().isoformat(),  # Thời gian hiện tại dưới dạng chuỗi ISO
+        'CREATED_DATE': datetime.now().isoformat(),  # Current time in ISO format
         'IMAGE_LINK': image_link,
-        'PASSWORD': password,  # Hãy đảm bảo mã hóa mật khẩu trước khi lưu
+        'HASH_PASSWORD': hash_password,  # Ensure password is hashed before storing
     }
 
-    # Thêm người dùng vào Realtime Database
-    user_ref = db.reference('USER').push(user_data)  # Sử dụng push() để tạo ID ngẫu nhiên
-    print(f"User added successfully with ID: {user_ref.key}")
+    # Add user to Realtime Database
+    db.reference('USER').child(user_id).set(user_data)  # Use set() with user_id as the key
+    print(f"User added successfully with ID: {user_id}")
+
+
+def authenticate_user(email, password):
+    try:
+        user = auth.sign_in_with_email_and_password(email, password)
+        print(f"User {email} authenticated successfully")
+        return user
+    except Exception as e:
+        print(f"Error authenticating user {email}: {e}")
+        return None
+
+
+def upload_file_mp3(word, id_token):
+    # authen firebase to firestorage
+    local_file = local_path_mp3 + word + '.mp3'
+    remote_file = remote_path_mp3 + word + '.mp3'
+
+    storage = firebase.storage()
+    storage.child(remote_file).put(local_file, id_token)
+    print(f"File uploaded successfully to {remote_file}")
+    return storage.child(remote_file).get_url(id_token)
+
+
+def add_vocabbulary(word, pronunciation, part_of_speech, image_link, meaning, cert_level_name,
+                    topic_name, id_token):
+    # plartern cert level,topic id
+    vocab_id = str(uuid.uuid4())
+    topic = get_topic_by_name(topic_name)
+    cert_level = get_cert_level_by_name(cert_level_name)
+    audio_link = upload_file_mp3(word, id_token)
+    vocab_data = {
+        'VOCAB_ID': vocab_id,
+        'WORD': word,
+        'PRONUNCIATION': pronunciation,
+        'PART_OF_SPEECH': part_of_speech,
+        'IMAGE_LINK': image_link,
+        'AUDIO_LINK': audio_link,
+        'MEANING': meaning,
+        'CERT_LEVEL_ID': cert_level,
+        'TOPIC_ID': topic,
+    }
+    db.reference('VOCABULARY').child(vocab_id).set(vocab_data)
+    print(f"Vocabulary added successfully with ID: {vocab_id}")
+
+
+def add_cert_level(level_name, description, image_link):
+    cert_level_id = str(uuid.uuid4())
+    cert_level_data = {
+        'CERT_LEVEL_ID': cert_level_id,
+        'LEVEL_NAME': level_name,
+        'DESCRIPTION': description,
+        'IMAGE_LINK': image_link,
+    }
+    db.reference('CERT_LEVEL').child(cert_level_id).set(cert_level_data)
+    print(f"Cert Level added successfully with ID: {cert_level_id}")
+
+
+def add_topic(topic_name, description, image_link):
+    topic_id = str(uuid.uuid4())
+    topic_data = {
+        'TOPIC_ID': topic_id,
+        'TOPIC_NAME': topic_name,
+        'DESCRIPTION': description,
+        'IMAGE_LINK': image_link,
+    }
+    db.reference('TOPIC').child(topic_id).set(topic_data)
+    print(f"Topic added successfully with ID: {topic_id}")
+
+
+def add_lession(name_of_lesson, cert_level_id, is_vocab, previous_lesson, topic_id):
+    # plattern certlevel, topic id
+    lession_id = str(uuid.uuid4())
+    lession = {
+        'NAME_OF_LESSON': name_of_lesson,
+        'CERT_LEVEL_ID': cert_level_id,
+        'IS_VOCAB': is_vocab,
+
+        'PREVIOUS_LESSON': previous_lesson,
+        'TOPIC_ID': topic_id,
+    }
+    db.reference('LESSON').child(lession_id).set(lession)
+    print(f"Lesson added successfully with ID: {lession_id}")
+
+
+def add_question(content, audio_link, image_link, correct_anwer_id, question_type_id, part_detail_id, grammar_id,
+                 explanation):
+    # add answer if selected answers then plattern
+    # plattern question type
+    question_id = str(uuid.uuid4())
+    question = {
+        'CONTENT': content,
+        'AUDIO_LINK': audio_link,
+        'IMAGE_LINK': image_link,
+        'CORRECT_ANSWER_ID': correct_anwer_id,
+        'QUESTION_TYPE_ID': question_type_id,
+        'PART_DETAI_ID': part_detail_id,
+        'GRAMMAR_ID': grammar_id,
+        'EXPLANATION': explanation
+    }
+    db.reference('QUESTION').child(question_id).set(question)
+    print(f"Question added successfully with ID: {question_id}")
+
+
+def add_answer(content, image_link, audio_link, question_id):
+    answer_id = str(uuid.uuid4())
+    answer = {
+        'CONTENT': content,
+        'IMAGE_LINK': image_link,
+        'AUDIO_LINK': audio_link,
+        'QUESTION_ID': question_id,
+    }
+    db.reference('LESSON').child(answer_id).set(answer)
+    print(f"Answer attending added successfully with ID: {answer_id}")
+
+
+def add_question_type(name_of_type):
+    question_type_id = str(uuid.uuid4())
+    question_type = {
+        'NAME_OF_TYPE': name_of_type,
+    }
+    db.reference('QUESTION_TYPE').child(question_type_id).set(question_type)
+    print(f"Question type added successfully with ID: {question_type_id}")
+
+
+def add_type_test(name_of_test_type, total_duration, maximum, cert_level_id):  # plattern cert_test
+    # PLATTERN CERT ID, CHANGE NAME
+    test_type_id = str(uuid.uuid4())
+    test_type = {
+        'NAME_OF_TYPE_TEST': name_of_test_type,
+        'TOTAL_DURATION': total_duration,
+        'MAXIMUM_SCORE': maximum,
+        'CERT_LEVEL_ID': cert_level_id,
+    }
+    db.reference('LESSON').child(test_type_id).set(test_type)
+    print(f"Type test added successfully with ID: {test_type_id}")
+
+
+def add_part_of_test(name_of_part, test_type_id, audio_link):
+    part_of_test_id = str(uuid.uuid4())
+    part_of_test = {
+        'NAME_OF_PART': name_of_part,
+        'TEST_TYPE_ID': test_type_id,
+        'AUDIO_LINK': audio_link
+    }
+    db.reference('PART_OF_TEST').child(part_of_test_id).set(part_of_test)
+    print(f"Part of test added successfully with ID: {part_of_test_id}")
+
+
+def add_question_content(content, image_link, audio_link, question_id):
+    question_content_id = str(uuid.uuid4())
+    answer = {
+        'CONTENT': content,
+        'IMAGE_LINK': image_link,
+        'AUDIO_LINK': audio_link,
+        'QUESTION_ID': question_id
+    }
+    db.reference('QUESTION_CONTENT').child(question_content_id).set(answer)
+    print(f"Date attending added successfully with ID: {question_content_id}")
+
+
+def add_test(name_of_test, test_type_id):
+    # add information
+    test_id = str(uuid.uuid4())
+    test = {
+        'NAME_OF_TEST': name_of_test,
+        'TEST_TYPE_ID': test_type_id
+    }
+    db.reference('TEST').child(test_id).set(test)
+    print(f"Test added successfully with ID: {test_id}")
+
+
+def add_part_detail(name_of_part_detail, test_id, audio_link):
+    part_detail_id = str(uuid.uuid4())
+    part_detail = {
+        'NAME_OF_PART_DETAIL': name_of_part_detail,
+        'TEST_ID': test_id,
+        'AUDIO_LINK': audio_link
+    }
+    db.reference('PART_DETAIL').child(part_detail_id).set(part_detail)
+    print(f"Part detail added successfully with ID: {part_detail_id}")
+
+
+def get_alltopic():
+    return db.reference('TOPIC').get()
+
+
+def get_topic_by_name(topic_name):
+    return db.reference('TOPIC').order_by_child('TOPIC_NAME').equal_to(topic_name).get()
+
+
+def get_all_cert_level():
+    return db.reference('CERT_LEVEL').get()
+
+
+def get_cert_level_by_name(level_name):
+    return db.reference('CERT_LEVEL').order_by_child('LEVEL_NAME').equal_to(level_name).get()
+
+
+def nan_to_none(value):
+    if pd.isna(value):
+        return None
+    return value
+
+
+def dataframe_nan_to_none(df):
+    return df.applymap(nan_to_none)
 
 if __name__ == '__main__':
-    connect_firebase()  # Kết nối với Firebase
-
-    # Thêm người dùng
-    # add_user('ChungLe', 1, True, 'https://firebasestorage.googleapis.com/v0/b/eng2utc.appspot.com/o/HoaHong.png?alt=media&token=49612cee-03f1-4072-b2f6-6a951f38e98e', 'ChungLe')
-    # add_user('TuanKhai', 1, False, 'https://firebasestorage.googleapis.com/v0/b/eng2utc.appspot.com/o/HoaHong.png?alt=media&token=49612cee-03f1-4072-b2f6-6a951f38e98e', 'TuanKhai')
-    # add_user('ChienTran', 1, True, 'https://firebasestorage.googleapis.com/v0/b/eng2utc.appspot.com/o/HoaHong.png?alt=media&token=49612cee-03f1-4072-b2f6-6a951f38e98e', 'ChienTran')
-    # add_user('LamBao', 1, True, 'https://firebasestorage.googleapis.com/v0/b/eng2utc.appspot.com/o/HoaHong.png?alt=media&token=49612cee-03f1-4072-b2f6-6a951f38e98e', 'LamBao')
-    # add_user('BackNguyen', 1, True, 'https://firebasestorage.googleapis.com/v0/b/eng2utc.appspot.com/o/HoaHong.png?alt=media&token=49612cee-03f1-4072-b2f6-6a951f38e98e', 'BackNguyen')
+    connect_firebase()
+    gmail, password = 'eng2UTC@gmail.com', 'eng2UTC@123'
+    # gmail=input('Enter your gmail: ')
+    # password=input('Enter your password: ')
+    user = authenticate_user(gmail, password)
+    vocab = eng.read_csv('data/csv/vocabulary.csv')
+    # print(vocab)
+    vocab = dataframe_nan_to_none(eng.read_csv('data/csv/vocabulary.csv'))
+    for index, row in vocab.iterrows():
+        add_vocabbulary(row['WORD'], row['PRONUNCIATION'], row['PART_OF_SPEECH'], row['IMAGE_LINK'], row['MEANING'],
+                        row['CERT_LEVEL_NAME'], row['TOPIC_NAME'], user['idToken'])
