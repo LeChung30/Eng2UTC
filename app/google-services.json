@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "679823761990",
+    "firebase_url": "https://eng2utc-default-rtdb.firebaseio.com",
+    "project_id": "eng2utc",
+    "storage_bucket": "eng2utc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679823761990:android:3ddd8b96d91343880e6047",
+        "android_client_info": {
+          "package_name": "com.example.eng2utc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679823761990-a4hbbijokvijt6hffgi1b4jqo61hnp35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG8td-oPGiFH1PVMBh2xfF3QOmSXTHUpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679823761990-a4hbbijokvijt6hffgi1b4jqo61hnp35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
