@@ -1,0 +1,7 @@
+TEST_TYPE_ID,NAME_OF_TEST_TYPE,TOTAL_DURATION,MAXIMUM_SCORE,CERT_LEVEL
+1,"Test A1 listening and reading",45,100,A1
+2,"Test A2 listening and reading",60,100,A2
+3,"Test B1 listening and reading",60,100,B1
+4,"Test B2 listening and reading",90,100,B2
+5,"Test C1 listening and reading",100,100,C1
+6,"Test C2 listening and reading",120,100,C2

@@ -1,0 +1,7 @@
+QUESTION_TYPE_ID,NAME_OF_TYPE
+QT1,Trắc nghiệm nghe tranh
+QT2,Trắc nghiệm nghe hội thoại
+QT3,Trắc nghiệm đọc đoạn văn trả lời câu hỏi
+QT4,Trắc nghiệm đọc đoạn văn điền vào chỗ trống
+QT5,Tự luận đọc đoạn văn điền từ phù hợp
+QT6,Tự luận sắp xếp lại câu
