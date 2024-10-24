@@ -12,4 +12,21 @@
     <color name="blue">#1976D2</color>
     <color name="dark_gray">#505050</color>
     <color name="primaryColor">#FF5722</color>
+
+    <color name="baseColor">#121212</color>
+    <color name="lightText">#a7a7a7</color>
+    <color name="blue_grey">#2E4058</color>
+    <color name="Home_LightBlue">#CBE6FF</color>
+    <color name="Home_Blue">#78BEFF</color>
+    <color name="grey">#F5F5F5</color>
+
+    <color name="cardViewVocab">#87B0FF</color>
+    <color name="cardViewGrammar">#C3F0FE</color>
+    <color name="cardViewExpressions">#D1FFE6</color>
+    <color name="cardViewReading">#FFE7C2</color>
+    <color name="cardViewTranslate">#F0EBFF</color>
+
+    <!-- For RateActivity-->
+    <color name="dialog_color_1">#FDD736</color>
+    <color name="dialog_color_2">#3B5796</color>
 </resources>
