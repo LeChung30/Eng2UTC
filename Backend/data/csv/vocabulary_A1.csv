@@ -1,14 +1,18 @@
 WORD,PRONUNCIATION,PART_OF_SPEECH,MEANING,TOPIC_NAME,IMAGE_LINK,CERT_LEVEL_NAME,AUDIO_LINK,LESSON_ID
-how are you?,haʊ ə juː,phrase,bạn khỏe không?,Meeting people,https://th.bing.com/th/id/OIP.kAifV4mdOXpqOX1rjrv8IwHaH_?rs=1&pid=ImgDetMain,A1,,1
-nice to meet you,naɪs tə miːt juː,phrase,rất vui được gặp bạn,Meeting people,https://th.bing.com/th/id/OIP.E8eaNFkoN9fgG-kkhylFBgHaFj?rs=1&pid=ImgDetMain,A1,,1
-please,pliːz,interjection,làm ơn,Meeting people,https://th.bing.com/th/id/OIP.A91Fb8AnQy84jnTCqOJKlwAAAA?rs=1&pid=ImgDetMain,A1,,1
-take care,teɪk ker,phrase,hãy chăm sóc bản thân,Meeting people,https://th.bing.com/th/id/R.06ff5216d721dffebdfffc477efc66bb?rik=4imGo1R3UXtvYg&riu=http%3a%2f%2fuchealth.com%2fwp-content%2fuploads%2f2014%2f10%2fTakeCare.jpg&ehk=xJj70H7W4qTtRhPfF2IXz5KBlb8nDfjfRXzLsKBsQko%3d&risl=&pid=ImgRaw&r=0,A1,,1
-welcome,ˈwelkəm,interjection,chào mừng,Meeting people,https://th.bing.com/th/id/OIP.p3u-jFb33vqdPHHkx1yltwHaEo?rs=1&pid=ImgDetMain,A1,,1
-what's up?,wɒts ʌp,phrase,có chuyện gì vậy?,Meeting people,https://th.bing.com/th/id/OIP.x0XPXT2QztHyaU5OR5dUjwHaHy?rs=1&pid=ImgDetMain,A1,,1
-what's your name?,wɒts jɔː neɪm,phrase,bạn tên là gì?,Meeting people,https://th.bing.com/th/id/R.fc1beb667b00e1ccbed60e57d34a93e0?rik=MGkA8Ep64DrCQg&pid=ImgRaw&r=0,A1,,1
-yes,jes,interjection,vâng,Meeting people,https://th.bing.com/th/id/R.53671936f502f3a3a4981c20ddd9ff67?rik=p6aN3CwEETxH%2fw&pid=ImgRaw&r=0,A1,,1
-no,nəʊ,interjection,không,Meeting people,https://th.bing.com/th/id/R.e4ecc4d77d3d13a3643eee6f52806e19?rik=VuT%2begZ5qKqRwQ&pid=ImgRaw&r=0,A1,,1
-see you later,siː juː ˈleɪtər,phrase,hẹn gặp lại sau,Meeting people,https://www.veipd.org/earlyintervention/wp-content/uploads/2022/06/see-you-later-scaled.jpg,A1,,1
+good morning,ɡʊd ˈmɔːnɪŋ,interjection,chào buổi sáng,Meeting People,https://th.bing.com/th/id/OIP.rt_sKU1a3frNDmUsYZ2vsgHaHa?rs=1&pid=ImgDetMain,A1,,1
+good afternoon,ɡʊd ˈɑːftənuːn,interjection,chào buổi chiều,Meeting People,https://th.bing.com/th/id/OIP.2XtT73r7HOtsLtxx6eIDCwHaHZ?rs=1&pid=ImgDetMain,A1,,1
+good evening,ɡʊd ˈiːvnɪŋ,interjection,chào buổi tối,Meeting People,https://th.bing.com/th/id/R.4a432fea5552ac2312284dd59a3cda39?rik=tDxkKZSd82I2zA&pid=ImgRaw&r=0,A1,,1
+good night,ɡʊd ˈnaɪt,interjection,chúc ngủ ngon,Meeting People,https://th.bing.com/th/id/OIP.1h5hC2hpfbT6FpZ5gJtmmgHaHa?rs=1&pid=ImgDetMain,A1,,1
+how are you?,haʊ ə juː,phrase,bạn khỏe không?,Meeting People,https://th.bing.com/th/id/OIP.kAifV4mdOXpqOX1rjrv8IwHaH_?rs=1&pid=ImgDetMain,A1,,1
+nice to meet you,naɪs tə miːt juː,phrase,rất vui được gặp bạn,Meeting People,https://th.bing.com/th/id/OIP.E8eaNFkoN9fgG-kkhylFBgHaFj?rs=1&pid=ImgDetMain,A1,,1
+please,pliːz,interjection,làm ơn,Meeting People,https://th.bing.com/th/id/OIP.A91Fb8AnQy84jnTCqOJKlwAAAA?rs=1&pid=ImgDetMain,A1,,1
+take care,teɪk ker,phrase,hãy chăm sóc bản thân,Meeting People,https://th.bing.com/th/id/R.06ff5216d721dffebdfffc477efc66bb?rik=4imGo1R3UXtvYg&riu=http%3a%2f%2fuchealth.com%2fwp-content%2fuploads%2f2014%2f10%2fTakeCare.jpg&ehk=xJj70H7W4qTtRhPfF2IXz5KBlb8nDfjfRXzLsKBsQko%3d&risl=&pid=ImgRaw&r=0,A1,,1
+welcome,ˈwelkəm,interjection,chào mừng,Meeting People,https://th.bing.com/th/id/OIP.p3u-jFb33vqdPHHkx1yltwHaEo?rs=1&pid=ImgDetMain,A1,,1
+what's up?,wɒts ʌp,phrase,có chuyện gì vậy?,Meeting People,https://th.bing.com/th/id/OIP.x0XPXT2QztHyaU5OR5dUjwHaHy?rs=1&pid=ImgDetMain,A1,,1
+what's your name?,wɒts jɔː neɪm,phrase,bạn tên là gì?,Meeting People,https://th.bing.com/th/id/R.fc1beb667b00e1ccbed60e57d34a93e0?rik=MGkA8Ep64DrCQg&pid=ImgRaw&r=0,A1,,1
+yes,jes,interjection,vâng,Meeting People,https://th.bing.com/th/id/R.53671936f502f3a3a4981c20ddd9ff67?rik=p6aN3CwEETxH%2fw&pid=ImgRaw&r=0,A1,,1
+no,nəʊ,interjection,không,Meeting People,https://th.bing.com/th/id/R.e4ecc4d77d3d13a3643eee6f52806e19?rik=VuT%2begZ5qKqRwQ&pid=ImgRaw&r=0,A1,,1
+see you later,siː juː ˈleɪtər,phrase,hẹn gặp lại sau,Meeting People,https://www.veipd.org/earlyintervention/wp-content/uploads/2022/06/see-you-later-scaled.jpg,A1,,1
 one,wʌn,determiner,1,Numbers,https://cdn3.vectorstock.com/i/1000x1000/63/02/number-one-symbol-neon-sign-first-vector-21256302.jpg,A1,,1
 two,tuː,determiner,2,Numbers,https://th.bing.com/th/id/OIP.qJ24xXHXJKEtx9h-4_rZwAHaF7?rs=1&pid=ImgDetMain,A1,,1
 three,θriː,determiner,3,Numbers,https://th.bing.com/th/id/OIP.ugTiggsmUSVSh2ptcwbiWgHaLN?rs=1&pid=ImgDetMain,A1,,1

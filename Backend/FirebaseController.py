@@ -1,10 +1,10 @@
 import uuid
 from datetime import datetime
 
-
+import firebase_admin
 import pyrebase
-from firebase_admin import credentials, db
-import re
+from firebase_admin import credentials
+from firebase_admin import db
 
 import english as eng
 
@@ -25,8 +25,6 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
 
 # Khởi tạo Firebase Admin SDK
-import firebase_admin
-from firebase_admin import credentials
 
 def connect_firebase():
     file_path = 'data/key/eng2utc-firebase-adminsdk-y4ymw-0ab02a4678.json'
@@ -73,14 +71,12 @@ def add_user(email, user_name, full_name, gender, is_active, image_link, hash_pa
     db.reference('USER').child(user_id).set(user_data)  # Use set() with user_id as the key
     print(f"User added successfully with ID: {user_id}")
 
-#add
-def sanitize_filename(filename):
-    # Replace spaces with underscores and remove invalid characters
-    return re.sub(r'[\\/*?:"<>|]', "", filename.replace(" ", "_"))
+
+# push
 
 def upload_file_mp3(word: str, id_token):
     # Sanitize the word to create a valid file name
-    sanitized_word = sanitize_filename(word)
+    sanitized_word = eng.sanitize_filename(word)
     local_file = local_path_mp3 + sanitized_word + '.mp3'
     remote_file = remote_path_mp3 + sanitized_word + '.mp3'
 
@@ -93,8 +89,8 @@ def add_vocabbulary(word, pronunciation, part_of_speech, image_link, meaning, ce
                     topic_name, id_token):
     # plartern cert level,topic id
     vocab_id = str(uuid.uuid4())
-    topic = get_topic_by_name(topic_name)
-    cert_level = get_cert_level_by_name(cert_level_name)
+    topic = get_id_by_topicname(topic_name)
+    cert_level = get_id_by_cert_level_name(cert_level_name)
     audio_link = upload_file_mp3(word, id_token)
     vocab_data = {
         'VOCAB_ID': vocab_id,
@@ -110,7 +106,6 @@ def add_vocabbulary(word, pronunciation, part_of_speech, image_link, meaning, ce
     db.reference('VOCABULARY').child(vocab_id).set(vocab_data)
     print(f"Vocabulary added successfully with ID: {vocab_id}")
 
-
 def add_cert_level(level_name, description, image_link):
     cert_level_id = str(uuid.uuid4())
     cert_level_data = {
@@ -121,7 +116,6 @@ def add_cert_level(level_name, description, image_link):
     }
     db.reference('CERT_LEVEL').child(cert_level_id).set(cert_level_data)
     print(f"Cert Level added successfully with ID: {cert_level_id}")
-
 
 def add_topic(topic_name, description, image_link):
     topic_id = str(uuid.uuid4())
@@ -135,22 +129,25 @@ def add_topic(topic_name, description, image_link):
     print(f"Topic added successfully with ID: {topic_id}")
 
 
-def add_lession(name_of_lesson, cert_level_id, is_vocab, question_id, previous_lesson, topic_id):
+def add_lession(name_of_lesson, image_link, cert_level_id, is_vocab, order, topic_name):
     # plattern certlevel, topic id
 
     lession_id = str(uuid.uuid4())
+    cert_id = get_id_by_cert_level_name(cert_level_id)
+    topic_id = get_id_by_topicname(topic_name)
+    vocabs = get_vocab_by_topicid_and_certid(topic_id, cert_id)
     lession = {
         'LESSON_ID': lession_id,
         'NAME_OF_LESSON': name_of_lesson,
-        'CERT_LEVEL_ID': cert_level_id,
+        'IMAGE_LINK': image_link,
+        'CERT_LEVEL_ID': cert_id,
         'IS_VOCAB': is_vocab,
-        'QUESTIONS': [],
-        'PREVIOUS_LESSON': previous_lesson,
+        'ORDER': order,
         'TOPIC_ID': topic_id,
+        'VOCABULARY': vocabs
     }
     db.reference('LESSON').child(lession_id).set(lession)
     print(f"Lesson added successfully with ID: {lession_id}")
-
 
 def add_question(content, audio_link, image_link, correct_anwer_id, question_type_id, part_detail_id,
                  question_content_id):  # add answer if selected answers then plattern
@@ -182,7 +179,6 @@ def add_answer(content, image_link, audio_link, question_id):
     db.reference('LESSON').child(answer_id).set(answer)
     print(f"Answer attending added successfully with ID: {answer_id}")
 
-
 def add_question_type(name_of_type):
     question_type_id = str(uuid.uuid4())
     question_type = {
@@ -190,7 +186,6 @@ def add_question_type(name_of_type):
     }
     db.reference('QUESTION_TYPE').child(question_type_id).set(question_type)
     print(f"Question type added successfully with ID: {question_type_id}")
-
 
 def add_test_type(name_of_test_type, total_duration, maximum, cert_level_id):  # plattern cert_test
     # PLATTERN CERT ID, CHANGE NAME
@@ -205,7 +200,6 @@ def add_test_type(name_of_test_type, total_duration, maximum, cert_level_id):  #
     db.reference('LESSON').child(test_type_id).set(test_type)
     print(f"Type test added successfully with ID: {test_type_id}")
 
-
 def add_part_of_test(name_of_part, test_type_id, audio_link):
     part_of_test_id = str(uuid.uuid4())
     part_of_test = {
@@ -214,7 +208,6 @@ def add_part_of_test(name_of_part, test_type_id, audio_link):
     }
     db.reference('PART_OF_TEST').child(part_of_test_id).set(part_of_test)
     print(f"Part of test added successfully with ID: {part_of_test_id}")
-
 
 def add_question_content(content, image_link, audio_link):
     question_content_id = str(uuid.uuid4())
@@ -227,8 +220,6 @@ def add_question_content(content, image_link, audio_link):
     db.reference('QUESTION_CONTENT').child(question_content_id).set(answer)
     print(f"Date attending added successfully with ID: {question_content_id}")
 
-
-
 def add_test(name_of_test, test_type_id):
     # add information
     test_id = str(uuid.uuid4())
@@ -238,7 +229,6 @@ def add_test(name_of_test, test_type_id):
     }
     db.reference('TEST').child(test_id).set(test)
     print(f"Test added successfully with ID: {test_id}")
-
 
 def add_part_detail(name_of_part_detail, test_id, audio_link, image_link):
     part_detail_id = str(uuid.uuid4())
@@ -271,7 +261,6 @@ def get_topic_by_name(topic_name):
 def get_all_cert_level():
     return db.reference('CERT_LEVEL').get()
 
-
 def get_cert_level_by_name(level_name):
     try:
         return db.reference('CERT_LEVEL').order_by_child('LEVEL_NAME').equal_to(level_name).get()
@@ -281,9 +270,111 @@ def get_cert_level_by_name(level_name):
 
 def get_vocabulary_by_question_id(question_id):
     return db.reference('QUESTION').order_by_child('QUESTION_ID').equal_to(question_id).get()
+
 def get_vocabulary_by_id(vocab_id):
     return db.reference('VOCABULARY').order_by_child('VOCAB_ID').equal_to(vocab_id).get()
 
+
+def get_vocabulary_by_topic_name(topic_name):
+    try:
+        # Step 1: Find the topic ID by topic name
+        topics = db.reference('TOPIC').order_by_child('TOPIC_NAME').equal_to(topic_name).get()
+        if not topics:
+            print(f"No topic found with the name: {topic_name}")
+            return None
+
+        # Assuming topic_name is unique and we get a single result
+        topic_id = list(topics.keys())[0]
+
+        # Step 2: Retrieve vocabulary data for the found topic ID
+        vocabulary_data = db.reference(f'TOPIC/{topic_id}/VOCABULARY').get()
+        if vocabulary_data:
+            return vocabulary_data
+        else:
+            print(f"No vocabulary data found for topic: {topic_name}")
+            return None
+    except Exception as e:
+        print(e)
+        return None
+
+
+def get_id_by_cert_level_name(cert_level_name):
+    try:
+        cert_levels = db.reference('CERT_LEVEL').order_by_child('LEVEL_NAME').equal_to(cert_level_name).get()
+        if not cert_levels:
+            print(f"No cert level found with the name: {cert_level_name}")
+            return None
+
+        # Assuming cert_level_name is unique and we get a single result
+        cert_level_id = list(cert_levels.keys())[0]
+        return cert_level_id
+    except Exception as e:
+        print(e)
+        return None
+
+
+def get_vocabulary_by_cert_level_name(cert_level_name):
+    try:
+        # Retrieve all vocabulary data
+        vocab_data = db.reference('TOPIC').get()
+        if not vocab_data:
+            print("No vocabulary data found.")
+            return None
+
+        # Filter words by certification level
+        words_with_level = []
+        for vocab_id, vocab_info in vocab_data.items():
+            cert_levels = vocab_info.get('CERT_LEVEL_ID', {})
+            for cert_id, cert_info in cert_levels.items():
+                if cert_info.get('LEVEL_NAME') == cert_level_name:
+                    words_with_level.append({
+                        'WORD': vocab_info.get('WORD'),
+                        'MEANING': vocab_info.get('MEANING'),
+                        'PRONUNCIATION': vocab_info.get('PRONUNCIATION'),
+                        'AUDIO_LINK': vocab_info.get('AUDIO_LINK'),
+                        'LEVEL_NAME': cert_info.get('LEVEL_NAME')
+                    })
+
+        return words_with_level
+    except Exception as e:
+        print(e)
+        return None
+
+
+def get_vocab_by_topicid_and_certid(topic_id, cert_id):
+    try:
+        # Step 1: Query by TOPIC_ID
+        vocab_data = db.reference('VOCABULARY').order_by_child('TOPIC_ID').equal_to(topic_id).get()
+
+        # Step 2: Filter by CERT_LEVEL_ID
+        filtered_vocab = {}
+        for vocab_id, vocab_info in vocab_data.items():
+            cert_levels = vocab_info.get('CERT_LEVEL_ID', {})
+            if cert_id in cert_levels:
+                filtered_vocab[vocab_id] = vocab_info
+
+        return filtered_vocab
+    except Exception as e:
+        print(e)
+        return None
+
+
+def get_id_by_topicname(topic_name):
+    try:
+        topics = db.reference('TOPIC').order_by_child('TOPIC_NAME').equal_to(topic_name).get()
+        if not topics:
+            print(f"No topic found with the name: {topic_name}")
+            return None
+
+        # Assuming topic_name is unique and we get a single result
+        topic_id = list(topics.keys())[0]
+        return topic_id
+    except Exception as e:
+        print(e)
+        return None
+
+
+# push arrange
 
 def add_rang_vocab(file):
     #phai them vocab truoc
@@ -298,10 +389,24 @@ def add_rang_vocab(file):
 
     print("Add vocabulary successfully")
 
-def add_range_topic():
-    file = 'data/csv/topic.csv'
+
+def add_range_topic(file):
     top = eng.read_csv(file)
     for index, row in top.iterrows():
         add_topic(topic_name=row['TOPIC_NAME'], description=row['DESCRIPTION'], image_link=row['DESCRIPTION'])
+
+
+def add_range_lesson(file):
+    data = eng.read_csv(file)
+    for index, row in data.iterrows():
+        add_lession(name_of_lesson=row['NAME_OF_LESSON'], image_link=row['IMAGE_LINK'],
+                    cert_level_id=row['CERT_LEVEL_NAME'],
+                    is_vocab=row['IS_VOCAB'], order=row['ORDER'], topic_name=row['TOPIC_NAME'])
+    print("Add lesson successfully")
+
 if __name__ == '__main__':
-    add_rang_vocab('data/csv/vocabulary_A1.csv')
+    # add_range_topic('data/csv/topic.csv')
+    # add_rang_vocab('data/csv/vocabulary_A1.csv')
+    # add_rang_vocab('data/csv/vocabulary_A2.csv')
+    # add_range_lesson('data/csv/lesson.csv')
+    pass

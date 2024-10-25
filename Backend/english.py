@@ -6,6 +6,7 @@ import pyttsx3
 import requests
 import matplotlib.pyplot as plt
 import sounddevice as sd
+import re
 
 from FirebaseController import add_topic
 
@@ -39,13 +40,17 @@ def read_csv(file_path):
 def read_excel(file_path):
     return pd.read_excel(file_path)
 
+def sanitize_filename(filename):
+    # Replace spaces with underscores and remove invalid characters
+    return re.sub(r'[\\/*?:"<>|]', "", filename.replace(" ", "_")).lower()
+
 def to_mp3(text, voice_id=1, rate=150, volume=1):
     directory = 'data/mp3/pronunciation'
     if not os.path.exists(directory):
         os.makedirs(directory)
 
     # Replace invalid characters in the file name
-    file_name = text.replace(" ", "_").replace("/", "_").replace("?", "").replace(":", "").replace("*", "")
+    file_name = sanitize_filename(text)
     file_path = os.path.join(directory, file_name + '.mp3')
 
     try:
