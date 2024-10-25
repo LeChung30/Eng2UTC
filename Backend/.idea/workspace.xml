@@ -4,225 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FastAPI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/answer.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/lesson.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/part_detail.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/part_of_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/question.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/question_content.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/question_type.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/test_type.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/vocab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/29.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/37.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/41.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/42.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/52.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/53.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/54.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/55.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/56.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/57.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/58.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/img/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/key/eng2utc-firebase-adminsdk-y4ymw-0ab02a4678.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/mp3/pronunciation/cook.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/mp3/question/ket-practice-listening-test-01-part-1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/mp3/question/ket-practice-listening-test-01-part-3.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/mp3/question/ket-practice-listening-test-01-part-4.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/mp3/question/ket-practice-listening-test-02-part-1.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="add data, fast api">
+      <change afterPath="$PROJECT_DIR$/data/csv/vocabulary_B1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/FastAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirebaseController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/topic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/topic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/vocabulary.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/key/serviceAccountKey.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/actor.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/actor.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/afraid.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/afraid.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/airport.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/airport.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/angry.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/angry.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/apartment.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/apartment.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/app.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/app.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/apple.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/apple.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/art.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/art.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/artist.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/artist.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/aunt.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/aunt.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/baby.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/baby.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/banana.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/banana.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/bank.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/bank.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/beach.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/beach.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/belt.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/belt.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/bicycle.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/bicycle.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/boat.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/boat.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/bored.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/bored.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/boss.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/boss.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/bread.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/bread.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/breakfast.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/breakfast.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/brother.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/brother.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/bus.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/bus.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/cake.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/cake.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/camera.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/camera.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/car.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/car.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/cheese.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/cheese.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/chemistry.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/chemistry.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/chicken.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/chicken.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/city.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/city.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/classroom.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/classroom.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/clothes.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/clothes.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/coffee.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/coffee.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/colleague.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/colleague.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/computer.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/computer.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/confused.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/confused.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/cook.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/country.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/country.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/cousin.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/cousin.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/daughter.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/daughter.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/device.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/device.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/digital.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/digital.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/doctor.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/doctor.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/download.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/download.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/dress.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/dress.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/electronic.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/electronic.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/engineer.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/engineer.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/exam.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/exam.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/excited.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/excited.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/farmer.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/farmer.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/father.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/father.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/firefighter.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/firefighter.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/friend.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/friend.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/geography.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/geography.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/grandfather.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/grandfather.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/grandmother.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/grandmother.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/happy.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/happy.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/hat.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/hat.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/helicopter.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/helicopter.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/history.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/history.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/homework.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/homework.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/hotel.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/hotel.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/house.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/house.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/husband.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/husband.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/internet.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/internet.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/jacket.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/jacket.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/jeans.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/jeans.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/keyboard.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/keyboard.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/lesson.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/lesson.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/library.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/library.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/literature.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/literature.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/lorry.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/lorry.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/manager.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/manager.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/math.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/math.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/mobile.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/mobile.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/mother.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/mother.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/motorbike.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/motorbike.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/mouse.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/mouse.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/museum.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/museum.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/music.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/music.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/neighbor.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/neighbor.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/nephew.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/nephew.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/nervous.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/nervous.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/niece.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/niece.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/nurse.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/nurse.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/park.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/park.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/physics.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/physics.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/plane.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/plane.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/police.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/police.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/proud.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/proud.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/restaurant.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/restaurant.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/room.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/room.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/sad.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/sad.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/scared.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/scared.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/scarf.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/scarf.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/school.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/school.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/science.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/science.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/secretary.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/secretary.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/ship.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/ship.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/shirt.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/shirt.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/shoes.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/shoes.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/singer.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/singer.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/sister.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/sister.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/skirt.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/skirt.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/smartphone.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/smartphone.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/socks.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/socks.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/software.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/software.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/son.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/son.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/student.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/student.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/subway.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/subway.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/surprised.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/surprised.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/sweater.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/sweater.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/tablet.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/tablet.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/taxi.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/taxi.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/tea.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/tea.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/teacher.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/teacher.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/technician.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/technician.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/television.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/television.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/tie.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/tie.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/tired.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/tired.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/train.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/train.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/trator.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/trator.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/trousers.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/trousers.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/truck.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/truck.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/uncle.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/uncle.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/university.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/university.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/upset.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/upset.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/van.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/van.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/waiter.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/waiter.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/waitress.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/waitress.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/watch.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/watch.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/water.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/water.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/wife.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/wife.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mp3/worried.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/pronunciation/worried.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xlsx/vocab.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/xlsx/vocab.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/english.py" beforeDir="false" afterPath="$PROJECT_DIR$/english.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,17 +54,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.FastAPI.executor": "Run",
-    "Python.FirebaseController.executor": "Run",
-    "Python.english.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "firebase",
-    "last_opened_file_path": "D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data/mp3/pronunciation",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.FastAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FirebaseController.executor&quot;: &quot;Run&quot;,
+    &quot;Python.english.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;firebase&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data/mp3/pronunciation&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data" />
@@ -290,7 +78,7 @@
       <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\csv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FastAPI">
+  <component name="RunManager" selected="Python.FirebaseController">
     <configuration name="FastAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <option name="ENV_FILES" value="" />
@@ -366,8 +154,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.FastAPI" />
         <item itemvalue="Python.FirebaseController" />
+        <item itemvalue="Python.FastAPI" />
         <item itemvalue="Python.english" />
       </list>
     </recent_temporary>
@@ -388,9 +176,38 @@
       <option name="presentableId" value="Default" />
       <updated>1728494877144</updated>
     </task>
+    <task id="LOCAL-00001" summary="add data, fast api">
+      <option name="closed" value="true" />
+      <created>1729669750489</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729669750489</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/backend" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -401,23 +218,32 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add data, fast api" />
+    <option name="LAST_COMMIT_MESSAGE" value="add data, fast api" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>56</line>
+          <line>57</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>120</line>
+          <line>122</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>286</line>
-          <option name="timeStamp" value="3" />
+          <line>287</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/english.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

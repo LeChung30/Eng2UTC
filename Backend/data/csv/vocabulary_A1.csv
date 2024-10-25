@@ -1,10 +1,4 @@
-WORD,PRONUNCIATION,PART_OF_SPEECH,VIETNAMESE_MEANING,TOPIC_NAME,IMAGE_LINK,CERT_LEVEL_NAME,AUDIO_LINK,LESSON_ID
-hello,ˈheləʊ,interjection,xin chào,Meeting people,https://th.bing.com/th/id/OIP.G_0V2LYYd5PV7VLuC779bQHaEK?rs=1&pid=ImgDetMain,A1,,1
-goodbye,ɡʊdˈbaɪ,interjection,tạm biệt,Meeting people,https://th.bing.com/th/id/OIP.la0M9Ugf-vwQGl2-CluxSgHaHa?rs=1&pid=ImgDetMain,A1,,1
-good morning,ɡʊd ˈmɔːnɪŋ,interjection,chào buổi sáng,Meeting people,https://th.bing.com/th/id/OIP.rt_sKU1a3frNDmUsYZ2vsgHaHa?rs=1&pid=ImgDetMain,A1,,1
-good afternoon,ɡʊd ˈɑːftənuːn,interjection,chào buổi chiều,Meeting people,https://th.bing.com/th/id/OIP.2XtT73r7HOtsLtxx6eIDCwHaHZ?rs=1&pid=ImgDetMain,A1,,1
-good evening,ɡʊd ˈiːvnɪŋ,interjection,chào buổi tối,Meeting people,https://th.bing.com/th/id/R.4a432fea5552ac2312284dd59a3cda39?rik=tDxkKZSd82I2zA&pid=ImgRaw&r=0,A1,,1
-good night,ɡʊd ˈnaɪt,interjection,chúc ngủ ngon,Meeting people,https://th.bing.com/th/id/OIP.1h5hC2hpfbT6FpZ5gJtmmgHaHa?rs=1&pid=ImgDetMain,A1,,1
+WORD,PRONUNCIATION,PART_OF_SPEECH,MEANING,TOPIC_NAME,IMAGE_LINK,CERT_LEVEL_NAME,AUDIO_LINK,LESSON_ID
 how are you?,haʊ ə juː,phrase,bạn khỏe không?,Meeting people,https://th.bing.com/th/id/OIP.kAifV4mdOXpqOX1rjrv8IwHaH_?rs=1&pid=ImgDetMain,A1,,1
 nice to meet you,naɪs tə miːt juː,phrase,rất vui được gặp bạn,Meeting people,https://th.bing.com/th/id/OIP.E8eaNFkoN9fgG-kkhylFBgHaFj?rs=1&pid=ImgDetMain,A1,,1
 please,pliːz,interjection,làm ơn,Meeting people,https://th.bing.com/th/id/OIP.A91Fb8AnQy84jnTCqOJKlwAAAA?rs=1&pid=ImgDetMain,A1,,1
@@ -101,4 +95,4 @@ cow,kaʊ,noun,bò,Animals,https://th.bing.com/th/id/OIP.c6LNuQclyKg2Ar3ffeHx9gHa
 pig,pɪɡ,noun,lợn,Animals,https://th.bing.com/th/id/R.96e9dc89447ac28dce372f10a49aa234?rik=eWn2AmoBJVdY5g&pid=ImgRaw&r=0,A1,,1
 duck,dʌk,noun,vịt,Animals,https://th.bing.com/th/id/R.0f0c7de87ad78fc755a3dbe1a84607a9?rik=9d7I07GKFqEzMQ&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f7%2f74%2fWhite_domesticated_duck%2c_stretching.jpg&ehk=i7%2fluCyICGchFfxbPgsAQu6RXaCp2PHj6Z0V5%2b7uEsI%3d&risl=1&pid=ImgRaw&r=0,A1,,1
 goat,ɡoʊt,noun,dê,Animals,https://th.bing.com/th/id/OIP.9ES0Zxtmu_JlM7k_Zg4L4AHaE8?rs=1&pid=ImgDetMain,A1,,1
-sheep,ʃiːp,noun,cừu,Animals,https://th.bing.com/th/id/OIP.7Z6
+sheep,ʃiːp,noun,cừu,Animals,https://th.bing.com/th/id/OIP.7Z6,A1,,1

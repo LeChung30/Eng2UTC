@@ -13,7 +13,6 @@ def get_all_topics():
 def get_topic(topic_id: int):
     res=fc.get_topic(topic_id)
     return res
+
 if __name__ == '__main__':
-    uvicorn.run(app, port=8000)
-
-
+    uvicorn.run(app,port=8000)

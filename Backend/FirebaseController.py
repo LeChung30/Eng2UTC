@@ -1,9 +1,10 @@
 import uuid
 from datetime import datetime
 
-import firebase_admin
+
 import pyrebase
 from firebase_admin import credentials, db
+import re
 
 import english as eng
 
@@ -18,7 +19,7 @@ firebaseConfig = {
     'appId': "1:679823761990:web:00cfe2a91e5d43440e6047",
     'measurementId': "G-X9047FEREQ"
 }
-local_path_mp3 = 'data/mp3/'
+local_path_mp3 = 'data/mp3/pronunciation/'
 remote_path_mp3 = 'mp3/pronunciation/'
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
@@ -73,16 +74,20 @@ def add_user(email, user_name, full_name, gender, is_active, image_link, hash_pa
     print(f"User added successfully with ID: {user_id}")
 
 #add
-def upload_file_mp3(word, id_token):
-    # authen firebase to firestorage
-    local_file = local_path_mp3 + word + '.mp3'
-    remote_file = remote_path_mp3 + word + '.mp3'
+def sanitize_filename(filename):
+    # Replace spaces with underscores and remove invalid characters
+    return re.sub(r'[\\/*?:"<>|]', "", filename.replace(" ", "_"))
+
+def upload_file_mp3(word: str, id_token):
+    # Sanitize the word to create a valid file name
+    sanitized_word = sanitize_filename(word)
+    local_file = local_path_mp3 + sanitized_word + '.mp3'
+    remote_file = remote_path_mp3 + sanitized_word + '.mp3'
 
     storage = firebase.storage()
     storage.child(remote_file).put(local_file, id_token)
     print(f"File uploaded successfully to {remote_file}")
     return storage.child(remote_file).get_url(id_token)
-
 
 def add_vocabbulary(word, pronunciation, part_of_speech, image_link, meaning, cert_level_name,
                     topic_name, id_token):
@@ -257,32 +262,46 @@ def get_alltopic():
     return r
 
 def get_topic_by_name(topic_name):
-    return db.reference('TOPIC').order_by_child('TOPIC_NAME').equal_to(topic_name).get()
-
+    try:
+        return db.reference('TOPIC').order_by_child('TOPIC_NAME').equal_to(topic_name).get()
+    except Exception as e:
+        print(e)
+        return -1
 
 def get_all_cert_level():
     return db.reference('CERT_LEVEL').get()
 
 
 def get_cert_level_by_name(level_name):
-    return db.reference('CERT_LEVEL').order_by_child('LEVEL_NAME').equal_to(level_name).get()
-
+    try:
+        return db.reference('CERT_LEVEL').order_by_child('LEVEL_NAME').equal_to(level_name).get()
+    except Exception as e:
+        print(e)
+        return -1
 
 def get_vocabulary_by_question_id(question_id):
     return db.reference('QUESTION').order_by_child('QUESTION_ID').equal_to(question_id).get()
+def get_vocabulary_by_id(vocab_id):
+    return db.reference('VOCABULARY').order_by_child('VOCAB_ID').equal_to(vocab_id).get()
 
 
 def add_rang_vocab(file):
+    #phai them vocab truoc
     connect_firebase()
     gmail, password = 'eng2UTC@gmail.com', 'eng2UTC@123'
     user = authenticate_user(gmail, password)
     vocab = eng.dataframe_nan_to_none(eng.read_csv(file))
     for index, row in vocab.iterrows():
+        eng.to_mp3(row['WORD'])
         add_vocabbulary(row['WORD'], row['PRONUNCIATION'], row['PART_OF_SPEECH'], row['IMAGE_LINK'], row['MEANING'],
                         row['CERT_LEVEL_NAME'], row['TOPIC_NAME'], user['idToken'])
+
     print("Add vocabulary successfully")
 
-
+def add_range_topic():
+    file = 'data/csv/topic.csv'
+    top = eng.read_csv(file)
+    for index, row in top.iterrows():
+        add_topic(topic_name=row['TOPIC_NAME'], description=row['DESCRIPTION'], image_link=row['DESCRIPTION'])
 if __name__ == '__main__':
-    r=get_alltopic()
-    print(r)
+    add_rang_vocab('data/csv/vocabulary_A1.csv')
