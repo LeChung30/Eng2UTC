@@ -1,0 +1,11 @@
+LESSON_ID,NAME_OF_LESSON,IMAGE_LINK,CERT_LEVEL_ID,IS_VOCAB,PREVIOUS_LESSON,TOPIC_ID
+L1,Counting from 1 to 100,https://i.ytimg.com/vi/J4kMxtyE4Jc/maxresdefault.jpg,A1,1,,T13
+L2,Understanding Time,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRqLZPv1LqnkgcW5OUl5TX3w83XlOhKRKHzg&s,A1,1,,T15
+L3,Animals Zoo,https://png.pngtree.com/png-clipart/20201208/original/pngtree-small-animals-in-the-zoo-png-image_5581660.jpg,A1,1,,T6
+L4,Introduction to Digital Devices,https://i.ytimg.com/vi/HbR4gC8_5YM/maxresdefault.jpg,A1,1,,T1
+L5,Clothing,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAoRQYIYIYxDjPeJTn9KNQLg3wOTnX637r4A&s,A2,1,,T5
+L6,Healthy Eating,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLGtzrveT76tW0LMGLBQqRIBfHPvvQSNM0tw&s,A2,1,,T2
+L7,Common Places in Daily Life,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCEgGSp0jJU-5b8ubrGXbMpn2uFv0WtFePeQ&s,A2,1,,T4
+L8,Common Modes of Transport,https://media.istockphoto.com/id/1188746132/vector/public-urban-transport.jpg?s=612x612&w=0&k=20&c=ddz-VHRnWEYQ8JErplZVrVDEzVk3I3iJlnJ4-NZfL_4=,A2,1,,T8
+L9,Jobs,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjVmGzv5I5cKtXLvlRiLd7cz0V_tGV9vuHA&s,A2,1,,T11
+L10,Family,https://luyenthiielts7.com/wp-content/uploads/2020/10/Family-Silhouette-3.jpg,A2,1,T10,T10
