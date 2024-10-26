@@ -2,11 +2,13 @@ import uuid
 from datetime import datetime
 
 import firebase_admin
+import pandas as pd
 import pyrebase
 from firebase_admin import credentials
 from firebase_admin import db
 
 import english as eng
+import EngSecurity as sec
 
 # upload file to firebase
 firebaseConfig = {
@@ -53,8 +55,9 @@ def authenticate_user(email, password):
         print(f"Error authenticating user {email}: {e}")
         return None
 
-def add_user(email, user_name, full_name, gender, is_active, image_link, hash_password):
+def add_user(email, user_name, full_name, gender, is_active, password):
     user_id = str(uuid.uuid4())
+    hash_password = sec.hash_bcrypt(password)
     user_data = {
         'USER_ID': user_id,
         'EMAIL': email,
@@ -63,7 +66,6 @@ def add_user(email, user_name, full_name, gender, is_active, image_link, hash_pa
         'GENDER': gender,
         'IS_ACTIVE': is_active,
         'CREATED_DATE': datetime.now().isoformat(),  # Current time in ISO format
-        'IMAGE_LINK': image_link,
         'HASH_PASSWORD': hash_password,  # Ensure password is hashed before storing
     }
 
@@ -89,8 +91,6 @@ def add_vocabbulary(word, pronunciation, part_of_speech, image_link, meaning, ce
                     topic_name, id_token):
     # plartern cert level,topic id
     vocab_id = str(uuid.uuid4())
-    topic = get_id_by_topicname(topic_name)
-    cert_level = get_id_by_cert_level_name(cert_level_name)
     audio_link = upload_file_mp3(word, id_token)
     vocab_data = {
         'VOCAB_ID': vocab_id,
@@ -100,8 +100,8 @@ def add_vocabbulary(word, pronunciation, part_of_speech, image_link, meaning, ce
         'IMAGE_LINK': image_link,
         'AUDIO_LINK': audio_link,
         'MEANING': meaning,
-        'CERT_LEVEL_ID': cert_level,
-        'TOPIC_ID': topic,
+        'CERT_LEVEL_NAME': cert_level_name,
+        'TOPIC_NAME': topic_name,
     }
     db.reference('VOCABULARY').child(vocab_id).set(vocab_data)
     print(f"Vocabulary added successfully with ID: {vocab_id}")
@@ -110,7 +110,7 @@ def add_cert_level(level_name, description, image_link):
     cert_level_id = str(uuid.uuid4())
     cert_level_data = {
         'CERT_LEVEL_ID': cert_level_id,
-        'LEVEL_NAME': level_name,
+        'CERT_LEVEL_NAME': level_name,
         'DESCRIPTION': description,
         'IMAGE_LINK': image_link,
     }
@@ -129,21 +129,21 @@ def add_topic(topic_name, description, image_link):
     print(f"Topic added successfully with ID: {topic_id}")
 
 
-def add_lession(name_of_lesson, image_link, cert_level_id, is_vocab, order, topic_name):
+def add_lession(name_of_lesson, image_link, cert_name, is_vocab, order, topic_name):
     # plattern certlevel, topic id
 
     lession_id = str(uuid.uuid4())
-    cert_id = get_id_by_cert_level_name(cert_level_id)
+    cert_id = get_id_by_cert_level_name(cert_name)
     topic_id = get_id_by_topicname(topic_name)
-    vocabs = get_vocab_by_topicid_and_certid(topic_id, cert_id)
+    vocabs = get_vocab_by_topicname_and_certname(topic_id, cert_id)
     lession = {
         'LESSON_ID': lession_id,
         'NAME_OF_LESSON': name_of_lesson,
         'IMAGE_LINK': image_link,
-        'CERT_LEVEL_ID': cert_id,
+        'CERT_LEVEL_NAME': cert_name,
         'IS_VOCAB': is_vocab,
         'ORDER': order,
-        'TOPIC_ID': topic_id,
+        'TOPIC_NAME': topic_name,
         'VOCABULARY': vocabs
     }
     db.reference('LESSON').child(lession_id).set(lession)
@@ -182,12 +182,14 @@ def add_answer(content, image_link, audio_link, question_id):
 def add_question_type(name_of_type):
     question_type_id = str(uuid.uuid4())
     question_type = {
+        'QUESTION_TYPE_ID': question_type_id,
         'NAME_OF_TYPE': name_of_type,
     }
     db.reference('QUESTION_TYPE').child(question_type_id).set(question_type)
     print(f"Question type added successfully with ID: {question_type_id}")
 
-def add_test_type(name_of_test_type, total_duration, maximum, cert_level_id):  # plattern cert_test
+
+def add_test_type(name_of_test_type, total_duration, maximum, cert_level_name):  # plattern cert_test
     # PLATTERN CERT ID, CHANGE NAME
     test_type_id = str(uuid.uuid4())
     test_type = {
@@ -195,16 +197,19 @@ def add_test_type(name_of_test_type, total_duration, maximum, cert_level_id):  #
         'NAME_OF_TYPE_TEST': name_of_test_type,
         'TOTAL_DURATION': total_duration,
         'MAXIMUM_SCORE': maximum,
-        'CERT_LEVEL_ID': cert_level_id,
+        'CERT_LEVEL_NAME': cert_level_name,
     }
-    db.reference('LESSON').child(test_type_id).set(test_type)
+    db.reference('TEST_TYPE').child(test_type_id).set(test_type)
     print(f"Type test added successfully with ID: {test_type_id}")
 
-def add_part_of_test(name_of_part, test_type_id, audio_link):
+
+def add_part_of_test(name_of_part, test_type_id):
     part_of_test_id = str(uuid.uuid4())
+    name_of_test_type = get_id_test_type_by_name(test_type_id)
     part_of_test = {
+        'PART_OF_TEST_ID': part_of_test_id,
         'NAME_OF_PART': name_of_part,
-        'TEST_TYPE_ID': test_type_id,
+        'TEST_TYPE_NAME': name_of_test_type,
     }
     db.reference('PART_OF_TEST').child(part_of_test_id).set(part_of_test)
     print(f"Part of test added successfully with ID: {part_of_test_id}")
@@ -263,7 +268,7 @@ def get_all_cert_level():
 
 def get_cert_level_by_name(level_name):
     try:
-        return db.reference('CERT_LEVEL').order_by_child('LEVEL_NAME').equal_to(level_name).get()
+        return db.reference('CERT_LEVEL').order_by_child('CERT_LEVEL_NAME').equal_to(level_name).get()
     except Exception as e:
         print(e)
         return -1
@@ -274,6 +279,14 @@ def get_vocabulary_by_question_id(question_id):
 def get_vocabulary_by_id(vocab_id):
     return db.reference('VOCABULARY').order_by_child('VOCAB_ID').equal_to(vocab_id).get()
 
+
+def get_id_test_type_by_name(name_of_test_type):
+    try:
+        res = db.reference('TEST_TYPE').order_by_child('NAME_OF_TEST_TYPE').equal_to(name_of_test_type).get()
+        return res
+    except Exception as e:
+        print(e)
+        return -1
 
 def get_vocabulary_by_topic_name(topic_name):
     try:
@@ -300,7 +313,7 @@ def get_vocabulary_by_topic_name(topic_name):
 
 def get_id_by_cert_level_name(cert_level_name):
     try:
-        cert_levels = db.reference('CERT_LEVEL').order_by_child('LEVEL_NAME').equal_to(cert_level_name).get()
+        cert_levels = db.reference('CERT_LEVEL').order_by_child('CERT_LEVEL_NAME').equal_to(cert_level_name).get()
         if not cert_levels:
             print(f"No cert level found with the name: {cert_level_name}")
             return None
@@ -341,15 +354,15 @@ def get_vocabulary_by_cert_level_name(cert_level_name):
         return None
 
 
-def get_vocab_by_topicid_and_certid(topic_id, cert_id):
+def get_vocab_by_topicname_and_certname(topic_id, cert_id):
     try:
         # Step 1: Query by TOPIC_ID
-        vocab_data = db.reference('VOCABULARY').order_by_child('TOPIC_ID').equal_to(topic_id).get()
+        vocab_data = db.reference('VOCABULARY').order_by_child('TOPIC_NAME').equal_to(topic_id).get()
 
         # Step 2: Filter by CERT_LEVEL_ID
         filtered_vocab = {}
         for vocab_id, vocab_info in vocab_data.items():
-            cert_levels = vocab_info.get('CERT_LEVEL_ID', {})
+            cert_levels = vocab_info.get('CERT_LEVEL_NAME', {})
             if cert_id in cert_levels:
                 filtered_vocab[vocab_id] = vocab_info
 
@@ -400,13 +413,57 @@ def add_range_lesson(file):
     data = eng.read_csv(file)
     for index, row in data.iterrows():
         add_lession(name_of_lesson=row['NAME_OF_LESSON'], image_link=row['IMAGE_LINK'],
-                    cert_level_id=row['CERT_LEVEL_NAME'],
+                    cert_name=row['CERT_LEVEL_NAME'],
                     is_vocab=row['IS_VOCAB'], order=row['ORDER'], topic_name=row['TOPIC_NAME'])
     print("Add lesson successfully")
 
+
+def add_range_test_type(file):
+    data = eng.read_csv(file)
+    for index, row in data.iterrows():
+        add_test_type(name_of_test_type=row['NAME_OF_TEST_TYPE'], total_duration=row['TOTAL_DURATION'],
+                      maximum=row['MAXIMUM_SCORE'], cert_level_name=row['CERT_LEVEL_NAME'])
+    print("Add test type successfully")
+
+
+def add_range_part_of_test(file):
+    data = eng.read_csv(file)
+    for index, row in data.iterrows():
+        add_part_of_test(name_of_part=row['NAME_OF_PART'], test_type_id=row['TEST_TYPE_NAME'])
+    print("Add part of test successfully")
+
+
+def add_range_cert_level(file):
+    data = eng.read_csv(file)
+    for index, row in data.iterrows():
+        add_cert_level(level_name=row['CERT_LEVEL_NAME'], description=row['DESCRIPTION'], image_link=row['IMAGE_LINK'])
+    print("Add cert level successfully")
+
+def add_range_question_type(file):
+    data=eng.read_csv(file)
+    for index,row in data.iterrows():
+        add_question_type(name_of_type=row['NAME_OF_TYPE'])
+    print('Add question type successfully')
+
+def add_range_user(file):
+    data=eng.read_csv(file)
+    data['DATE_OF_BIRTH'] = pd.to_datetime(data['DATE_OF_BIRTH'], format='%b,%d,%Y')
+    data['CREATED_DATE'] = pd.to_datetime(data['CREATED_DATE'], format='%b,%d,%Y')
+    data['PHONE_NUMBER'] = data['PHONE_NUMBER'].apply(lambda x: str(x))
+    data['PHONE_NUMBER'] = data['PHONE_NUMBER'].str.replace('-', '', regex=False)
+    for index,row in data.iterrows():
+        add_user(email=row['EMAIL'],user_name=row['USER_NAME'],full_name=row['FULL_NAME'],gender=row['GENDER'],is_active=row['IS_ACTIVE'],password=row['PASSWORD'])
+    print('Add user successfully')
+
 if __name__ == '__main__':
+    # add_range_cert_level('data/csv/cert_level.csv')
     # add_range_topic('data/csv/topic.csv')
     # add_rang_vocab('data/csv/vocabulary_A1.csv')
     # add_rang_vocab('data/csv/vocabulary_A2.csv')
     # add_range_lesson('data/csv/lesson.csv')
+    # add_range_test_type('data/csv/test_type.csv')
+    # add_range_part_of_test('data/csv/part_of_test.csv')
+    # add_range_user('data/csv/user.csv')
     pass
+
+
