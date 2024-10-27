@@ -1,111 +1,111 @@
 ANSWER_ID,CONTENT,IMAGE,AUDIO_LINK,QUESTION_ID,ORDER
-e5d9a7d2-2c0c-4ca0-8619-9fb52beff35b,A,1.0,,f1edbbce-9e68-46b5-847c-85f801eeb98d,1
-571d6b52-d476-48cd-9544-0d4366d22757,B,2.0,,f1edbbce-9e68-46b5-847c-85f801eeb98d,2
-db48e8b4-bbb6-4f85-aab2-55ce1aa7864f,C,3.0,,f1edbbce-9e68-46b5-847c-85f801eeb98d,3
-3a9b243a-08bf-4bb7-a8e4-6eac3e989052,A,4.0,,c35cd920-3f7c-4fad-9efc-42c3f03c8d26,1
-476fd9c8-e4b2-43f9-9e60-e05ac90cbae1,B,5.0,,c35cd920-3f7c-4fad-9efc-42c3f03c8d26,2
-6e19208f-d224-4664-b3bb-de812f6292b8,C,6.0,,c35cd920-3f7c-4fad-9efc-42c3f03c8d26,3
-c4300bd7-5d22-41e1-9e77-8d12c6113dd8,A,7.0,,b508e0c2-d1ea-4746-ac26-8155b7eb02e7,1
-226f3552-c373-4ebc-9d4e-1a3dd6740bed,B,8.0,,b508e0c2-d1ea-4746-ac26-8155b7eb02e7,2
-b4a4a942-14d6-439f-9666-c9e1189a17af,C,9.0,,b508e0c2-d1ea-4746-ac26-8155b7eb02e7,3
-27a6198c-faeb-40a3-9f5f-4bc01364f676,A,10.0,,854b163c-37d6-4455-972c-88bb3a610850,1
-580fcd43-e79e-410a-bf89-6c9ba53bb7f9,B,11.0,,854b163c-37d6-4455-972c-88bb3a610850,2
-3a3eeff1-2a58-482d-acc5-7986b6b5ef7c,C,12.0,,854b163c-37d6-4455-972c-88bb3a610850,3
-cacacf0d-d686-46ea-9971-fa2706c181d8,A,13.0,,5233df55-7db6-48ec-9772-b024e0678377,1
-1c16c9b7-df8e-40ff-acd7-d1dff182b69a,B,14.0,,5233df55-7db6-48ec-9772-b024e0678377,2
-3cfe3c1e-b616-4dca-9750-32a8b7efa4bb,C,15.0,,5233df55-7db6-48ec-9772-b024e0678377,3
-1cb65030-19c3-47ee-b949-2f8fe89c4d0f,from a game website,,,55678cde-61a0-4ed2-a0a7-185230019d6d,1
-b621cce5-4e26-44cc-a7c3-7985fe269f7b,from a school friend,,,55678cde-61a0-4ed2-a0a7-185230019d6d,2
-d7e32d32-f2f1-4bf8-bb86-1feda642ef22,from a magazine advertisement,,,55678cde-61a0-4ed2-a0a7-185230019d6d,3
-74b24b33-bdcc-46fe-bb7b-b6049fb9a268,it’s funny.,,,814e837d-9f62-4ca8-84dd-0f6f41595f65,1
-48041f01-91c3-4acf-8364-0d3db5b67d98,it’s hard.,,,814e837d-9f62-4ca8-84dd-0f6f41595f65,2
-fe7d1a51-23cf-4c37-a95e-2bc98998cf34,it’s new.,,,814e837d-9f62-4ca8-84dd-0f6f41595f65,3
-4a9c65f9-8929-4997-883c-ecae514bad20,his brother,,,2c85849c-04bb-43f0-8f1b-7b4a15c1473c,1
-7755b398-cae1-4280-a732-e5e3b6ce0eec,his granddad,,,2c85849c-04bb-43f0-8f1b-7b4a15c1473c,2
-69b74660-190f-4405-9488-04100d7346c3,his cousin,,,2c85849c-04bb-43f0-8f1b-7b4a15c1473c,3
-2a297e69-a561-4d9a-9399-657db60c2516,forty-five minutes,,,43a5bef3-ba1e-472e-b773-9a6565de4c82,1
-fae6c118-0343-48ae-89d2-2e53f021c7be,one hour,,,43a5bef3-ba1e-472e-b773-9a6565de4c82,2
-a7cdfa88-066f-4753-b022-0ae1a9a991c2,one hour and thirty minutes,,,43a5bef3-ba1e-472e-b773-9a6565de4c82,3
-3f8f7086-099d-4106-b376-0478cc2e95e5,finding food,,,3559fdb4-8322-4b7f-8d4e-af34303a63ac,1
-dd4c7e14-a4da-4b6a-a39d-573f84bc2573,building a hut,,,3559fdb4-8322-4b7f-8d4e-af34303a63ac,2
-d9a58667-c951-4252-a83c-04c6e3d5b0f9,crossing the river,,,3559fdb4-8322-4b7f-8d4e-af34303a63ac,3
-ae5504a5-a301-4317-81a2-ad9f1f0657c3,something to wear,,,034eb3d5-b51d-4737-bbea-ddb9230e058b,1
-c24e3990-53da-47fc-8793-58616486cad0,something to eat,,,034eb3d5-b51d-4737-bbea-ddb9230e058b,2
-22181e8f-954f-47b5-abcd-2f47b0c0f850,something to read,,,034eb3d5-b51d-4737-bbea-ddb9230e058b,3
-b99ad2c1-0599-4a57-b9b5-a1a369a298cd,She was sick.,,,e2343109-96bf-4e07-ad61-00b39488a45f,1
-d4e6532d-406f-40ad-961b-a8f7a1be6e9c,She was in a competition.,,,e2343109-96bf-4e07-ad61-00b39488a45f,2
-d313c758-1fa9-4511-86bb-ebe93211fb1d,She arrived back late from holiday.,,,e2343109-96bf-4e07-ad61-00b39488a45f,3
-658f3304-93bc-488c-bbbc-aa83474f5ddb,by doing a course,,,6bc7e78e-5d97-4339-bcc2-ba6d5f8c78f3,1
-93d7820e-624e-478f-a700-db63af3a0507,by watching videos,,,6bc7e78e-5d97-4339-bcc2-ba6d5f8c78f3,2
-1702c25c-2c3c-491a-9769-7efb615fbdc4,by practising by himself,,,6bc7e78e-5d97-4339-bcc2-ba6d5f8c78f3,3
-8d28a469-0224-4525-a747-c611f3f6c7d0,geography,,,20c47a05-b33f-4abb-a4e4-9ab979fc5869,1
-d9b29307-2b4f-4356-82a1-d043c3c32923,English,,,20c47a05-b33f-4abb-a4e4-9ab979fc5869,2
-74b3313a-6470-444c-8a16-d24844fef99c,biology,,,20c47a05-b33f-4abb-a4e4-9ab979fc5869,3
-3904c433-b96b-4f09-820e-2f457f41a7b4,Their bedroom was hot.,,,1e0860db-dc8b-41cd-8435-40280fd7dd65,1
-faab8054-3a39-4b7d-838a-9edefb78baf7,There were noises in the street.,,,1e0860db-dc8b-41cd-8435-40280fd7dd65,2
-ee6ed021-acf3-4066-a52a-ab62e134ab37,They were excited about going on holiday.,,,1e0860db-dc8b-41cd-8435-40280fd7dd65,3
-ecc718d3-b20f-41e7-9020-be63e8a56b55,A,16.0,,c69ee6ab-39cb-4279-9c14-8d16a704e2ba,1
-e67ce24d-02ca-4bb7-baf2-fd84e6397ace,B,17.0,,c69ee6ab-39cb-4279-9c14-8d16a704e2ba,2
-9005efa3-82fa-46f1-8d1f-c764b1333f18,C,18.0,,c69ee6ab-39cb-4279-9c14-8d16a704e2ba,3
-c57ff6d4-48a4-42a0-b8ad-b6429a85471b,A,19.0,,750f73e0-a5c5-4e3a-b8ff-c957a06324c3,1
-b8e14d5c-b5b3-49d2-96c9-9594f82ec9ed,B,20.0,,750f73e0-a5c5-4e3a-b8ff-c957a06324c3,2
-6f410b4a-6073-43bb-b6f4-9db65b34d37c,C,21.0,,750f73e0-a5c5-4e3a-b8ff-c957a06324c3,3
-a3477599-fd52-40cd-ad08-961ae25b168e,A,22.0,,ed3cb792-4490-4bd0-af4a-bd2bf4cd5ae9,1
-752748d0-2e76-4a99-8f37-be989fd97b89,B,23.0,,ed3cb792-4490-4bd0-af4a-bd2bf4cd5ae9,2
-9ed81f21-12c7-40d3-8178-d11736cda5c8,C,24.0,,ed3cb792-4490-4bd0-af4a-bd2bf4cd5ae9,3
-04a0a105-96a0-4e56-b836-c5fe489b2a54,A,25.0,,6781f642-993e-4b1d-b9b2-3fe3b758f4eb,1
-6f5b6f42-bda6-488b-b607-c07674d05d83,B,26.0,,6781f642-993e-4b1d-b9b2-3fe3b758f4eb,2
-a31ae213-5091-4ece-87ab-d1b14467245d,C,27.0,,6781f642-993e-4b1d-b9b2-3fe3b758f4eb,3
-763d6c99-1e33-403c-b9e1-2b6dff5fa610,A,28.0,,56aa3f0f-8f3a-43ba-8f49-7925c9017e32,1
-3b22f393-212e-4cbd-8dec-c61a07f3307e,B,29.0,,56aa3f0f-8f3a-43ba-8f49-7925c9017e32,2
-8f5b9881-1689-488a-b3f1-49357262206d,C,30.0,,56aa3f0f-8f3a-43ba-8f49-7925c9017e32,3
-3c6aab0e-70ca-419b-a46e-20313ea8d171,His father wanted to have a street party.,,,ee066aa0-7110-4372-8982-2cf8b507dbe4,1
-7eb0719b-05b5-486c-ab5f-18796568351f,There hasn’t been a street party for a long time.,,,ee066aa0-7110-4372-8982-2cf8b507dbe4,2
-71df545a-026b-4025-b812-e1e476f964ae,Many people remembered the last street party.,,,ee066aa0-7110-4372-8982-2cf8b507dbe4,3
-d4eb826c-b288-4b67-8b3e-433c40b516a4,The street still looks the same now.,,,2363606e-7985-4f9e-a9cf-462b6d34a93b,1
-6680a735-d3af-478d-bbed-1174c7720f20,There are more children living in the street now.,,,2363606e-7985-4f9e-a9cf-462b6d34a93b,2
-7e4d2302-f67c-4b4b-8e3b-76d6f949925e,The same people still live on the street now.,,,2363606e-7985-4f9e-a9cf-462b6d34a93b,3
-586fc4c2-ff83-466f-8346-5e4b724340d2,She thought that the party was too expensive.,,,d9c7121c-4d70-40a0-bf1d-cac9f20c5ec3,1
-0f52aa16-002c-4211-9fe6-d269dc76c7ed,She thought that people might not come to the party.,,,d9c7121c-4d70-40a0-bf1d-cac9f20c5ec3,2
-1dafafde-9464-410b-9800-952697970dd7,She thought that the guests might not talk to each other.,,,d9c7121c-4d70-40a0-bf1d-cac9f20c5ec3,3
-a12db42c-7104-4706-94a7-7095df2bab8d,hearing Louisa’s stories.,,,1ba850a0-d78f-41bc-b742-a896a5ef64bb,1
-2e257aae-8728-4cbf-b50e-3500cc934b5d,meeting Louisa’s friends.,,,1ba850a0-d78f-41bc-b742-a896a5ef64bb,2
-831ce7ea-dd42-487d-97b9-7240c4bec644,telling Louisa about their lives.,,,1ba850a0-d78f-41bc-b742-a896a5ef64bb,3
-01b19ea2-c873-41ce-a03f-764a333da5a1,Why I love street parties,,,ecc999c5-1b73-41c6-9acd-60ed921659f4,1
-74705be7-e11d-4216-b2b8-8fb782852acb,The street party we had,,,ecc999c5-1b73-41c6-9acd-60ed921659f4,2
-2efbe52f-c36d-4d65-90db-c1b19131ccd6,How to have a street party,,,ecc999c5-1b73-41c6-9acd-60ed921659f4,3
-a720159a-24ca-4dca-9536-843434a818df,soon,,,5a019d22-8ecc-44c3-b1d0-4768bddc28e8,1
-b32e1b12-80a4-4403-ad7b-c0b1e64dca62,much,,,5a019d22-8ecc-44c3-b1d0-4768bddc28e8,2
-a77789e6-344b-49e9-a24b-099608e8ede4,well,,,5a019d22-8ecc-44c3-b1d0-4768bddc28e8,3
-ef81b7b8-4443-4565-9cee-864d0ce7b942,spend,,,71f519f0-81f7-465e-94fe-fdb0ea0af9d8,1
-ed78a66e-cf49-4740-9918-c916243eb932,live,,,71f519f0-81f7-465e-94fe-fdb0ea0af9d8,2
-4a63fb4e-ce27-4403-b58a-aa0d0d523503,take,,,71f519f0-81f7-465e-94fe-fdb0ea0af9d8,3
-e79da144-8a66-467f-b35c-685984781ead,look,,,cd8b2098-95a2-4e74-8aba-1c83a38f7f42,1
-56d06e7c-3ac5-4c1d-8c44-b5f1fa527ff7,see,,,cd8b2098-95a2-4e74-8aba-1c83a38f7f42,2
-4ce9eb8b-04ac-4b39-ba28-be12d36dae32,find,,,cd8b2098-95a2-4e74-8aba-1c83a38f7f42,3
-ee8acac6-4c27-46e8-b9ac-6621effa3d88,even,,,98497572-9045-441b-b06a-9d0bc9243368,1
-e5236049-e349-45f7-8b9f-88669e43e45a,quite,,,98497572-9045-441b-b06a-9d0bc9243368,2
-490fa64c-6bff-407f-8ca3-6074d8dada62,still,,,98497572-9045-441b-b06a-9d0bc9243368,3
-ec758455-7e51-4c36-95b7-4c9ca80285f8,little,,,fb04b8fc-8fe9-4e62-9374-ed4ac441d479,1
-b39091d6-d8f6-4a25-a3c9-01cf5c996805,low,,,fb04b8fc-8fe9-4e62-9374-ed4ac441d479,2
-e5e957bc-9279-42ff-bb44-e69e1d3522df,short,,,fb04b8fc-8fe9-4e62-9374-ed4ac441d479,3
-4bf18eb8-8675-4b36-b932-70ad7e4e078f,are,,,db729e87-707c-438f-b2c5-770ef2a44d41,1
-1b0bb485-c2ad-4792-a2c4-b219614cf53d,was,,,db729e87-707c-438f-b2c5-770ef2a44d41,2
-87377c8f-6e7b-46b6-b150-321f39b47172,were,,,db729e87-707c-438f-b2c5-770ef2a44d41,3
-791e26dd-7dfb-4268-b0fd-cf2f88e48e6d,were,,,a61e3694-9509-4b88-a9fe-e2af85d02ffd,1
-51f2c3a9-ae4d-4a68-a889-57ea29526283,did,,,a61e3694-9509-4b88-a9fe-e2af85d02ffd,2
-4e5bf55f-dd61-4c1b-9d1b-2eeaa1d1eb55,was,,,a61e3694-9509-4b88-a9fe-e2af85d02ffd,3
-ac2620d5-0e35-43ec-8d42-44611d2bd102,were,,,fc3f7917-b914-485b-9300-ffcc66cdb2e5,1
-75741a21-b9a9-4f3d-a483-832631ab05e0,was,,,fc3f7917-b914-485b-9300-ffcc66cdb2e5,2
-28c204d6-0c20-4cbd-afd2-8a10b06d79fb,did,,,fc3f7917-b914-485b-9300-ffcc66cdb2e5,3
-e28b178c-ea94-4794-bd43-62d3bd57a642,was,,,bbd3e109-f655-48e3-8bf3-7019ae64b066,1
-17af6d16-161d-496e-9f14-462041438846,were,,,bbd3e109-f655-48e3-8bf3-7019ae64b066,2
-b51d7f80-72e1-4f62-b62c-326c98de39c6,did,,,bbd3e109-f655-48e3-8bf3-7019ae64b066,3
-28b490c5-c0f6-44d5-9c7d-28c6ae88009d,were,,,1e6f1072-e5a1-4023-ad3f-350f88607a6e,1
-624c4857-65c6-4b7a-9376-f0ce7099d3d5,was,,,1e6f1072-e5a1-4023-ad3f-350f88607a6e,2
-16edc3ad-515c-416c-8b9e-9d92a649c14d,has,,,1e6f1072-e5a1-4023-ad3f-350f88607a6e,3
-18a6995c-834c-4791-840a-8e0d14e4f735,My mother works in an office.,,,68782d1f-7f61-47ff-80f2-b86850e4aaa6,1
-5eaaaf7b-fd4d-47b8-a003-b4868f21994f,Sarah usually has breakfast at 8 AM.,,,e9d89f09-9b71-489d-895d-652f5326500e,1
-d8720a82-94ec-47ae-85d4-0e27071563c2,When did you last visit the museum?,,,ee974e7a-5d66-4e8b-89d1-803d7c21c704,1
-291b2300-136d-4e2b-a519-974bf4d10081,Where do you usually go on the weekend?,,,733a2925-464c-49e1-853e-46fb9b3a9d5f,1
-2c2c4c6f-1898-4520-9525-e680b305b648,Pizza is my favorite food.,,,00998ceb-54f0-459c-8d10-d483b33aac32,1
+08e461dd-8a7c-47be-9f91-1112149525de,A,1.0,,8fb89000-52bb-4951-bee0-e32c792880dc,1
+cee0f05b-fd3f-42c3-ba6e-e6e236444b3d,B,2.0,,8fb89000-52bb-4951-bee0-e32c792880dc,2
+c3e2a066-1b21-4a60-bbef-b49c460087f1,C,3.0,,8fb89000-52bb-4951-bee0-e32c792880dc,3
+26b87731-6888-48da-afd0-8aad3d0318cc,A,4.0,,8666d91c-3eaf-46e7-961c-e2c3e541f9b7,1
+c4c2efbb-1945-4db2-ac96-391465619d20,B,5.0,,8666d91c-3eaf-46e7-961c-e2c3e541f9b7,2
+6a5153ee-16d8-416a-a209-1eeb6843f07a,C,6.0,,8666d91c-3eaf-46e7-961c-e2c3e541f9b7,3
+b6bbb2c7-ad2a-4b34-8b2d-1276b8a433f5,A,7.0,,35705c5f-ffdb-4cc0-bbcc-99d86b5cab7b,1
+9ca81645-ebea-434a-9457-0eb5857cd9d6,B,8.0,,35705c5f-ffdb-4cc0-bbcc-99d86b5cab7b,2
+0bc0c8ec-e0fb-4831-8f22-04c270a0b914,C,9.0,,35705c5f-ffdb-4cc0-bbcc-99d86b5cab7b,3
+fa757bbf-67ce-42bd-86b6-12a631c4d7ed,A,10.0,,4e999404-d0dd-4f86-9790-22066da7ca11,1
+2278952e-2633-4955-8a95-a5873956af93,B,11.0,,4e999404-d0dd-4f86-9790-22066da7ca11,2
+f15b68cc-9440-4a1f-b09d-dff52cb7c2c2,C,12.0,,4e999404-d0dd-4f86-9790-22066da7ca11,3
+10be5419-dd9b-4f80-b441-f35e28ce3974,A,13.0,,297045d6-ce5b-4efb-89d3-01c33db91a38,1
+62cb9966-d513-4510-b715-dd0939402b82,B,14.0,,297045d6-ce5b-4efb-89d3-01c33db91a38,2
+e60fa67e-6921-49c1-92a9-868bd1b4b136,C,15.0,,297045d6-ce5b-4efb-89d3-01c33db91a38,3
+3efd0746-9d97-485a-934b-1e3bedbaa2fb,from a game website,,,9321c7c7-94f2-4296-96fd-57a37e1f849e,1
+695df909-1e1a-4cf9-9002-61840b5dc416,from a school friend,,,9321c7c7-94f2-4296-96fd-57a37e1f849e,2
+99692ace-ab26-4811-a11f-2d6ae69f97e5,from a magazine advertisement,,,9321c7c7-94f2-4296-96fd-57a37e1f849e,3
+b9328624-75db-4aba-bd8f-ed501c09d31a,it’s funny.,,,fbaa1bba-582f-482f-88d1-fc46ef36d839,1
+76436e7b-1549-4d51-b5ac-00c4517b8f01,it’s hard.,,,fbaa1bba-582f-482f-88d1-fc46ef36d839,2
+a2485da5-3046-41e0-bcf5-0392aba92725,it’s new.,,,fbaa1bba-582f-482f-88d1-fc46ef36d839,3
+21b294cc-d8d7-4077-8f9f-cabf6116f3fe,his brother,,,3b61fdef-8a9b-4ca5-8f13-fd4741f1381c,1
+ba23b800-1955-41cb-af49-aa4988c30a44,his granddad,,,3b61fdef-8a9b-4ca5-8f13-fd4741f1381c,2
+9ed34548-badc-40db-9d0f-9bdf5f7aa804,his cousin,,,3b61fdef-8a9b-4ca5-8f13-fd4741f1381c,3
+c2bdc16b-c1d2-463f-90be-b246ee2a09d9,forty-five minutes,,,85901b27-8b64-46df-9c59-adac0674002c,1
+bf699f2a-5e83-488d-a30a-4e502d7fbfbf,one hour,,,85901b27-8b64-46df-9c59-adac0674002c,2
+81d1c81b-9201-40ca-9e43-2e990f11a104,one hour and thirty minutes,,,85901b27-8b64-46df-9c59-adac0674002c,3
+3137f1c8-4677-4709-896d-bb4439b591ba,finding food,,,df9beae2-c760-4221-b183-2f34763ebc1d,1
+6e39b7c9-60f9-4d42-accb-4f2ec39924b1,building a hut,,,df9beae2-c760-4221-b183-2f34763ebc1d,2
+592e9711-7e08-498e-a55c-61af14e0d251,crossing the river,,,df9beae2-c760-4221-b183-2f34763ebc1d,3
+8c93450a-7418-4e60-8c87-2ea99b6d45d1,something to wear,,,b711cfe7-abbe-4205-8b94-03dcd4d313b8,1
+f22e5b88-bac6-45f8-8292-9bf133138587,something to eat,,,b711cfe7-abbe-4205-8b94-03dcd4d313b8,2
+45b6df44-4c18-4062-b40d-e3c548b4371c,something to read,,,b711cfe7-abbe-4205-8b94-03dcd4d313b8,3
+a86acfee-9c85-4376-b384-550b8076872c,She was sick.,,,f0d46dcb-6f82-4d3b-ab4b-64ffdbb00dff,1
+5c17ab46-2653-46f6-a4ee-aca1f0a0b329,She was in a competition.,,,f0d46dcb-6f82-4d3b-ab4b-64ffdbb00dff,2
+7e0f5d64-f85f-4d6f-858c-47a90c8e2577,She arrived back late from holiday.,,,f0d46dcb-6f82-4d3b-ab4b-64ffdbb00dff,3
+3730397c-31e6-4a61-ac3e-144a992a1593,by doing a course,,,3880c9de-068f-4959-8671-a57801705303,1
+4465ac13-6d55-42c6-a83a-41364afd88ab,by watching videos,,,3880c9de-068f-4959-8671-a57801705303,2
+fdb91d40-725d-4980-a843-4487f6a158dc,by practising by himself,,,3880c9de-068f-4959-8671-a57801705303,3
+b4340283-8b48-4900-96fe-c9d96a22cb54,geography,,,ba68f1ca-d8c0-409d-96d8-0e28c78fd0d5,1
+b323c806-0313-466f-a0d4-9cfb9f3d2340,English,,,ba68f1ca-d8c0-409d-96d8-0e28c78fd0d5,2
+52e75d16-34e0-47dc-8f5d-2514f83cf7c5,biology,,,ba68f1ca-d8c0-409d-96d8-0e28c78fd0d5,3
+877be6f8-1c4a-4df2-b7ad-b6178c99d6ce,Their bedroom was hot.,,,210f6c6b-d48f-4115-8f2c-1e9305ece708,1
+7300d57a-ca1b-4309-915b-6036c4ced9d2,There were noises in the street.,,,210f6c6b-d48f-4115-8f2c-1e9305ece708,2
+6491a5fb-e8ba-48fc-a0b8-ac8862d51feb,They were excited about going on holiday.,,,210f6c6b-d48f-4115-8f2c-1e9305ece708,3
+88cd7dd4-e974-4660-9e0a-bd105be8fbdf,A,16.0,,68512eea-9376-4a78-93e0-2af78efbab7d,1
+4c6fd7af-ea0b-476e-8eb9-6d4b5d08e012,B,17.0,,68512eea-9376-4a78-93e0-2af78efbab7d,2
+e3beb591-0c49-431c-9c53-4cebecf3e0c2,C,18.0,,68512eea-9376-4a78-93e0-2af78efbab7d,3
+523ecfc4-83a0-4976-9d18-5822b5e0ef4f,A,19.0,,c92814ce-fc89-4f49-b0d0-9438ae782efd,1
+ceff0382-095a-4e90-a99b-88985748a614,B,20.0,,c92814ce-fc89-4f49-b0d0-9438ae782efd,2
+7365b0af-b6cf-49f8-adbf-69ce2307f271,C,21.0,,c92814ce-fc89-4f49-b0d0-9438ae782efd,3
+255dcaa6-1f0b-4ea8-9fb5-4e2b414747aa,A,22.0,,79666d92-45a8-4aed-a9c7-a3595e36d837,1
+3dc49b1b-47f0-45f9-ba85-1237b59e17dd,B,23.0,,79666d92-45a8-4aed-a9c7-a3595e36d837,2
+bfb719c5-b154-4ccd-bac8-75b2fbc86caa,C,24.0,,79666d92-45a8-4aed-a9c7-a3595e36d837,3
+8da0d87f-4123-4191-9289-f8b6d4ee2958,A,25.0,,6359f4ea-0336-4c08-b400-f6955164ac39,1
+e6981b3b-a460-41af-9f4c-bbf844b1f260,B,26.0,,6359f4ea-0336-4c08-b400-f6955164ac39,2
+df4ec3f2-a8f0-4559-8272-32b1a8735358,C,27.0,,6359f4ea-0336-4c08-b400-f6955164ac39,3
+c075b5f9-702f-47a8-9998-444e8ce60736,A,28.0,,a5983abb-16df-41d3-9442-69d8e6d2bfa8,1
+f1206ece-52f7-410b-bf63-7d0cdacd93ce,B,29.0,,a5983abb-16df-41d3-9442-69d8e6d2bfa8,2
+8600f438-98b9-49cb-8d66-fe68bebd49b4,C,30.0,,a5983abb-16df-41d3-9442-69d8e6d2bfa8,3
+8b6c8240-239f-48e0-ba0f-062ed9861e80,His father wanted to have a street party.,,,bfce6e72-cb8d-4db2-9acf-818dd84cde0a,1
+e7da8cd3-87e3-4eab-8de9-c40a0c97711f,There hasn’t been a street party for a long time.,,,bfce6e72-cb8d-4db2-9acf-818dd84cde0a,2
+9fe7bb4b-4e19-4fc5-93e5-bec972c31512,Many people remembered the last street party.,,,bfce6e72-cb8d-4db2-9acf-818dd84cde0a,3
+a041b3dc-fdfe-44d6-9b29-f97d646f6947,The street still looks the same now.,,,44a6720d-4b2a-450a-94b7-bc392e07a2a2,1
+4f53b555-b3af-4f7f-b153-539b96c64212,There are more children living in the street now.,,,44a6720d-4b2a-450a-94b7-bc392e07a2a2,2
+4fb9d7a4-1883-4a54-9dfe-a18f03285fc4,The same people still live on the street now.,,,44a6720d-4b2a-450a-94b7-bc392e07a2a2,3
+4ed16c91-488f-40ce-8690-d308c73e7fee,She thought that the party was too expensive.,,,9e14463a-0e8a-4ff4-adf1-fd6f8cff7321,1
+308738e4-7ebf-4891-a49b-4d0063687efd,She thought that people might not come to the party.,,,9e14463a-0e8a-4ff4-adf1-fd6f8cff7321,2
+a961a090-7de5-49eb-9dbf-b6cdc28409d3,She thought that the guests might not talk to each other.,,,9e14463a-0e8a-4ff4-adf1-fd6f8cff7321,3
+6993dee3-47e4-4fb1-aaa2-a62dc90b9ae7,hearing Louisa’s stories.,,,0d972691-5aba-4527-b28e-c43b9d8bc8b3,1
+80139490-d4c7-483d-b079-4a74168df681,meeting Louisa’s friends.,,,0d972691-5aba-4527-b28e-c43b9d8bc8b3,2
+136b87f7-df83-4258-ac49-57283e0421c3,telling Louisa about their lives.,,,0d972691-5aba-4527-b28e-c43b9d8bc8b3,3
+f7d7d8fd-d771-4b20-92bf-40269f47fbf7,Why I love street parties,,,f3679fa5-8659-4f44-9a9b-e0e71adef39c,1
+40004041-5d29-4019-bdfd-97305369b0b9,The street party we had,,,f3679fa5-8659-4f44-9a9b-e0e71adef39c,2
+94f4cfd3-e7e6-4690-b065-9078f270c7f7,How to have a street party,,,f3679fa5-8659-4f44-9a9b-e0e71adef39c,3
+ab59d426-7204-4a52-a8e7-3f40e759193a,soon,,,cb0c96af-e7b1-432c-92ff-9b24f6c8eb4c,1
+d992a349-d989-4fd0-af92-e674a1ea36ea,much,,,cb0c96af-e7b1-432c-92ff-9b24f6c8eb4c,2
+2ccccf4d-0c4e-4bca-a60c-7649996a2a7b,well,,,cb0c96af-e7b1-432c-92ff-9b24f6c8eb4c,3
+ae8d39d7-2428-45fe-aee5-be2fd0ddeb58,spend,,,2556805f-ca42-46ef-a730-faa60f4f4126,1
+4d3caeba-9ba2-426f-ba2f-1cdbba167899,live,,,2556805f-ca42-46ef-a730-faa60f4f4126,2
+d4acf6d7-e6a2-409d-8efa-109ad6f0bbc3,take,,,2556805f-ca42-46ef-a730-faa60f4f4126,3
+c9f4e492-7532-4b35-905c-1a0fcdb27dd0,look,,,c426aa3a-eac7-43b6-a58d-ea66997449a7,1
+9fe240df-5e47-4a1d-b35d-69bda3a3b80d,see,,,c426aa3a-eac7-43b6-a58d-ea66997449a7,2
+d234b697-dbd0-4161-b6ad-94bf4e7a69cd,find,,,c426aa3a-eac7-43b6-a58d-ea66997449a7,3
+2f8315d6-4e8d-457d-9f2f-1db621c51150,even,,,8a137da2-e64f-40ae-b86c-97c738a45d75,1
+9aff43f5-ba19-4add-8715-7b88cdaafed0,quite,,,8a137da2-e64f-40ae-b86c-97c738a45d75,2
+310474c9-2dd1-49f3-8bc4-01e844d7a761,still,,,8a137da2-e64f-40ae-b86c-97c738a45d75,3
+91db8b42-4ed0-4403-909e-b7ad83c393ce,little,,,88b81db3-c4aa-4ecc-8734-7f787c6dfd55,1
+a82a48ca-8662-4d11-adb2-6d1532b1de8f,low,,,88b81db3-c4aa-4ecc-8734-7f787c6dfd55,2
+5bef7570-9bc8-49e4-8cb7-91a2a98192ba,short,,,88b81db3-c4aa-4ecc-8734-7f787c6dfd55,3
+45834a6c-2860-4d58-9b06-3e06f8aca43f,are,,,490d2753-0209-4337-b6a0-7e0ba5a2af84,1
+ae9657c0-6995-4db2-81f7-1bcaf1affee7,was,,,490d2753-0209-4337-b6a0-7e0ba5a2af84,2
+99685bd4-4948-4504-9a1a-dd607b5c8c8d,were,,,490d2753-0209-4337-b6a0-7e0ba5a2af84,3
+cfbce983-4d71-401d-8d70-7974a40aad10,were,,,0eb6bc06-4b30-4ef7-8b3b-2704b29ab8fe,1
+c564e3fb-2b05-48c9-9b7d-1c00d109616a,did,,,0eb6bc06-4b30-4ef7-8b3b-2704b29ab8fe,2
+40d8e63c-8329-4200-93af-9fc577afeea0,was,,,0eb6bc06-4b30-4ef7-8b3b-2704b29ab8fe,3
+ddaf1124-d445-484f-8bfe-be0f8b21f580,were,,,0450aa85-1eea-47f7-8cfb-e3f5d2b3f40a,1
+6856b5cd-f3d4-409b-941c-7a9060cc7816,was,,,0450aa85-1eea-47f7-8cfb-e3f5d2b3f40a,2
+f8e9e3f1-3719-40ac-b7f0-92c1932be921,did,,,0450aa85-1eea-47f7-8cfb-e3f5d2b3f40a,3
+44a3b0f6-9790-4f78-aff9-b33943eff27b,was,,,fb35bee6-9d65-4dce-91f9-f6e4556ecc91,1
+997899cc-4de7-4751-bdd1-641bb1a02535,were,,,fb35bee6-9d65-4dce-91f9-f6e4556ecc91,2
+cd1f2bb7-58ed-45ec-b4ce-d52e4db62ebd,did,,,fb35bee6-9d65-4dce-91f9-f6e4556ecc91,3
+a19e0f03-8f39-4588-85b7-75a05fc189bf,were,,,79ad00ca-557e-44a8-9d9e-e26fd80aafab,1
+1e2420e9-ecde-4810-aadc-59bca4356a61,was,,,79ad00ca-557e-44a8-9d9e-e26fd80aafab,2
+1972fd61-166a-4783-8443-c5060db3234b,has,,,79ad00ca-557e-44a8-9d9e-e26fd80aafab,3
+4f1b12bb-04c2-44d4-990b-d4fb77239b28,My mother works in an office.,,,b2924b61-a1fd-4344-a8b8-356146e11cb2,1
+ce98bded-be75-424c-99f3-83a828683385,Sarah usually has breakfast at 8 AM.,,,8f1c1464-abab-48b3-b3d3-be3ad7c3278e,1
+905e2029-d116-4e67-be38-659d8103bf97,When did you last visit the museum?,,,c105a1a4-88a6-43cc-9aed-f6712d02127d,1
+d8db9ceb-148a-48ed-9aed-f13eb7b85d03,Where do you usually go on the weekend?,,,98d7fbb5-79ae-4b4e-a854-29b591514012,1
+b1d8e830-5be7-4922-a9a3-7902183a0b57,Pizza is my favorite food.,,,00a8b74a-1977-4ea3-9adf-49e628c69853,1

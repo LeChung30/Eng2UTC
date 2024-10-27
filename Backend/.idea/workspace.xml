@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="add user">
-      <change afterPath="$PROJECT_DIR$/data/key/vocabtoeic-23b22-firebase-adminsdk-iibv3-bddeba9767.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/FastAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirebaseController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/answer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/answer.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/cert_level.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/cert_level.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/lesson.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/lesson.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/part_detail.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/part_detail.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/part_of_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/part_of_test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/question.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/question_content.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_content.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/question_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_type.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/test_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/test_type.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/topic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/topic.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/user.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/vocabulary_A2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/english.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessFile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +60,7 @@
     "Python.FirebaseController.executor": "Run",
     "Python.english.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "maintain",
+    "git-widget-placeholder": "firebase",
     "last_opened_file_path": "D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data/key",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
@@ -283,18 +270,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>545</line>
+          <line>544</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>701</line>
+          <line>700</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>169</line>
+          <line>168</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

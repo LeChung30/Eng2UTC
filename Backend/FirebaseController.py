@@ -11,14 +11,14 @@ import ProcessFile as pfl
 
 # upload file to firebase
 firebaseConfig = {
-    'apiKey': "AIzaSyDkqh_raKgzMDrcvA_xS8EqtMci470kK4g",
-    'authDomain': "vocabtoeic-23b22.firebaseapp.com",
-    'databaseURL': "https://vocabtoeic-23b22-default-rtdb.asia-southeast1.firebasedatabase.app",
-    'projectId': "vocabtoeic-23b22",
-    'storageBucket': "vocabtoeic-23b22.appspot.com",
-    'messagingSenderId': "590716820711",
-    'appId': "1:590716820711:web:2a1f843481dcfa81d8d642",
-    'measurementId': "G-3MZ0HYSVTX"
+    'apiKey': "AIzaSyAwW6pc0aQGXSA-ndqBPM3Gp8e5jqCaIB0",
+    'authDomain': "eng2utc.firebaseapp.com",
+    'databaseURL': "https://eng2utc-default-rtdb.firebaseio.com",
+    'projectId': "eng2utc",
+    'storageBucket': "eng2utc.appspot.com",
+    'messagingSenderId': "679823761990",
+    'appId': "1:679823761990:web:00cfe2a91e5d43440e6047",
+    'measurementId': "G-X9047FEREQ"
 }
 
 local_path_mp3 = 'data/mp3/pronunciation/'
@@ -27,9 +27,8 @@ local_path_img = 'data/img/'
 remote_path_img = 'img/'
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
-file_path = 'data/key/vocabtoeic-23b22-firebase-adminsdk-iibv3-bddeba9767.json'
-# data_base_url='https://eng2utc-default-rtdb.firebaseio.com/'
-data_base_url = 'https://vocabtoeic-23b22-default-rtdb.asia-southeast1.firebasedatabase.app/'
+file_path = 'data/key/eng2utc-firebase-adminsdk-y4ymw-0ab02a4678.json'
+data_base_url='https://eng2utc-default-rtdb.firebaseio.com/'
 # Khởi tạo Firebase Admin SDK
 
 def connect_firebase():
@@ -732,11 +731,11 @@ def update_anwser_in_question(question_id):
 
 
 if __name__ == '__main__':
-    add_range_user('data/csv/user.csv')
-    add_range_cert_level('data/csv/cert_level.csv')
-    add_range_topic('data/csv/topic.csv')
-    add_range_vocab('data/csv/vocabulary_A1.csv')
-    add_range_vocab('data/csv/vocabulary_A2.csv')
+    # add_range_user('data/csv/user.csv')
+    # add_range_cert_level('data/csv/cert_level.csv')
+    # add_range_topic('data/csv/topic.csv')
+    # add_range_vocab('data/csv/vocabulary_A1.csv')
+    # add_range_vocab('data/csv/vocabulary_A2.csv')
     add_range_lesson('data/csv/lesson.csv')
     add_range_test_type('data/csv/test_type.csv')
     add_range_part_of_test('data/csv/part_of_test.csv')
