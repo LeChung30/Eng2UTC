@@ -4,16 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="add lesson, change vocab data structure">
-      <change afterPath="$PROJECT_DIR$/data/csv/user.csv" afterDir="false" />
+    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="add user">
+      <change afterPath="$PROJECT_DIR$/data/key/vocabtoeic-23b22-firebase-adminsdk-iibv3-bddeba9767.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngSecurity.py" beforeDir="false" afterPath="$PROJECT_DIR$/EngSecurity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/FastAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirebaseController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/answer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/answer.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/cert_level.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/cert_level.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/lesson.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/lesson.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/part_detail.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/part_detail.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/part_of_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/part_of_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/question.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/question_content.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_content.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/question_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_type.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/test_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/test_type.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/vocab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/topic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/topic.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/user.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/vocabulary_A2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessFile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="backend" />
+        <entry key="$PROJECT_DIR$/.." value="firebase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -56,19 +67,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.FastAPI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.FirebaseController.executor&quot;: &quot;Run&quot;,
-    &quot;Python.english.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;firebase&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.FastAPI.executor": "Run",
+    "Python.FirebaseController.executor": "Run",
+    "Python.english.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "maintain",
+    "last_opened_file_path": "D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data/key",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\key" />
+      <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\csv" />
       <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data" />
       <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend" />
     </key>
@@ -126,7 +139,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="english" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ProcessFile" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,7 +153,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/english.py" />
+      <option name="SCRIPT_NAME" value="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\ProcessFile.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,13 +165,13 @@
     <list>
       <item itemvalue="Python.FastAPI" />
       <item itemvalue="Python.FirebaseController" />
-      <item itemvalue="Python.english" />
+      <item itemvalue="Python.ProcessFile" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.FirebaseController" />
         <item itemvalue="Python.FastAPI" />
-        <item itemvalue="Python.english" />
+        <item itemvalue="Python.ProcessFile" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729837098893</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add user">
+      <option name="closed" value="true" />
+      <created>1729914451536</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729914451536</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,15 +270,31 @@
     <MESSAGE value="fix bug" />
     <MESSAGE value="add mp3" />
     <MESSAGE value="add lesson, change vocab data structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="add lesson, change vocab data structure" />
+    <MESSAGE value="add user" />
+    <option name="LAST_COMMIT_MESSAGE" value="add user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/english.py</url>
+          <url>file://$PROJECT_DIR$/ProcessFile.py</url>
           <line>37</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
+          <line>545</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
+          <line>701</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
+          <line>169</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

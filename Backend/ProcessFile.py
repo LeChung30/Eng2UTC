@@ -8,10 +8,16 @@ import matplotlib.pyplot as plt
 import sounddevice as sd
 import re
 
-from FirebaseController import add_topic
 
 # Tạo đối tượng pyttsx3
 engine = pyttsx3.init()
+
+def reverse_dict(dictionary):
+    return {v: k for k, v in dictionary.items()}
+
+def map_new_value(df, column, new_value):
+    df[column] = df[column].map(new_value)
+    return df
 
 def read_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -34,8 +40,12 @@ def save_ipas_of_words():
         res.append(get_ipa(i))
     write_to_file(res, 'ipa.txt')
 
-def read_csv(file_path):
-    return pd.read_csv(file_path, encoding='utf-8')
+def read_csv(file_path)->pd.DataFrame:
+    try:
+        return pd.read_csv(file_path, encoding='utf-8')
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 
 def read_excel(file_path):
     return pd.read_excel(file_path)

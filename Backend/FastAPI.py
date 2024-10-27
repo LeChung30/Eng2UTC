@@ -14,5 +14,10 @@ def get_topic(topic_id: int):
     res=fc.get_topic(topic_id)
     return res
 
+@app.get("/question/{test_id}")
+def get_question(test_id: int):
+    res=fc.get_question_by_test_id(test_id)
+    return res
+
 if __name__ == '__main__':
     uvicorn.run(app,port=8000)
