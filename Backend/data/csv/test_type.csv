@@ -1,7 +1,7 @@
-TEST_TYPE_ID,NAME_OF_TEST_TYPE,TOTAL_DURATION,MAXIMUM_SCORE,CERT_LEVEL
-1,"Test A1 listening and reading",45,100,A1
-2,"Test A2 listening and reading",60,100,A2
-3,"Test B1 listening and reading",60,100,B1
-4,"Test B2 listening and reading",90,100,B2
-5,"Test C1 listening and reading",100,100,C1
-6,"Test C2 listening and reading",120,100,C2
+TEST_TYPE_ID,NAME_OF_TEST_TYPE,TOTAL_DURATION,MAXIMUM_SCORE,CERT_LEVEL_NAME
+db2c1e6b-2af5-422a-920e-89ef0c30bd63,Test A1 listening and reading,45,100,A1
+66bea5e1-85cb-4bbd-b942-408f67b8c6cf,Test A2 listening and reading,60,100,A2
+6da905aa-0caa-42bc-9475-034cdb3bc718,Test B1 listening and reading,60,100,B1
+38d8b4d4-4b71-46d7-a4d6-65b3ea0d95f4,Test B2 listening and reading,90,100,B2
+6387dc92-677b-4b8a-b01c-88cbd221b1e9,Test C1 listening and reading,100,100,C1
+c464aa55-4608-46db-a204-ae54e6325683,Test C2 listening and reading,120,100,C2

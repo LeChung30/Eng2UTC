@@ -1,62 +1,21 @@
-import hashlib
+import bcrypt
 
-
-
-def hash_blake2b(data: str) -> str:
+def hash_bcrypt(data: str) -> str:
     """
-    Hash data using BLAKE2b algorithm
+    Hash data using bcrypt algorithm
 
     :param data: Data to hash
     :return: Hashed data
     """
-    return hashlib.blake2b(data.encode()).hexdigest()
+    return bcrypt.hashpw(data.encode(), bcrypt.gensalt()).decode()
 
-def hash_md5(data: str) -> str:
+def verify_bcrypt(data: str, hashed: str) -> bool:
     """
-    Hash data using MD5 algorithm
+    Verify data with hashed data using bcrypt algorithm
 
-    :param data: Data to hash
-    :return: Hashed data
+    :param data: Data to verify
+    :param hashed: Hashed data
+    :return: True if data is verified, False otherwise
     """
-    return hashlib.md5(data.encode()).hexdigest()
-
-def encrypt_AES(data: str, key: str) -> str:
-    """
-    Encrypt data using AES algorithm
-
-    :param data: Data to encrypt
-    :param key: Key to encrypt
-    :return: Encrypted data
-    """
-    return hashlib.sha256(data.encode()).hexdigest()
-
-def decrypt_AES(data: str, key: str) -> str:
-    """
-    Decrypt data using AES algorithm
-
-    :param data: Data to decrypt
-    :param key: Key to decrypt
-    :return: Decrypted data
-    """
-    return hashlib.sha256(data.encode()).hexdigest()
-
-def encrypt_RSA(data: str, key: str) -> str:
-    """
-    Encrypt data using RSA algorithm
-
-    :param data: Data to encrypt
-    :param key: Key to encrypt
-    :return: Encrypted data
-    """
-    return hashlib.sha256(data.encode()).hexdigest()
-
-def decrypt_RSA(data: str, key: str) -> str:
-    """
-    Decrypt data using RSA algorithm
-
-    :param data: Data to decrypt
-    :param key: Key to decrypt
-    :return: Decrypted data
-    """
-    return hashlib.sha256(data.encode()).hexdigest()
+    return bcrypt.checkpw(data.encode(), hashed.encode())
 

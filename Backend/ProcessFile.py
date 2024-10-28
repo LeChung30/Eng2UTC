@@ -1,14 +1,23 @@
 import os
+import re
+
 import eng_to_ipa as ipa
 import librosa
+import matplotlib.pyplot as plt
 import pandas as pd
 import pyttsx3
 import requests
-import matplotlib.pyplot as plt
 import sounddevice as sd
 
 # Tạo đối tượng pyttsx3
 engine = pyttsx3.init()
+
+def reverse_dict(dictionary):
+    return {v: k for k, v in dictionary.items()}
+
+def map_new_value(df, column, new_value):
+    df[column] = df[column].map(new_value)
+    return df
 
 def read_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -31,28 +40,46 @@ def save_ipas_of_words():
         res.append(get_ipa(i))
     write_to_file(res, 'ipa.txt')
 
-def read_csv(file_path):
-    return pd.read_csv(file_path, encoding='utf-8')
+def read_csv(file_path)->pd.DataFrame:
+    try:
+        return pd.read_csv(file_path, encoding='utf-8')
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 
 def read_excel(file_path):
     return pd.read_excel(file_path)
 
+def sanitize_filename(filename):
+    # Replace spaces with underscores and remove invalid characters
+    return re.sub(r'[\\/*?:"<>|]', "", filename.replace(" ", "_")).lower()
+
 def to_mp3(text, voice_id=1, rate=150, volume=1):
-    directory = 'data/mp3'
+    directory = 'data/mp3/pronunciation'
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    # Thay thế các ký tự không hợp lệ trong tên file
-    file_name = text.replace(" ", "_").replace("/", "_")
+    # Replace invalid characters in the file name
+    file_name = sanitize_filename(text)
     file_path = os.path.join(directory, file_name + '.mp3')
 
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[voice_id].id)  # Chọn giọng nói
-    engine.setProperty('rate', rate)  # Tùy chỉnh tốc độ
-    engine.setProperty('volume', volume)  # Tùy chỉnh âm lượng
+    try:
+        engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[voice_id].id)  # Select voice
+        engine.setProperty('rate', rate)  # Set rate
+        engine.setProperty('volume', volume)  # Set volume
 
-    engine.save_to_file(text, file_path)
-    engine.runAndWait()  # Chạy engine để hoàn thành quá trình
+        # Save and check if the file is saved successfully
+        engine.save_to_file(text, file_path)
+        engine.runAndWait()
+
+        if os.path.exists(file_path):
+            return file_path
+        return -1
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return -1
 
 def speak(text, voice_id=1, rate=150, volume=1):
     voices = engine.getProperty('voices')
@@ -101,12 +128,3 @@ def download_audio_firestorage(url_link, local_path):
         print("File downloaded successfully!")
     else:
         print(f"Failed to download file. Status code: {response.status_code}")
-
-if __name__ == '__main__':
-    file='data/data.txt'
-    df=read_csv(file)
-    ipas=[]
-    for i in range(len(df)):
-        text=df['word'][i]
-        ipas.append(get_ipa(text))
-    write_to_file(ipas,'data/ipa.txt')
