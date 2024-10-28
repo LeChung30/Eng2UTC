@@ -9,17 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.eng2utc.Model.Test;
 import com.example.eng2utc.R;
+import com.example.eng2utc.TestExerciseActivity;
 
 import java.util.List;
 
-import com.example.eng2utc.Activity.TestActivity;
-
 public class A2TestAdapter extends RecyclerView.Adapter<A2TestAdapter.TestViewHolder> {
 
-    private List<String> testList;
+    private List<Test> testList;
 
-    public A2TestAdapter(List<String> testList) {
+    public A2TestAdapter(List<Test> testList) {
         this.testList = testList;
     }
 
@@ -34,11 +34,11 @@ public class A2TestAdapter extends RecyclerView.Adapter<A2TestAdapter.TestViewHo
     @Override
     public void onBindViewHolder(@NonNull TestViewHolder holder, int position) {
         // Bind the data to the TextView in each CardView
-        String testName = testList.get(position);
+        String testName = testList.get(position).getNameOfTest();
         holder.tvTestName.setText(testName);
         holder.itemView.setOnClickListener(v -> {
-             Intent intent = new Intent(v.getContext(), TestActivity.class);
-            intent.putExtra("testName", testName);
+            Intent intent = new Intent(v.getContext(), TestExerciseActivity.class);
+            intent.putExtra("test_id", testList.get(position).getTestId());
             v.getContext().startActivity(intent);
         });
     }
