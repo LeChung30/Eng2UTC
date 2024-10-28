@@ -18,7 +18,7 @@ def get_topic(topic_id: int):
 def get_question(test_id: int):
     res=fc.get_question_by_test_id(test_id)
     return res
-
+#Lấy part_detail,question, answer theo test_id
 @app.get("/data/{test_id}")
 def get_data(test_id: str):
     res = fc.get_data_by_test_id(test_id)

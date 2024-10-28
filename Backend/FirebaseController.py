@@ -493,6 +493,9 @@ def get_data_by_test_id(test_id):
         for question_id, question_info in questions.items():
             part_id = question_info.get('PART_DETAIL_ID')
             if part_id in part_detail_dict:
+                # Sắp xếp các câu trả lời theo cột Order
+                if 'ANSWERS' in question_info:
+                    question_info['ANSWERS'] = sorted(question_info['ANSWERS'].values(), key=lambda x: x.get('ORDER', 0))
                 part_detail_dict[part_id]['questions'].append(question_info)
 
         # Sắp xếp các câu hỏi theo cột Order
