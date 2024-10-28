@@ -29,7 +29,7 @@ local_path_img = 'data/img/'
 remote_path_img = 'img/'
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
-file_path = 'data/key/eng2utc-firebase-adminsdk-y4ymw-0ab02a4678.json'
+file_path = 'D:\Code\python\project_1\Eng2UTC\Backend\data\key\eng2utc-firebase-adminsdk-y4ymw-0ab02a4678.json'
 data_base_url='https://eng2utc-default-rtdb.firebaseio.com/'
 # Khởi tạo Firebase Admin SDK
 
@@ -474,7 +474,40 @@ def get_question_by_test_id(test_id):
         print(e)
         return -1
 # push arrange
+#khải: lấy question và part_details bằng test_idF
+def get_data_by_test_id(test_id):
+    try:
+        # Lấy dữ liệu từ bảng part_detail
+        part_details = db.reference('PART_DETAIL').order_by_child('TEST_ID').equal_to(test_id).get()
+        
+        # Lấy dữ liệu từ bảng question
+        questions = db.reference('QUESTION').order_by_child('TEST_ID').equal_to(test_id).get()
 
+        # Tạo dictionary để lưu trữ part_detail với các câu hỏi tương ứng
+        part_detail_dict = {}
+        for part_id, part_info in part_details.items():
+            part_info['questions'] = []
+            part_detail_dict[part_id] = part_info
+
+        # Gán các câu hỏi vào part_detail tương ứng
+        for question_id, question_info in questions.items():
+            part_id = question_info.get('PART_DETAIL_ID')
+            if part_id in part_detail_dict:
+                part_detail_dict[part_id]['questions'].append(question_info)
+
+        # Sắp xếp các câu hỏi theo cột Order
+        for part_id, part_info in part_detail_dict.items():
+            part_info['questions'] = sorted(part_info['questions'], key=lambda x: x.get('ORDER', 0))
+
+        # Sắp xếp kết quả part_detail theo cột Order
+        sorted_part_details = sorted(part_detail_dict.values(), key=lambda x: x.get('ORDER', 0))
+
+        return {
+            "part_details": sorted_part_details
+        }
+    except Exception as e:
+        print(e)
+        return -1
 def add_range_vocab(file):
     # Phải thêm vocab trước
     gmail, password = 'eng2UTC@gmail.com', 'eng2UTC@123'
