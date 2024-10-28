@@ -128,15 +128,3 @@ def download_audio_firestorage(url_link, local_path):
         print("File downloaded successfully!")
     else:
         print(f"Failed to download file. Status code: {response.status_code}")
-
-if __name__ == '__main__':
-    '''file='data/data.txt'
-    df=read_csv(file)
-    ipas=[]
-    for i in range(len(df)):
-        text=df['word'][i]
-        ipas.append(get_ipa(text))
-    write_to_file(ipas,'data/ipa.txt')
-    '''
-    file='data/csv/topic.csv'
-    add_topic()
