@@ -209,7 +209,7 @@ def add_question(content, audio_link, image_link, correct_anwer_id, question_typ
         'IMAGE_LINK': image_link,
         'CORRECT_ANSWER_ID': correct_anwer_id,
         'QUESTION_TYPE_ID': question_type_id,
-        'PART_DETAI_ID': part_detail_id,
+        'PART_DETAIL_ID': part_detail_id,
         'QUESTION_CONTENT_ID': question_content_id,
         'ORDER': order,
         'TEST_ID': test_id,
@@ -686,7 +686,8 @@ def add_range_part_detail(file):
                                  image_link=row['IMAGE_LINK'],
                                  order=row['ORDER'])
         map_dict[row['PART_DETAIL_ID']] = detail['PART_DETAIL_ID']
-        data.at[index, 'PART_DETAIL_ID'] = detail['PART_DETAIL_ID']
+
+    data=pfl.map_new_value(data, 'PART_DETAIL_ID', map_dict)
     pfl.write_to_file(data, file)
     # map part detail id
     question = pfl.read_csv('data/csv/question.csv')
@@ -785,8 +786,22 @@ if __name__ == '__main__':
     # add_range_test_type('data/csv/test_type.csv')
     # add_range_part_of_test('data/csv/part_of_test.csv')
     # add_range_test('data/csv/test.csv')
-    # add_range_part_detail('data/csv/part_detail.csv')
+    add_range_part_detail('data/csv/part_detail.csv')
     # add_range_question_type('data/csv/question_type.csv')
     # add_range_question_content('data/csv/question_content.csv')
-    # add_range_question_and_answer('data/csv/question.csv', 'data/csv/answer.csv')
+    add_range_question_and_answer('data/csv/question.csv', 'data/csv/answer.csv')
+
+    # detail=pfl.read_csv('data/csv/part_detail.csv')
+    # detail=pfl.dataframe_nan_to_none(detail)
+    # ques=pfl.read_csv('data/csv/question.csv')
+    # ques=pfl.dataframe_nan_to_none(ques)
+    # i=0
+    # for j in range(40):
+    #     if j!=0 and j%5==0:
+    #         i+=1
+    #     ques.at[j, 'PART_DETAIL_ID'] = detail.at[i, 'PART_DETAIL_ID']
+    #
+    # pfl.write_to_file(ques, 'data/csv/question.csv')
+
+
     pass

@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="maintain firebase">
+    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="add order cho part detail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngSecurity.py" beforeDir="false" afterPath="$PROJECT_DIR$/EngSecurity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirebaseController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProcessFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessFile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/answer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/answer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/part_detail.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/part_detail.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/question.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/question_content.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_content.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/question_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_type.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/key/vocabtoeic-23b22-firebase-adminsdk-iibv3-bddeba9767.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730051089765</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add order cho part detail">
+      <option name="closed" value="true" />
+      <created>1730116869058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730116869058</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +273,18 @@
     <MESSAGE value="add lesson, change vocab data structure" />
     <MESSAGE value="add user" />
     <MESSAGE value="maintain firebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="maintain firebase" />
+    <MESSAGE value="add order cho part detail" />
+    <option name="LAST_COMMIT_MESSAGE" value="add order cho part detail" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
+          <line>767</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
