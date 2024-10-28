@@ -1,5 +1,3 @@
-import hashlib
-
 import bcrypt
 
 def hash_bcrypt(data: str) -> str:

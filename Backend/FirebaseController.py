@@ -21,8 +21,10 @@ firebaseConfig = {
     'measurementId': "G-X9047FEREQ"
 }
 
-local_path_mp3 = 'data/mp3/pronunciation/'
-remote_path_mp3 = 'mp3/pronunciation/'
+local_path_pronunciation_mp3 = 'data/mp3/pronunciation/'
+local_pat_question_mp3 = 'data/mp3/question/'
+remote_path_pronunciation_mp3 = 'mp3/pronunciation/'
+remote_path_question_mp3 = 'mp3/question/'
 local_path_img = 'data/img/'
 remote_path_img = 'img/'
 firebase = pyrebase.initialize_app(firebaseConfig)
@@ -48,6 +50,15 @@ def connect_firebase():
 connect_firebase()
 
 
+def sign_up_user_authencation(email, password):
+    try:
+        user = auth.create_user_with_email_and_password(email, password)
+        print(f"User {email} signed up successfully")
+        return user
+    except Exception as e:
+        print(f"Error signing up user {email}: {e}")
+        return None
+
 def authenticate_user(email, password):
     try:
         user = auth.sign_in_with_email_and_password(email, password)
@@ -72,11 +83,8 @@ def upload_file_img(file, r_file, id_token):
     return storage.child(remote).get_url(id_token)
 
 
-def upload_file_mp3(word: str, id_token):
+def upload_file_mp3(local_file, remote_file, id_token):
     # Sanitize the word to create a valid file name
-    sanitized_word = pfl.sanitize_filename(word)
-    local_file = local_path_mp3 + sanitized_word + '.mp3'
-    remote_file = remote_path_mp3 + sanitized_word + '.mp3'
 
     storage = firebase.storage()
     storage.child(remote_file).put(local_file, id_token)
@@ -102,7 +110,7 @@ def add_user(full_name, age, gender, birth_of_date, email, phone_number, user_na
         'BIRTH_OF_DATE': birth_of_date,
         'EMAIL': email,
         'PHONE_NUMBER': phone_number,
-        'user': user_name,
+        'USER_NAME': user_name,
         'CREATED_DATE': created_date,
         'PASSWORD': hash_password,
         'IS_ACTIVE': is_active
@@ -121,7 +129,10 @@ def add_vocabbulary(word, pronunciation, part_of_speech, meaning, topic_name, im
                     cert_level_name, id_token):
     # plartern cert level,topic id
     vocab_id = str(uuid.uuid4())
-    audio_link = upload_file_mp3(word, id_token)
+    sanitized_word = pfl.sanitize_filename(word)
+    local_file = local_path_pronunciation_mp3 + sanitized_word + '.mp3'
+    remote_file = remote_path_pronunciation_mp3 + sanitized_word + '.mp3'
+    audio_link = upload_file_mp3(local_file, remote_file, id_token)
     vocab_data = {
         'VOCAB_ID': vocab_id,
         'WORD': word,
@@ -289,14 +300,15 @@ def add_test(name_of_test, test_type_id):
     return test
 
 
-def add_part_detail(part_of_test_id, test_id, audio_link, image_link):
+def add_part_detail(part_of_test_id, test_id, audio_link, image_link, order):
     part_detail_id = str(uuid.uuid4())
     part_detail = {
         'PART_DETAIL_ID': part_detail_id,
         'PART_OF_TEST_ID': part_of_test_id,
         'TEST_ID': test_id,
         'AUDIO_LINK': audio_link,
-        'IMAGE_LINK': image_link
+        'IMAGE_LINK': image_link,
+        'ORDER': order
     }
     db.reference('PART_DETAIL').child(part_detail_id).set(part_detail)
     print(f"Part detail added successfully with ID: {part_detail_id}")
@@ -638,7 +650,8 @@ def add_range_part_detail(file):
         detail = add_part_detail(part_of_test_id=row['PART_OF_TEST_ID'],
                                  test_id=row['TEST_ID'],
                                  audio_link=row['AUDIO_LINK'],
-                                 image_link=row['IMAGE_LINK'])
+                                 image_link=row['IMAGE_LINK'],
+                                 order=row['ORDER'])
         map_dict[row['PART_DETAIL_ID']] = detail['PART_DETAIL_ID']
         data.at[index, 'PART_DETAIL_ID'] = detail['PART_DETAIL_ID']
     pfl.write_to_file(data, file)
@@ -729,19 +742,18 @@ def update_anwser_in_question(question_id):
 
 
 
-
 if __name__ == '__main__':
     # add_range_user('data/csv/user.csv')
     # add_range_cert_level('data/csv/cert_level.csv')
     # add_range_topic('data/csv/topic.csv')
     # add_range_vocab('data/csv/vocabulary_A1.csv')
     # add_range_vocab('data/csv/vocabulary_A2.csv')
-    add_range_lesson('data/csv/lesson.csv')
-    add_range_test_type('data/csv/test_type.csv')
-    add_range_part_of_test('data/csv/part_of_test.csv')
-    add_range_test('data/csv/test.csv')
-    add_range_part_detail('data/csv/part_detail.csv')
-    add_range_question_type('data/csv/question_type.csv')
-    add_range_question_content('data/csv/question_content.csv')
-    add_range_question_and_answer('data/csv/question.csv', 'data/csv/answer.csv')
-
+    # add_range_lesson('data/csv/lesson.csv')
+    # add_range_test_type('data/csv/test_type.csv')
+    # add_range_part_of_test('data/csv/part_of_test.csv')
+    # add_range_test('data/csv/test.csv')
+    # add_range_part_detail('data/csv/part_detail.csv')
+    # add_range_question_type('data/csv/question_type.csv')
+    # add_range_question_content('data/csv/question_content.csv')
+    # add_range_question_and_answer('data/csv/question.csv', 'data/csv/answer.csv')
+    pass

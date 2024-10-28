@@ -1,13 +1,13 @@
 import os
+import re
+
 import eng_to_ipa as ipa
 import librosa
+import matplotlib.pyplot as plt
 import pandas as pd
 import pyttsx3
 import requests
-import matplotlib.pyplot as plt
 import sounddevice as sd
-import re
-
 
 # Tạo đối tượng pyttsx3
 engine = pyttsx3.init()

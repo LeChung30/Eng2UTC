@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="add user">
+    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="maintain firebase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EngSecurity.py" beforeDir="false" afterPath="$PROJECT_DIR$/EngSecurity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirebaseController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/cert_level.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/cert_level.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/topic.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/topic.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/user.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/user.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/vocabulary_A2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/vocabulary_A2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProcessFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/answer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/answer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/part_detail.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/part_detail.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/question.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/question_content.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_content.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/question_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question_type.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/key/vocabtoeic-23b22-firebase-adminsdk-iibv3-bddeba9767.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +57,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.FastAPI.executor": "Run",
-    "Python.FirebaseController.executor": "Run",
-    "Python.english.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "firebase",
-    "last_opened_file_path": "D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data/key",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.FastAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FirebaseController.executor&quot;: &quot;Run&quot;,
+    &quot;Python.english.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;firebase&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data/key&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\key" />
@@ -218,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729914451536</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="maintain firebase">
+      <option name="closed" value="true" />
+      <created>1730051089765</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730051089765</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,37 +269,7 @@
     <MESSAGE value="add mp3" />
     <MESSAGE value="add lesson, change vocab data structure" />
     <MESSAGE value="add user" />
-    <option name="LAST_COMMIT_MESSAGE" value="add user" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ProcessFile.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>544</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>700</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>168</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="maintain firebase" />
+    <option name="LAST_COMMIT_MESSAGE" value="maintain firebase" />
   </component>
 </project>
