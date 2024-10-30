@@ -34,11 +34,11 @@ public class A2TestAdapter extends RecyclerView.Adapter<A2TestAdapter.TestViewHo
     @Override
     public void onBindViewHolder(@NonNull TestViewHolder holder, int position) {
         // Bind the data to the TextView in each CardView
-        String testName = testList.get(position).getNameOfTest();
+        String testName = testList.get(position).getNAME_OF_TEST();
         holder.tvTestName.setText(testName);
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), TestExerciseActivity.class);
-            intent.putExtra("test_id", testList.get(position).getTestId());
+            intent.putExtra("test_id", testList.get(position).getTEST_ID() + "");
             v.getContext().startActivity(intent);
         });
     }

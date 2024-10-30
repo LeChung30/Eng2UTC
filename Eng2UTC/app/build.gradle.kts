@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.firebase.messaging)
+    implementation(libs.firebase.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -50,6 +51,6 @@ dependencies {
     implementation ("com.google.firebase:firebase-database:20.3.0")
     implementation ("com.google.firebase:firebase-auth:21.0.1")
     implementation ("com.squareup.picasso:picasso:2.71828")
-
-
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 }

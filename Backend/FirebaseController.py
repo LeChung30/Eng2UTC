@@ -29,7 +29,7 @@ local_path_img = 'data/img/'
 remote_path_img = 'img/'
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
-file_path = 'D:\Code\python\project_1\Eng2UTC\Backend\data\key\eng2utc-firebase-adminsdk-y4ymw-0ab02a4678.json'
+file_path = 'data/key/eng2utc-firebase-adminsdk-y4ymw-0ab02a4678.json'
 data_base_url='https://eng2utc-default-rtdb.firebaseio.com/'
 # Khởi tạo Firebase Admin SDK
 
@@ -479,7 +479,7 @@ def get_data_by_test_id(test_id):
     try:
         # Lấy dữ liệu từ bảng part_detail
         part_details = db.reference('PART_DETAIL').order_by_child('TEST_ID').equal_to(test_id).get()
-        
+
         # Lấy dữ liệu từ bảng question
         questions = db.reference('QUESTION').order_by_child('TEST_ID').equal_to(test_id).get()
 

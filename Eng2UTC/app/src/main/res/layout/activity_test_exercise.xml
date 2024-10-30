@@ -78,7 +78,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
     <!-- Progress bar centered on the screen -->
     <ProgressBar
@@ -98,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#80FFFAFA"
+        android:background="#34FFFAFA"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -114,32 +115,5 @@
             android:contentDescription="Close Sidebar"
             android:layout_gravity="end"
             android:layout_margin="8dp"/>
-
-        <!-- Question buttons -->
-        <Button
-            android:id="@+id/question1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Câu hỏi 1"
-            android:padding="16dp"
-            android:onClick="onQuestionClick"/>
-
-        <Button
-            android:id="@+id/question2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Câu hỏi 2"
-            android:padding="16dp"
-            android:onClick="onQuestionClick"/>
-
-        <Button
-            android:id="@+id/question3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Câu hỏi 3"
-            android:padding="16dp"
-            android:onClick="onQuestionClick"/>
-
-        <!-- Thêm nhiều câu hỏi tương tự nếu cần -->
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

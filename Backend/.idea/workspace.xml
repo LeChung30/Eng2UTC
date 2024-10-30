@@ -4,12 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="add order cho part detail">
+    <list default="true" id="5d9c2d61-285a-4218-8d1e-568127f0914e" name="Changes" comment="merge firebase 1">
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Model/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Model/PartDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Model/PartDetailResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Model/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Retrofit/ApiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Retrofit/RetrofitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/TestFragment/MultipleFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/TestFragment/ReadingFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/drawable/circle_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/layout/fragment_multiple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/layout/fragment_reading.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirebaseController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FirebaseController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProcessFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/answer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/answer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/csv/part_detail.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/part_detail.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/csv/question.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/question.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Adapter/A2TestAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Adapter/A2TestAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/Model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/TestExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/TestExerciseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/src/main/java/com/example/eng2utc/TestFragment/AudioManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/layout/activity_test_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/layout/activity_test_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eng2UTC/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../Eng2UTC/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +63,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/LeChung30/Eng2UTC.git&quot;,
-    &quot;accountId&quot;: &quot;b2962025-6a11-432a-bd4f-7fa340716faf&quot;
+    &quot;accountId&quot;: &quot;d12a5e7b-8f3d-4558-b0a6-97f07854c05e&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -58,7 +81,7 @@
     &quot;Python.FirebaseController.executor&quot;: &quot;Run&quot;,
     &quot;Python.english.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;firebase&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;chung&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/tai_lieu/Nam4-ki1/Project/Project/Eng_Back/Backend/data/key&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
@@ -78,7 +101,7 @@
       <recent name="D:\tai_lieu\Nam4-ki1\Project\Project\Eng_Back\Backend\data\csv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FirebaseController">
+  <component name="RunManager" selected="Python.FastAPI">
     <configuration name="FastAPI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <option name="ENV_FILES" value="" />
@@ -154,8 +177,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.FirebaseController" />
         <item itemvalue="Python.FastAPI" />
+        <item itemvalue="Python.FirebaseController" />
         <item itemvalue="Python.ProcessFile" />
       </list>
     </recent_temporary>
@@ -163,7 +186,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
+        <option value="bundled-python-sdk-884f5ed5d46b-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.22855.92" />
       </set>
     </attachedChunks>
   </component>
@@ -275,16 +298,5 @@
     <MESSAGE value="maintain firebase" />
     <MESSAGE value="add order cho part detail" />
     <option name="LAST_COMMIT_MESSAGE" value="add order cho part detail" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FirebaseController.py</url>
-          <line>767</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
