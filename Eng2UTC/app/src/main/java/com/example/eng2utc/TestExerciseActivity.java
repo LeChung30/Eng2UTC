@@ -149,9 +149,17 @@ public class TestExerciseActivity extends AppCompatActivity {
     private void createQuestionButtons(PartDetail partDetail, LinearLayout questionLayout) {
         for (int i = 0; i < partDetail.getQuestions().size(); i++) {
             Button questionButton = new Button(this);
+            // Thiết lập kích thước cho button
             questionButton.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
             questionButton.setText(String.valueOf(i + 1));
+            questionButton.setTextSize(20);
             questionButton.setBackgroundResource(R.drawable.circle_background);
+
+            // Thiết lập margins cho button
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) questionButton.getLayoutParams();
+            layoutParams.setMargins(16, 16, 16, 16); // Thay đổi giá trị này để điều chỉnh khoảng cách
+            questionButton.setLayoutParams(layoutParams);
+
             final int finalIndex = i;
             questionButton.setOnClickListener(v -> onQuestionClick(partDetail, finalIndex));
             questionLayout.addView(questionButton);
@@ -160,6 +168,7 @@ public class TestExerciseActivity extends AppCompatActivity {
 
     private void showPartDetailFragment(PartDetail partDetail) {
         int index = partDetails.indexOf(partDetail);
+        System.out.println(index);
         if (index != -1 && index < fragments.size()) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -189,6 +198,7 @@ public class TestExerciseActivity extends AppCompatActivity {
             if (selectedFragment instanceof TestListeningFragment && index < mediaPlayers.size()) {
                 MediaPlayer mediaPlayer = mediaPlayers.get(index);
                 mediaPlayer.start();
+                ((TestListeningFragment) selectedFragment).updateUI(mediaPlayer);
             }
 
             currentTestIndex = index;

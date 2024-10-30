@@ -1,8 +1,11 @@
 package com.example.eng2utc.TestFragment;
 
+import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,58 +49,61 @@ public class TestListeningFragment extends Fragment {
         currentTimeTextView = view.findViewById(R.id.currentTimeTextView);
         totalTimeTextView = view.findViewById(R.id.totalTimeTextView);
 
+        System.out.println("oncreateView");
         // Kiểm tra nếu mediaPlayer không null để thiết lập
         if (mediaPlayer != null) {
-            totalTimeTextView.setText(formatDuration(mediaPlayer.getDuration()));
-            seekBar.setMax(mediaPlayer.getDuration());
-
-            // Kiểm tra trạng thái của mediaPlayer và cập nhật icon cho playButton
-            if (mediaPlayer.isPlaying()) {
-                playButton.setBackgroundResource(R.drawable.baseline_pause_circle_outline_24); // Icon tạm dừng
-                handler.postDelayed(updateSeekBar, 1000); // Bắt đầu cập nhật SeekBar
-            } else {
-                playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24); // Icon phát
-            }
-
-            // Thiết lập lắng nghe sự thay đổi SeekBar
-            seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    if (fromUser && mediaPlayer != null) {
-                        mediaPlayer.seekTo(progress); // Di chuyển đến vị trí được chọn
-                    }
-                }
-
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-                    handler.removeCallbacks(updateSeekBar); // Dừng cập nhật khi người dùng kéo
-                }
-
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-                    handler.postDelayed(updateSeekBar, 1000); // Tiếp tục cập nhật sau khi dừng kéo
-                }
-            });
-
-            // Xử lý sự kiện nhấn nút play
-            playButton.setOnClickListener(v -> {
-                if (mediaPlayer == null) return; // Kiểm tra xem mediaPlayer có phải là null
-
-                if (mediaPlayer.isPlaying()) {
-                    mediaPlayer.pause();
-                    playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24);
-                } else {
-                    mediaPlayer.start();
-                    playButton.setBackgroundResource(R.drawable.baseline_pause_circle_outline_24);
-                    handler.postDelayed(updateSeekBar, 1000);
-                }
-            });
+            setupMediaPlayer();
         } else {
             // Nếu mediaPlayer là null, đảm bảo button có icon play
             playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24);
         }
 
         return view;
+    }
+
+    private void setupMediaPlayer() {
+        totalTimeTextView.setText(formatDuration(mediaPlayer.getDuration()));
+        seekBar.setMax(mediaPlayer.getDuration());
+
+        // Thiết lập lắng nghe sự thay đổi SeekBar
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser && mediaPlayer != null) {
+                    mediaPlayer.seekTo(progress); // Di chuyển đến vị trí được chọn
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                handler.removeCallbacks(updateSeekBar); // Dừng cập nhật khi người dùng kéo
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                handler.postDelayed(updateSeekBar, 1000); // Tiếp tục cập nhật sau khi dừng kéo
+            }
+        });
+
+        // Xử lý sự kiện nhấn nút play
+        playButton.setOnClickListener(v -> {
+            if (mediaPlayer == null) return; // Kiểm tra xem mediaPlayer có phải là null
+
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+                playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24);
+            } else {
+                mediaPlayer.start();
+                playButton.setBackgroundResource(R.drawable.baseline_pause_circle_outline_24);
+                handler.postDelayed(updateSeekBar, 1000); // Bắt đầu cập nhật SeekBar
+            }
+        });
+
+        // Cập nhật UI nếu mediaPlayer đang phát
+        updatePlayButtonIcon();
+        if (mediaPlayer.isPlaying()) {
+            handler.postDelayed(updateSeekBar, 1000);
+        }
     }
 
     private void updatePlayButtonIcon() {
@@ -107,8 +113,6 @@ public class TestListeningFragment extends Fragment {
             } else {
                 playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24);
             }
-        } else {
-            playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24);
         }
     }
 
@@ -130,6 +134,19 @@ public class TestListeningFragment extends Fragment {
         }
     };
 
+    public void updateUI(MediaPlayer mediaPlayer) {
+        totalTimeTextView.setText(formatDuration(mediaPlayer.getDuration()));
+        seekBar.setMax(mediaPlayer.getDuration());
+
+        // Nếu mediaPlayer đang phát, cập nhật button và start seekbar
+        if (mediaPlayer.isPlaying()) {
+            playButton.setBackgroundResource(R.drawable.baseline_pause_circle_outline_24); // Icon tạm dừng
+            handler.postDelayed(updateSeekBar, 1000); // Bắt đầu cập nhật SeekBar
+        } else {
+            playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24); // Icon phát
+        }
+    }
+
     public void resetAudio() {
         if (mediaPlayer != null) {
             mediaPlayer.seekTo(0); // Reset audio về đầu
@@ -139,12 +156,24 @@ public class TestListeningFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        System.out.println("Start");
+        if (mediaPlayer != null) {
+            seekBar.setMax(mediaPlayer.getDuration());
+            currentTimeTextView.setText(formatDuration(mediaPlayer.getCurrentPosition()));
+            if (mediaPlayer.isPlaying()) {
+                handler.postDelayed(updateSeekBar, 1000);
+            }
+        }
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-            mediaPlayer.pause();
-            playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24); // Đặt lại hình ảnh nút khi tạm dừng
-        }
+        System.out.println("pause fragment");
+        resetAudio();
+        handler.removeCallbacks(updateSeekBar);
     }
 
     @Override
@@ -155,20 +184,20 @@ public class TestListeningFragment extends Fragment {
             mediaPlayer.release();
             mediaPlayer = null; // Đặt lại để tránh lỗi
         }
-        handler.removeCallbacks(updateSeekBar);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        // Cập nhật SeekBar và thời gian hiện tại khi quay lại fragment
         if (mediaPlayer != null) {
-            seekBar.setMax(mediaPlayer.getDuration());
+            totalTimeTextView.setText(formatDuration(mediaPlayer.getDuration()));
             currentTimeTextView.setText(formatDuration(mediaPlayer.getCurrentPosition()));
+            seekBar.setMax(mediaPlayer.getDuration());
+
+            // Nếu đang phát, bắt đầu cập nhật SeekBar
             if (mediaPlayer.isPlaying()) {
                 handler.postDelayed(updateSeekBar, 1000);
             }
         }
-        updatePlayButtonIcon(); // Cập nhật icon khi quay lại fragment
     }
 }
