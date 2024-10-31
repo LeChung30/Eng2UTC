@@ -5,7 +5,7 @@
     android:id="@+id/home_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    style="@style/SCREEN"
     tools:context=".Fragments.HomeFragment">
 
 
@@ -20,41 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_marginStart="16dp"-->
-<!--                android:layout_marginTop="16dp"-->
-<!--                android:layout_marginEnd="16dp">-->
-
-
-<!--                <TextView-->
-<!--                    android:id="@+id/textView1"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Chào mừng "-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textColor="@color/Home_Blue"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/textView5"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="BaoLam"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textColor="@color/Home_Blue"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/textView1" />-->
-
-
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -83,11 +48,11 @@
                         android:id="@+id/searchEdt"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:layout_weight="1"
                         android:layout_margin="4dp"
+                        android:layout_weight="1"
                         android:background="@color/grey"
 
-                        android:hint="Search...."
+                        android:hint="@string/search"
                         android:inputType="text"
                         android:padding="8dp"
                         android:textAlignment="center"
@@ -122,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:background="@color/Home_Blue"
+                style="@style/Home_Blue_Default"
                 android:padding="10dp">
 
 
@@ -132,12 +97,12 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/Home_LightBlue"
+                    style="@style/Home_LightBlue"
                     app:cardElevation="5dp" >
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_width="201dp"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -149,9 +114,10 @@
 
                         <TextView
                             android:id="@+id/textView"
+                            style="@style/TEXT"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="My Wordlists"
+                            android:text="@string/my_word_lists"
                             android:textAlignment="center"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -164,7 +130,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/Home_LightBlue"
+                    style="@style/Home_LightBlue"
                     app:cardElevation="5dp"  >
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -185,7 +151,8 @@
                             android:textAlignment="center"
                             android:textStyle="bold"
                             android:textSize="18sp"
-                            android:text="Daily words" />
+                            style="@style/TEXT"
+                            android:text="@string/daily_words" />
                     </LinearLayout>
 
 
@@ -193,22 +160,11 @@
 
 
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:text="Category"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -220,6 +176,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        style="@style/SCREEN"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -234,7 +191,7 @@
                                 android:layout_margin="5dp"
                                 android:layout_weight="1"
                                 app:cardCornerRadius="10dp"
-                                android:backgroundTint="@color/cardViewVocab"
+                                style="@style/cardViewVocab"
                                 app:cardElevation="5dp">
                                 <!-- ImageView, TextView of card view Vocab -->
 
@@ -243,9 +200,10 @@
                                     android:id="@+id/textViewVocab"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Vocabulary"
+                                    android:text="@string/vocabulary"
                                     android:textSize="18sp"
                                     android:textStyle="bold"
+                                    style="@style/TEXT"
                                     android:layout_margin="10dp"/>
 
 
@@ -264,15 +222,16 @@
                                 android:layout_height="180dp"
                                 android:layout_margin="5dp"
                                 android:layout_weight="1"
-                                android:backgroundTint="@color/cardViewGrammar"
+                                style="@style/cardViewGrammar"
                                 app:cardCornerRadius="10dp"
                                 app:cardElevation="5dp">
 
                                 <TextView
+                                    style="@style/TEXT"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
-                                    android:text="Grammar"
+                                    android:text="@string/grammar"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
@@ -302,21 +261,22 @@
                                 android:layout_margin="5dp"
                                 android:layout_weight="1"
                                 app:cardCornerRadius="10dp"
-                                android:backgroundTint="@color/cardViewExpressions"
+                                style="@style/cardViewExpressions"
                                 app:cardElevation="5dp">
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Expressions"
+                                    android:text="@string/expressions"
                                     android:textSize="18sp"
                                     android:textStyle="bold"
+                                    style="@style/TEXT"
                                     android:layout_margin="10dp"/>
 
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    app:srcCompat="@drawable/ic_home_cv_vocab"
+                                    app:srcCompat="@drawable/ic_home_cv_expression"
                                     android:layout_marginStart="120dp"
                                     android:layout_marginTop="100dp"/>
 
@@ -331,20 +291,21 @@
                                 android:layout_margin="5dp"
                                 android:layout_weight="1"
                                 app:cardCornerRadius="10dp"
-                                android:backgroundTint="@color/cardViewReading"
+                                style="@style/cardViewReading"
                                 app:cardElevation="5dp">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Reading"
+                                    android:text="@string/reading"
                                     android:textSize="18sp"
+                                    style="@style/TEXT"
                                     android:textStyle="bold"
                                     android:layout_margin="10dp"/>
 
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    app:srcCompat="@drawable/ic_home_cv_grammar"
+                                    app:srcCompat="@drawable/ic_home_cv_reading"
                                     android:layout_marginStart="120dp"
                                     android:layout_marginTop="100dp"/>
 

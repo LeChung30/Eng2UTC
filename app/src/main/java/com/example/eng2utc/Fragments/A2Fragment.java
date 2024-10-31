@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +32,7 @@ public class A2Fragment extends Fragment {
         // Inflate layout for this fragment
         View view = inflater.inflate(R.layout.fragment_a2, container, false);
 
-        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView = view.findViewById(R.id.recyclerViewA2);
 
         // Dữ liệu giả lập - 5 bài thi A2
         testList = new ArrayList<>();
@@ -41,7 +42,7 @@ public class A2Fragment extends Fragment {
 
         // Setup RecyclerView
         adapter = new A2TestAdapter(testList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2)); // Setup RecyclerView với GridLayoutManager và 2 cột
         recyclerView.setAdapter(adapter);
 
         return view;

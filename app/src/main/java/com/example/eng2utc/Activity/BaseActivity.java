@@ -1,5 +1,7 @@
 package com.example.eng2utc.Activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,26 +13,40 @@ import com.example.eng2utc.R;
 import java.util.Locale;
 
 public class BaseActivity extends AppCompatActivity {
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.white));
-
-        // Đọc ngôn ngữ từ SharedPreferences
-        SharedPreferences prefs = getSharedPreferences("Settings", MODE_PRIVATE);
-        String language = prefs.getString("Language", "en"); // Mặc định là tiếng Anh
-        setLocale(language);
+        applyLocale();
     }
 
-    private void setLocale(String lang) {
-        Locale locale = new Locale(lang);
+    public void applyLocale() {
+        String languageCode = getLanguageCodeFromPreferences();
+        setLocale(languageCode);
+    }
+
+    private String getLanguageCodeFromPreferences() {
+        return getSharedPreferences("settings", Context.MODE_PRIVATE)
+                .getString("language_code", "en"); // Ngôn ngữ mặc định là "en"
+    }
+
+    public void setLocale(String languageCode) {
+        Locale locale = new Locale(languageCode);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.setLocale(locale);
-
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+    }
+
+    public void changeLanguage(String newLanguageCode) {
+        String currentLanguageCode = getLanguageCodeFromPreferences();
+        if (!currentLanguageCode.equals(newLanguageCode)) { // Kiểm tra nếu ngôn ngữ khác
+            // Lưu ngôn ngữ mới vào SharedPreferences
+            getSharedPreferences("settings", Context.MODE_PRIVATE)
+                    .edit().putString("language_code", newLanguageCode).apply();
+            // Khởi động lại Activity
+            Intent intent = new Intent(this, getClass());
+            finish();
+            startActivity(intent);
+        }
     }
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/tense_fragment"
     android:orientation="vertical"
-    android:background="@color/white"
+    style="@style/SCREEN"
     android:padding="16dp">
 
     <!-- Header riêng cho Fragments.TenseFragment -->
@@ -20,19 +20,20 @@
             android:id="@+id/btn_back_tense"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_back" />
+            style="@style/backBtn"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tenses"
+            android:text="@string/tense"
             android:textSize="20sp"
             android:textStyle="bold"
+            style="@style/TEXT"
             android:gravity="center" />
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_setting_notification" />
+            style="@style/settingNotification" />
     </LinearLayout>
 
     <ScrollView
@@ -58,6 +59,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -70,13 +72,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Present simple"
+                            style="@style/TEXT"
+                            android:text="Present Simple"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            style="@style/TEXT"
                             android:text="In this lesson, you will learn
                     \nall the grammatical features
                     \nof the Present simple tense
@@ -88,7 +92,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:scaleType="fitXY"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/tense_present_simple" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -106,6 +110,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -118,12 +123,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Past simple"
+                            style="@style/TEXT"
+                            android:text="Past Simple"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            style="@style/TEXT"
                             android:text="In this lesson, you will learn
                     \nall the grammatical features
                     \nof the Past simple tense
@@ -135,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:scaleType="fitXY"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/tense_past_simple" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -153,6 +160,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -165,12 +173,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Future simple"
+                            style="@style/TEXT"
+                            android:text="Future Simple"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            style="@style/TEXT"
                             android:text="In this lesson, you will learn
                     \nall the grammatical features
                     \nof the Future simple tense
@@ -179,13 +189,314 @@
                             android:textSize="11sp" />
                     </LinearLayout>
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_margin="5dp"
-                        android:scaleType="fitXY"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/tense_future_simple" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_present_continuous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="#E3F2FD">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="Present Continuous"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="In this lesson, you will learn
+                    \nall the grammatical features
+                    \nof the Future simple tense
+                    \nin English and get familiar \nwith its uses"
+                            android:textStyle="bold"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tense_future_simple" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_past_continuous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="#E3F2FD">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="Past Continuous"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="In this lesson, you will learn
+                    \nall the grammatical features
+                    \nof the Future simple tense
+                    \nin English and get familiar \nwith its uses"
+                            android:textStyle="bold"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tense_past_continuous" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_future_continuous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="#E3F2FD">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="Future Continuous"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="In this lesson, you will learn
+                    \nall the grammatical features
+                    \nof the Future simple tense
+                    \nin English and get familiar \nwith its uses"
+                            android:textStyle="bold"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tense_future_continuous" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_present_perfect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="#E3F2FD">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Present Perfect"
+                            android:textSize="18sp"
+                            style="@style/TEXT"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="In this lesson, you will learn
+                    \nall the grammatical features
+                    \nof the Present perfect tense
+                    \nin English and get familiar \nwith its uses"
+                            android:textStyle="bold"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tense_present_perfect" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_past_perfect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="#E3F2FD">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Past Perfect"
+                            style="@style/TEXT"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TEXT"
+                            android:text="In this lesson, you will learn
+                    \nall the grammatical features
+                    \nof the Past perfect tense
+                    \nin English and get familiar \nwith its uses"
+                            android:textStyle="bold"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tense_future_continuous" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_future_perfect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="#E3F2FD">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Future Perfect"
+                            style="@style/TEXT"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="In this lesson, you will learn
+                    \nall the grammatical features
+                    \nof the Future perfect tense
+                    \nin English and get familiar \nwith its uses"
+                            style="@style/TEXT"
+                            android:textStyle="bold"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tense_future_continuous" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
 

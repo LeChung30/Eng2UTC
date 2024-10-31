@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    style="@style/SCREEN"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.SettingActivity">
@@ -24,7 +25,7 @@
                 android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@color/Home_Blue"
+                style="@style/Home_Blue_Default"
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,7 +39,7 @@
                         android:padding="12dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_back" />
+                        style="@style/backBtn" />
 
                     <ImageView
                         android:id="@+id/imageView3"
@@ -56,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:text="BaoLam"
-                        android:textColor="@color/white"
+                        style="@style/TEXT"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -68,7 +69,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Edit"
-                        android:textColor="@color/white"
+                        style="@style/TEXT"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="@+id/txt_setting_user_name"
                         app:layout_constraintTop_toBottomOf="@+id/txt_setting_user_name" />
@@ -80,6 +81,7 @@
                         android:layout_marginStart="16dp"
                         android:text="Sign out"
                         android:textColor="@color/red"
+                        android:textStyle="bold"
                         android:textSize="16sp"
                         app:layout_constraintStart_toEndOf="@+id/btn_setting_edit"
                         app:layout_constraintTop_toTopOf="@+id/btn_setting_edit" />
@@ -115,7 +117,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_language" />
+                            style="@style/changeLanguage" />
 
                         <TextView
                             android:id="@+id/textView3"
@@ -124,8 +126,9 @@
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
-                            android:text="Change displayed language"
+                            android:text="@string/change_language"
                             android:textSize="16sp"
+                            style="@style/TEXT"
                             android:textStyle="bold" />
                         <androidx.appcompat.widget.SwitchCompat
                             android:id="@+id/switch_language"
@@ -150,7 +153,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_font_size" />
+                            style="@style/changeFontSize" />
 
                         <TextView
                             android:id="@+id/textView4"
@@ -158,7 +161,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="Font size"
+                            android:text="@string/font_size"
+                            style="@style/TEXT"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -178,7 +182,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_font_style" />
+                           style="@style/changeFontStyle" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -186,7 +190,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="Font style"
+                            android:text="@string/font_style"
+                            style="@style/TEXT"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -207,7 +212,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_theme" />
+                            style="@style/changeTheme" />
 
                         <TextView
                             android:id="@+id/textView7"
@@ -215,8 +220,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="Change theme"
+                            android:text="@string/theme"
                             android:layout_weight="1"
+                            style="@style/TEXT"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -243,7 +249,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_notification" />
+                            style="@style/settingNotification" />
 
                         <TextView
                             android:id="@+id/textView8"
@@ -251,7 +257,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="Notification"
+                            android:text="@string/notification"
+                            style="@style/TEXT"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -283,7 +290,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_about" />
+                            style="@style/settingAbout" />
 
                         <TextView
                             android:id="@+id/textView9"
@@ -291,7 +298,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="About us"
+                            android:text="@string/about_us"
+                            style="@style/TEXT"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -312,7 +320,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_contact" />
+                            style="@style/settingContact" />
 
                         <TextView
                             android:id="@+id/textView10"
@@ -320,7 +328,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="Contact us"
+                            android:text="@string/contact_us"
+                            style="@style/TEXT"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -340,7 +349,7 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
-                            app:srcCompat="@drawable/ic_setting_rate" />
+                            style="@style/settingRate" />
 
                         <TextView
                             android:id="@+id/textView11"
@@ -348,7 +357,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="Rate us"
+                            android:text="@string/rate_us"
+                            style="@style/TEXT"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
