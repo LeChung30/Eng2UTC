@@ -7,11 +7,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.eng2utc.R;
-import com.example.eng2utc.databinding.ActivityMainBinding;
 
 import com.example.eng2utc.Fragments.ExamFragment;
 import com.example.eng2utc.Fragments.HomeFragment;
 import com.example.eng2utc.Fragments.TranslateFragment;
+import com.example.eng2utc.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends BaseActivity {

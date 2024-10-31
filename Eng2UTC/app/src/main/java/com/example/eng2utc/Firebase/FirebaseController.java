@@ -39,6 +39,11 @@ public class FirebaseController {
         getDataFromTable("VOCABULARY", callback);
     }
 
+    // Phương thức lấy dữ liệu từ bảng level
+    public void getLevelData(FirebaseDataCallback callback) {
+        getDataFromTable("CERT_LEVEL", callback);
+    }
+
     // Phương thức lấy từ vựng A2
     public void getA2VocabularyData(final FirebaseDataCallback callback) {
         databaseReference.child("VOCABULARY").addListenerForSingleValueEvent(new ValueEventListener() {
