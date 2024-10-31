@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.VocabularyFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="8dp">
+
+            <!-- Title -->
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/baseline_arrow_back_24"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="2dp" />
+
+            <TextView
+                android:id="@+id/word_test_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Từ Vựng"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#221E1B"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/backButton" />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/baseline_notifications_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="348dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_myvocab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Danh sách từ vựng của tôi"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:background="@drawable/vocab_item_top_btn"
+                android:drawableTop="@drawable/folder_logo"
+                android:gravity="start|top"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:layout_marginRight="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_wordbyday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/vocab_item_top_btn"
+                android:text="Từ hàng ngày"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/note_logo"
+                android:gravity="start|top"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_levelbase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Dựa trên cấp độ"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:background="@drawable/vocab_item_btn"
+            style="@style/CustomTextStyle"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Bài kiểm tra trình độ"
+            android:textAllCaps="false"
+            android:background="@drawable/vocab_item_btn"
+            style="@style/CustomTextStyle"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:text="Liên quan đến chủ đề"
+            android:background="@drawable/vocab_item_btn"
+            style="@style/CustomTextStyle"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_idiom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Tục ngữ và thành ngữ"
+            android:background="@drawable/vocab_item_btn"
+            style="@style/CustomTextStyle"/>
+    </LinearLayout>
+</FrameLayout>
