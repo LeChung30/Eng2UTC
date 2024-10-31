@@ -42,8 +42,8 @@ public class GrammarFragment extends Fragment {
             transaction.addToBackStack(null); // Để có thể quay lại fragment trước đó
             transaction.commit();
         });
-
         return view;
+
 
     }
 }

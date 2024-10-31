@@ -1,5 +1,42 @@
 <resources>
-    <string name="app_name">Eng2UTC</string>
+
+     <string name="app_name">Eng2UTC</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forget_password" translatable="false">Forget Password?</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="signup" translatable="false">Sign up</string>
+    <string name="eng2utc" translatable="false">ENG2 UTC</string>
+    <!--Setting Activity-->
+    <string name="change_language">Change displayed language</string>
+    <string name="font_size">Font size</string>
+    <string name="font_style">Font style</string>
+    <string name="theme">Change theme</string>
+    <string name="notification">Notification</string>
+    <string name="about_us">About us</string>
+    <string name="contact_us">Contact us</string>
+    <string name="rate_us">Rate us</string>
+    <string name="sign_out">Sign out</string>
+    <string name="edit">Edit</string>
+    <!--Home Fragment-->
+    <string name="vocabulary">Vocabulary</string>
+    <string name="grammar">Grammar</string>
+    <string name="expressions">Expressions</string>
+    <string name="reading">Reading</string>
+    <string name="my_word_lists">My Wordlists</string>
+    <string name="daily_words">Daily words</string>"
+    <string name="search">Search....</string>
+    <string name="scan">Scan</string>
+<!--    Bottom Navigation Bar-->
+    <string name="exam">Exams</string>
+    <string name="statistics">Statistics</string>
+    <string name="home">Home</string>
+    <string name="translate">Translate</string>
+    <!--Grammar Fragment-->
+    <string name="tense">Tenses</string>
+    <string name="level_based">Level-based</string>
+    <string name="adjectives_prepositions">Adjectives and Prepositions</string>"
+    <string name="phrases_clauses">Phrases and Clauses</string>
+
+
+
 </resources>

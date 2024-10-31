@@ -1,13 +1,16 @@
 package com.example.eng2utc.Activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
 
 import com.example.eng2utc.R;
@@ -18,7 +21,10 @@ public class SettingActivity extends BaseActivity {
 
     private ImageView btn_back;
     private SwitchCompat switch_language;
+    private SwitchCompat switch_theme;
     private SharedPreferences sharedPreferences;
+    private boolean nightMode;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +34,41 @@ public class SettingActivity extends BaseActivity {
         // Find the ImageView for the back button
         btn_back = findViewById(R.id.btn_back_setting);
         btn_back.setOnClickListener(v -> {
-            // Handle the back button click event
-            finish(); // Close the activity
+            finish();
         });
-
+        // Switch language en -> vi
         switch_language = findViewById(R.id.switch_language);
         switch_language.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                setLocale("vi"); // Chuyển sang tiếng Việt
+                changeLanguage("vi"); // Chuyển sang tiếng Việt nếu khác ngôn ngữ hiện tại
             } else {
-                setLocale("en"); // Chuyển sang tiếng Anh
+                changeLanguage("en"); // Chuyển sang tiếng Anh nếu khác ngôn ngữ hiện tại
             }
         });
 
+        // Switch theme
+        switch_theme = findViewById(R.id.switch_theme);
+        sharedPreferences = getSharedPreferences("MODE", MODE_PRIVATE);
+        nightMode = sharedPreferences.getBoolean("night", false); // light mode is the default mode
+        if (nightMode) {
+            switch_theme.setChecked(true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        switch_theme.setOnClickListener(v -> {
+            if (nightMode){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                editor = sharedPreferences.edit();
+                editor.putBoolean("night",false);
+
+            }else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                editor = sharedPreferences.edit();
+                editor.putBoolean("night",true);
+            }
+            editor.apply();
+        });
+
+        // Handle layout_rate click
         LinearLayout layout_rate = findViewById(R.id.layout_rate);
         layout_rate.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -50,25 +78,5 @@ public class SettingActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    // Hàm thay đổi ngôn ngữ
-    private void setLocale(String lang) {
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.setLocale(locale);
-
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-
-        // Lưu ngôn ngữ vào SharedPreferences
-        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
-        editor.putString("Language", lang);
-        editor.apply();
-
-        // Restart activity to apply changes
-        Intent refresh = new Intent(this, SettingActivity.class);
-        finish(); // End current activity
-        startActivity(refresh); // Restart the activity
     }
 }

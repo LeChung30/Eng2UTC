@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -14,6 +15,10 @@ import com.example.eng2utc.R;
 public class TenseFragment extends Fragment {
 
     private ImageView backBtn;
+    private CardView cardViewPresentSimple;
+    private CardView cardViewPastSimple;
+    private CardView cardViewFutureSimple;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +35,44 @@ public class TenseFragment extends Fragment {
            transaction.addToBackStack(null); // Thêm vào back stack nếu cần thiết
            transaction.commit();
        });
+        cardViewPresentSimple = view.findViewById(R.id.cardView_present_simple);
+        cardViewPresentSimple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Thay thế TenseFragment bằng PresentSimpleFragment
+                Fragment presentSimpleFragment = new PresentSimpleFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, presentSimpleFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
+        cardViewPastSimple = view.findViewById(R.id.cardView_past_simple);
+        cardViewPastSimple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                Fragment pastSimpleFragment = new PastSimpleFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, pastSimpleFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+            });
+
+        cardViewFutureSimple = view.findViewById(R.id.cardView_future_simple);
+        cardViewFutureSimple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                Fragment futureSimpleFragment = new FutureSimpleFragment();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayout, futureSimpleFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
        return view;
     }
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    style="@style/SCREEN"
     android:padding="16dp"
     android:id="@+id/grammar_fragment"
     tools:context=".Fragments.GrammarFragment">
@@ -23,13 +23,14 @@
             android:id="@+id/btn_back_grammar"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_back" />
+            style="@style/backBtn" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Grammar"
+            android:text="@string/grammar"
+            style="@style/TEXT"
             android:textSize="20sp"
             android:textStyle="bold"
             android:gravity="center" />
@@ -37,7 +38,7 @@
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_setting_notification" />
+            style="@style/settingNotification" />
     </LinearLayout>
 
     <ScrollView
@@ -63,21 +64,26 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="170dp"
+                    style="@style/Home_Blue_Default"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Level-based "
+                        android:text="@string/level_based"
                         android:textSize="18sp"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        style="@style/TEXT"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="6 levels"
-                        android:layout_marginStart="10dp"
+                        android:textStyle="bold"
+                        style="@style/TEXT"
+                        android:layout_marginStart="20dp"
                         android:textSize="16sp" />
 
                     <!-- LinearLayout contains 6 images -->
@@ -136,6 +142,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -148,7 +155,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tense"
+                            android:text="@string/tense"
+                            style="@style/TEXT"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -156,6 +164,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="12 lessons"
+                            style="@style/TEXT"
+                            android:textStyle="bold"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -181,6 +191,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -192,6 +203,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Adjectives and\nPrepositions"
+                            style="@style/TEXT"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -219,6 +231,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    style="@style/Home_Blue_Default"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -230,6 +243,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Phrases and \nClauses"
+                            style="@style/TEXT"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </LinearLayout>

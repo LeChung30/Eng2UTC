@@ -4,4 +4,36 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <!-- Dark mode -->
+    <!--Screen background if dark mode on -->
+    <style name="Home_Blue_Default"><item name="android:background">@color/Home_Blue_Dark_Mode</item></style>
+    <style name="Home_LightBlue"><item name="android:backgroundTint">#3468B2</item></style>
+    <style name ="SCREEN">
+        <item name="android:background">#0e1e38</item>
+    </style>
+    <!--Text background if light mode on -->
+    <style name ="TEXT">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--Button background if light mode on -->
+    <style name ="BUTTON">
+        <item name="android:background">@color/blue_grey</item>
+    </style>
+    <style name="backBtn"><item name="android:src">@drawable/ic_back_light</item></style>
+    <!--Light icon in SettingActivity if dark mode on -->
+    <style name="changeLanguage"><item name="android:src">@drawable/ic_setting_language_light</item></style>
+    <style name="changeFontSize"><item name="android:src">@drawable/ic_setting_font_size_light</item></style>
+    <style name="changeFontStyle"><item name="android:src">@drawable/ic_setting_font_style_light</item></style>
+    <style name="changeTheme"><item name="android:src">@drawable/ic_setting_theme_light</item></style>
+    <style name="settingNotification"><item name="android:src">@drawable/ic_setting_notification_light</item></style>
+
+    <style name="settingAbout"><item name="android:src">@drawable/ic_setting_about_light</item></style>
+    <style name="settingContact"><item name="android:src">@drawable/ic_setting_contact_light</item></style>
+    <style name="settingRate"><item name="android:src">@drawable/ic_setting_rate_light</item></style>
+    <!--Home-->
+    <style name="cardViewVocab"><item name="android:backgroundTint">@color/cardViewDarkMode</item></style>
+    <style name="cardViewGrammar"><item name="android:backgroundTint">@color/cardViewDarkMode</item></style>
+    <style name="cardViewExpressions"><item name="android:backgroundTint">@color/cardViewDarkMode</item></style>
+    <style name="cardViewReading"><item name="android:backgroundTint">@color/cardViewDarkMode</item></style>
 </resources>
