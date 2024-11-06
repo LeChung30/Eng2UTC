@@ -1,63 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.LevelBaseFragment"
-    android:paddingHorizontal="16dp">
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    tools:context=".Fragments.LevelBaseFragment">
 
+
+    <!-- Header cố định, không cuộn -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/btn_back_level"
+            style="@style/backBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            style="@style/TEXT"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingVertical="8dp">
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Level"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <!-- Title -->
-
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/baseline_arrow_back_24"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="2dp" />
-
-            <TextView
-                android:id="@+id/word_level_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Từ Vựng"
-                android:textColor="#221E1B"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/backButton"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/button_notify"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/baseline_notifications_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:layout_editor_absoluteX="348dp"
-                tools:layout_editor_absoluteY="8dp" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewWordLevel"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <ImageView
+            style="@style/settingNotification"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
     </LinearLayout>
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewWordLevel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

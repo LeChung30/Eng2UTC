@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity {
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.replace(R.id.frameLayoutContainer, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

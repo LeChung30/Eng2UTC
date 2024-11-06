@@ -2,7 +2,7 @@ package com.example.eng2utc.Model;
 
 public class CertLevel {
     private String CERT_LEVEL_ID;
-    private String LEVEL_NAME;
+    private String CERT_LEVEL_NAME;
     private String DESCRIPTION;
     private String IMAGE_LINK;
 
@@ -19,12 +19,12 @@ public class CertLevel {
         this.CERT_LEVEL_ID = CERT_LEVEL_ID;
     }
 
-    public String getLEVEL_NAME() {
-        return LEVEL_NAME;
+    public String getCERT_LEVEL_NAME() {
+        return CERT_LEVEL_NAME;
     }
 
-    public void setLEVEL_NAME(String LEVEL_NAME) {
-        this.LEVEL_NAME = LEVEL_NAME;
+    public void setCERT_LEVEL_NAME(String CERT_LEVEL_NAME) {
+        this.CERT_LEVEL_NAME = CERT_LEVEL_NAME;
     }
 
     public String getDESCRIPTION() {

@@ -45,8 +45,20 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 // Thực hiện chuyển đến Fragments.GrammarFragment
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.home_fragment, new GrammarFragment()); // R.id.frameLayout2 là ID của layout chứa Fragment
+                transaction.replace(R.id.frameLayoutContainer, new GrammarFragment()); // R.id.frameLayout2 là ID của layout chứa Fragment
                 transaction.addToBackStack(null); // Để quay lại Fragments.HomeFragment khi nhấn nút Back
+                transaction.commit();
+            }
+        });
+
+        cardViewVocab = view.findViewById(R.id.cardViewVocab);
+        cardViewVocab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Thực hiện chuyển đến Fragments.VocabularyFragment
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frameLayoutContainer, new VocabularyFragment());
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
