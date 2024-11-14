@@ -1,6 +1,6 @@
 <resources>
 
-     <string name="app_name">Eng2UTC</string>
+    <string name="app_name">Eng2UTC</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="forget_password" translatable="false">Forget Password?</string>
     <string name="login" translatable="false">Login</string>
@@ -26,7 +26,7 @@
     <string name="daily_words">Daily words</string>"
     <string name="search">Search....</string>
     <string name="scan">Scan</string>
-<!--    Bottom Navigation Bar-->
+    <!--    Bottom Navigation Bar-->
     <string name="exam">Exams</string>
     <string name="statistics">Statistics</string>
     <string name="home">Home</string>
@@ -36,6 +36,10 @@
     <string name="level_based">Level-based</string>
     <string name="adjectives_prepositions">Adjectives and Prepositions</string>"
     <string name="phrases_clauses">Phrases and Clauses</string>
+
+    <!--    Exam Fragment-->
+    <string name="completed">Completed</string>
+    <string name="retake">Retake</string>
 
 
 
