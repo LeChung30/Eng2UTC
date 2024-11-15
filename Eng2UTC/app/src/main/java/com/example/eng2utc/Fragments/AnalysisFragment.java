@@ -9,14 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.graphics.Color;
+import android.widget.TextView;
 
+import com.example.eng2utc.Model.MemoryLevel;
 import com.example.eng2utc.R;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.RadarChart;
@@ -24,9 +29,6 @@ import com.github.mikephil.charting.charts.BubbleChart;
 import com.github.mikephil.charting.charts.ScatterChart;
 import com.github.mikephil.charting.charts.CandleStickChart;
 import com.github.mikephil.charting.charts.CombinedChart;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -45,9 +47,21 @@ import com.github.mikephil.charting.data.CandleDataSet;
 import com.github.mikephil.charting.data.ScatterData;
 import com.github.mikephil.charting.data.ScatterDataSet;
 import com.github.mikephil.charting.data.CombinedData;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.List;
+
+
+import com.example.eng2utc.Retrofit.RetrofitController;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,7 +79,15 @@ public class AnalysisFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private LineChart lineChart;
+    private BarChart memoryBarChart;
+
+    private TextView streaksTextView;
+    private TextView studiedWordsTextView;
+    RequestBody body = RequestBody.create(
+            MediaType.parse("application/json"),
+            "{\"user_id\":\"00a287f7-cc71-4c8c-b957-07b80fd92b28\",\"attending_date\":\"2024-02-08 00:00:00\"}"
+    );
+    //get id of the textview in the xml file at
 
     public AnalysisFragment() {
         // Required empty public constructor
@@ -99,34 +121,22 @@ public class AnalysisFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        displayStreaks();
+        show_total_studied_words();
+        display_bar_chart_memory();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_analysis, container, false);
-
-        // Initialize LineChart
-        lineChart = view.findViewById(R.id.lineChart);
-        setupLineChart();
-
-        // Initialize PieChart
-        PieChart pieChart = view.findViewById(R.id.pieChart);
-        setupPieChart(pieChart);
-
         // Initialize BarChart
-        BarChart barChart = view.findViewById(R.id.barChart);
-        setupBarChart(barChart);
-
-        // Initialize RadarChart
-        RadarChart radarChart = view.findViewById(R.id.radarChart);
-        setupRadarChart(radarChart);
-
-        // Initialize BubbleChart
-        BubbleChart bubbleChart = view.findViewById(R.id.bubbleChart);
-        setupBubbleChart(bubbleChart);
-
-        // Initialize ScatterChart
-        ScatterChart scatterChart = view.findViewById(R.id.scatterChart);
-        setupScatterChart(scatterChart);
+        streaksTextView = view.findViewById(R.id.analysis_textview_streak);
+        studiedWordsTextView = view.findViewById(R.id.analysis_textview_studied_words);
+        memoryBarChart = view.findViewById(R.id.memoryBarChart);
 
         return view;
     }
@@ -159,159 +169,127 @@ public class AnalysisFragment extends Fragment {
         super.onDetach();
     }
 
-    //create a method to draw a line chart
-    private void setupLineChart() {
-        // Cấu hình LineChart
-        lineChart.setDrawGridBackground(false);
-        lineChart.getDescription().setEnabled(false);
-        lineChart.setTouchEnabled(true);
-        lineChart.setDragEnabled(true);
-        lineChart.setScaleEnabled(true);
-        lineChart.setPinchZoom(true);
+    public void displayStreaks() {
+        //display streaks
+        RetrofitController.getApiService().postStreak(body).enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                if (response.isSuccessful()) {
+                    Integer streaks = response.body();
+                    streaksTextView.setText("Streaks: " + streaks.toString());
+                } else {
+                    System.out.printf("Failed to get streaks");
+                    //print error message
+                    System.out.printf(response.message());
+                }
+            }
 
-        // Tạo dữ liệu mẫu
-        ArrayList<Entry> values = new ArrayList<>();
-        values.add(new Entry(0, 1));
-        values.add(new Entry(1, 2));
-        values.add(new Entry(2, 3));
-        values.add(new Entry(3, 4));
-        values.add(new Entry(4, 5));
-
-        LineDataSet set1 = new LineDataSet(values, "Sample Data");
-        set1.setFillAlpha(110);
-        set1.setColor(Color.BLUE);
-        set1.setLineWidth(1.5f);
-        set1.setCircleColor(Color.RED);
-        set1.setCircleRadius(5f);
-        set1.setValueTextSize(10f);
-        set1.setValueTextColor(Color.BLACK);
-
-        LineData data = new LineData(set1);
-        lineChart.setData(data);
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                System.out.printf("Failed to get streaks");
+                //print error message
+                System.out.printf(t.getMessage());
+            }
+        });
     }
 
-    private void setupPieChart(PieChart pieChart) {
-        ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(30f, "Category 1"));
-        entries.add(new PieEntry(20f, "Category 2"));
-        entries.add(new PieEntry(50f, "Category 3"));
+    private void show_total_studied_words() {
+        //display total studied words
+        RetrofitController.getApiService().postTotalWords(body).enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                if (response.isSuccessful()) {
+                    Integer totalWords = response.body();
+                    studiedWordsTextView.setText("Total Studied Words: " + totalWords.toString());
+                } else {
+                    System.out.printf("Failed to get total studied words");
+                    //print error message
+                    System.out.printf(response.message());
+                }
+            }
 
-        PieDataSet dataSet = new PieDataSet(entries, "Sample Data");
-        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        dataSet.setValueTextSize(20f); // Set the text size of the labels to be larger
-
-        PieData data = new PieData(dataSet);
-        data.setValueTextSize(20f); // Set the text size of the values to be larger
-        pieChart.setData(data);
-        pieChart.invalidate(); // refresh
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                System.out.printf("Failed to get total studied words");
+                //print error message
+                System.out.printf(t.getMessage());
+            }
+        });
     }
 
-    private void setupBarChart(BarChart barChart) {
+    private void display_bar_chart_memory() {
+        // Initialize BarChart
+        final ArrayList<MemoryLevel>[] memoryLevels = new ArrayList[]{null};
+        RetrofitController.getApiService().postMemoryLevel(body).enqueue(new Callback<List<MemoryLevel>>() {
+            @Override
+            public void onResponse(Call<List<MemoryLevel>> call, Response<List<MemoryLevel>> response) {
+                if (response.isSuccessful()) {
+                    memoryLevels[0] = new ArrayList<>(response.body());
+                    setupBarChart(memoryLevels[0]);
+                } else {
+                    System.out.printf("Failed to get memory levels");
+                    //print error message
+                    System.out.printf(response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<MemoryLevel>> call, Throwable t) {
+                System.out.printf("Failed to get memory levels");
+                //print error message
+                System.out.printf(t.getMessage());
+            }
+        });
+    }
+
+
+    private void setupBarChart(ArrayList<MemoryLevel> memoryLevels) {
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(1, 40));
-        entries.add(new BarEntry(2, 30));
-        entries.add(new BarEntry(3, 60));
-        entries.add(new BarEntry(4, 50));
-        entries.add(new BarEntry(5, 70));
+        final ArrayList<String> labels = new ArrayList<>();
+        labels.add("");
 
-        BarDataSet dataSet = new BarDataSet(entries, "Sample Data");
+        for (MemoryLevel memoryLevel : memoryLevels) {
+            entries.add(new BarEntry(memoryLevel.getLevel(), memoryLevel.getCount()));
+            labels.add(memoryLevel.getLabel()); // Lấy nhãn từ phương thức getLabel()
+        }
+
+        BarDataSet dataSet = new BarDataSet(entries, "Memory Level");
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        dataSet.setValueTextSize(12f); // Đặt kích thước văn bản của giá trị
         BarData data = new BarData(dataSet);
-        barChart.setData(data);
-        barChart.invalidate(); // refresh
+        memoryBarChart.setData(data);
+
+        // Thiết lập nhãn cho trục X
+        XAxis xAxis = memoryBarChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
+        xAxis.setGranularity(1f); // Đảm bảo mỗi nhãn là một giá trị duy nhất
+        xAxis.setGranularityEnabled(true);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawLabels(true);
+        xAxis.setDrawGridLines(false);
+        xAxis.setAxisMinimum(0f); // Đảm bảo trục X bắt đầu từ vị trí đầu tiên
+        memoryBarChart.setExtraOffsets(10, 10, 10, 15); // Thêm khoảng trống xung quanh biểu đồ
+        xAxis.setTextSize(12f); // Đặt kích thước văn bản của trục X
+
+        // Thiết lập nhãn cho trục Y
+        YAxis leftAxis = memoryBarChart.getAxisLeft();
+        leftAxis.setTextSize(12f); // Đặt kích thước văn bản của trục Y bên trái
+
+        YAxis rightAxis = memoryBarChart.getAxisRight();
+        rightAxis.setTextSize(12f); // Đặt kích thước văn bản của trục Y bên phải
+
+
+        Legend legend = memoryBarChart.getLegend();
+        legend.setEnabled(false);
+
+        Description description = new Description();
+        description.setText("Memory Level of Words");
+        description.setTextSize(12f); // Đặt kích thước văn bản là 12sp
+        memoryBarChart.setDescription(description);
+
+
+        memoryBarChart.invalidate(); // refresh
     }
 
-    private void setupRadarChart(RadarChart radarChart) {
-        ArrayList<RadarEntry> entries = new ArrayList<>();
-        entries.add(new RadarEntry(40));
-        entries.add(new RadarEntry(30));
-        entries.add(new RadarEntry(60));
-        entries.add(new RadarEntry(50));
-        entries.add(new RadarEntry(70));
-
-        RadarDataSet dataSet = new RadarDataSet(entries, "Sample Data");
-        dataSet.setColor(Color.BLUE);
-        RadarData data = new RadarData(dataSet);
-        radarChart.setData(data);
-        radarChart.invalidate(); // refresh
-    }
-
-    private void setupBubbleChart(BubbleChart bubbleChart) {
-        ArrayList<BubbleEntry> entries = new ArrayList<>();
-        entries.add(new BubbleEntry(1, 40, 10));
-        entries.add(new BubbleEntry(2, 30, 20));
-        entries.add(new BubbleEntry(3, 60, 30));
-        entries.add(new BubbleEntry(4, 50, 40));
-        entries.add(new BubbleEntry(5, 70, 50));
-
-        BubbleDataSet dataSet = new BubbleDataSet(entries, "Sample Data");
-        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        BubbleData data = new BubbleData(dataSet);
-        bubbleChart.setData(data);
-        bubbleChart.invalidate(); // refresh
-    }
-
-    private void setupCandleStickChart(CandleStickChart candleStickChart) {
-        ArrayList<CandleEntry> entries = new ArrayList<>();
-        entries.add(new CandleEntry(1, 40, 10, 30, 20));
-        entries.add(new CandleEntry(2, 30, 20, 40, 10));
-        entries.add(new CandleEntry(3, 60, 30, 50, 40));
-        entries.add(new CandleEntry(4, 50, 40, 70, 30));
-        entries.add(new CandleEntry(5, 70, 50, 80, 60));
-
-        CandleDataSet dataSet = new CandleDataSet(entries, "Sample Data");
-        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        CandleData data = new CandleData(dataSet);
-        candleStickChart.setData(data);
-        candleStickChart.invalidate(); // refresh
-    }
-
-    private void setupScatterChart(ScatterChart scatterChart) {
-        ArrayList<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(1, 40));
-        entries.add(new Entry(2, 30));
-        entries.add(new Entry(3, 60));
-        entries.add(new Entry(4, 50));
-        entries.add(new Entry(5, 70));
-
-        ScatterDataSet dataSet = new ScatterDataSet(entries, "Sample Data");
-        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        ScatterData data = new ScatterData(dataSet);
-        scatterChart.setData(data);
-        scatterChart.invalidate(); // refresh
-    }
-
-    private void setupCombinedChart(CombinedChart combinedChart) {
-        ArrayList<Entry> lineEntries = new ArrayList<>();
-        lineEntries.add(new Entry(1, 40));
-        lineEntries.add(new Entry(2, 30));
-        lineEntries.add(new Entry(3, 60));
-        lineEntries.add(new Entry(4, 50));
-        lineEntries.add(new Entry(5, 70));
-
-        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Sample Data");
-        lineDataSet.setColor(Color.BLUE);
-        lineDataSet.setLineWidth(1.5f);
-        lineDataSet.setCircleColor(Color.RED);
-        lineDataSet.setCircleRadius(5f);
-        lineDataSet.setValueTextSize(10f);
-        lineDataSet.setValueTextColor(Color.BLACK);
-
-        ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(1, 40));
-        barEntries.add(new BarEntry(2, 30));
-        barEntries.add(new BarEntry(3, 60));
-        barEntries.add(new BarEntry(4, 50));
-        barEntries.add(new BarEntry(5, 70));
-
-        BarDataSet barDataSet = new BarDataSet(barEntries, "Sample Data");
-        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-
-        CombinedData data = new CombinedData();
-        data.setData(new LineData(lineDataSet));
-        data.setData(new BarData(barDataSet));
-        combinedChart.setData(data);
-        combinedChart.invalidate(); // refresh
-    }
 
 }
