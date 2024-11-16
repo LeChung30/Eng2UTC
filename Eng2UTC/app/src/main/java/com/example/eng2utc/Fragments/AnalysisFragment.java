@@ -139,6 +139,7 @@ public class AnalysisFragment extends Fragment {
         memoryBarChart = view.findViewById(R.id.memoryBarChart);
 
         return view;
+        //test key
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
