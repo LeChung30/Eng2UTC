@@ -30,6 +30,10 @@ public class A2Fragment extends Fragment {
     private FirebaseController firebaseController;
     private String testTypeID;
 
+    public A2Fragment() {
+        // Required empty public constructor
+    }
+
     public A2Fragment(String testTypeID) {
         this.testTypeID = testTypeID;
     }
@@ -57,6 +61,7 @@ public class A2Fragment extends Fragment {
                 testList.clear(); // Clear the list before adding new items
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Test test = snapshot.getValue(Test.class); // Parse each item to Test model
+                    // Check if the test is not null and has the same TEST_TYPE_ID
                     if (test != null && test.getTEST_TYPE_ID().equals(testTypeID)) {
                         testList.add(test);
                     }

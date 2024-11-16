@@ -51,5 +51,18 @@
                 android:background="@drawable/baseline_play_circle_outline_24"
                 android:contentDescription="Play Audio" />
         </LinearLayout>
+
+        <!-- Danh sách câu hỏi -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:id="@+id/questionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"/>
+        </ScrollView>
     </LinearLayout>
 </FrameLayout>
