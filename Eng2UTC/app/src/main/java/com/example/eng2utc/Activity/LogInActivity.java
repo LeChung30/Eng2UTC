@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.eng2utc.R;
 import com.example.eng2utc.databinding.ActivityLoginBinding;
 
-public class LogInActivity extends AppCompatActivity {
+public class LogInActivity extends BaseActivity {
 
     ActivityLoginBinding binding;
 
@@ -29,26 +29,23 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private void setVariables(){
-//        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String email = binding.userEdt.getText().toString();
-//                String password = binding.passEdt.getText().toString();
-//                if (!email.isEmpty() && !password.isEmpty()){
-//                    mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(LogInActivity.this, task -> {
-//                        if (task.isSuccessful()){
-//                            startActivity(new Intent(LogInActivity.this, MainActivity.class));
-//                        }
-//                        else {
-//                            Log.i(TAG, "onComplete: Fail" + task.getException());
-//                            Toast.makeText(LogInActivity.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//                }
-//                else {
-//                    Toast.makeText(LogInActivity.this, "Please fill all the fields",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
+        binding.loginBtn.setOnClickListener(v -> {
+            String email = binding.userEdt.getText().toString().trim();
+            String password = binding.passEdt.getText().toString().trim();
+
+            if (!email.isEmpty() && !password.isEmpty()){
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LogInActivity.this, task -> {
+                    if (task.isSuccessful()){
+                        startActivity(new Intent(LogInActivity.this, MainActivity.class));
+                    } else {
+                        // In ra lỗi cụ thể
+                        Log.e(TAG, "Authentication failed: " + task.getException().getMessage());
+                        Toast.makeText(LogInActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
+                Toast.makeText(LogInActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
