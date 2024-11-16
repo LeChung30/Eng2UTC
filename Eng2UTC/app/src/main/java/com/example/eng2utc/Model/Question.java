@@ -14,16 +14,20 @@ public class Question {
     @SerializedName("IMAGE_LINK")
     private String imageLink;
 
+    @SerializedName("ORDER")
+    private int order;
+
     @SerializedName("ANSWERS")
     private List<Answer> answers;
 
     public Question() {
     }
 
-    public Question(String content, String correctAnswerId, String imageLink, List<Answer> answers) {
+    public Question(String content, String correctAnswerId, String imageLink, int order, List<Answer> answers) {
         this.content = content;
         this.correctAnswerId = correctAnswerId;
         this.imageLink = imageLink;
+        this.order = order;
         this.answers = answers;
     }
 
@@ -49,6 +53,14 @@ public class Question {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 
     public List<Answer> getAnswers() {
