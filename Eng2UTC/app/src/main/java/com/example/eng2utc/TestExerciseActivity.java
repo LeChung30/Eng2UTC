@@ -144,11 +144,11 @@ public class TestExerciseActivity extends AppCompatActivity {
     private void createPartLayout(PartDetail partDetail) {
         LinearLayout partLayout = new LinearLayout(this);
         partLayout.setOrientation(LinearLayout.VERTICAL);
-        partLayout.setPadding(16, 16, 16, 16);
+        partLayout.setPadding(16, 0, 16, 16);
 
         TextView partTitle = new TextView(this);
         partTitle.setText("Part " + partDetail.getOrder());
-        partTitle.setTextSize(18);
+        partTitle.setTextSize(20);
         partLayout.addView(partTitle);
 
         partLayout.setOnClickListener(v -> showPartDetailFragment(partDetail));
@@ -161,24 +161,18 @@ public class TestExerciseActivity extends AppCompatActivity {
     }
 
     private void createQuestionButtons(PartDetail partDetail, LinearLayout questionLayout) {
-        for (int i = 0; i < partDetail.getQuestions().size(); i++) {
+        List<Question> questions = partDetail.getQuestions();
+        int questionCount = questions.size();
+        for (int i = 0; i < questionCount; i++) {
+
             Button questionButton = new Button(this);
             questionButton.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
-            questionButton.setText(String.valueOf(i + 1));
+            questionButton.setText(questions.get(i).getOrder() + "");
             questionButton.setTextSize(20);
             questionButton.setBackgroundResource(R.color.white);
-
-            // Set button color based on whether the question is answered
-            if (answeredQuestions.getOrDefault(partDetail.getQuestions().get(i), false)) {
-                questionButton.setBackgroundResource(R.drawable.circle_background); // Change to desired color
-            }
-
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) questionButton.getLayoutParams();
             layoutParams.setMargins(16, 16, 16, 16);
             questionButton.setLayoutParams(layoutParams);
-
-            final int finalIndex = i;
-//            questionButton.setOnClickListener(v -> onQuestionClick(partDetail, finalIndex));
             questionButton.setOnClickListener(v -> showPartDetailFragment(partDetail));
             questionLayout.addView(questionButton);
         }
