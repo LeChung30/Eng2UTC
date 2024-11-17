@@ -8,13 +8,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eng2utc.Adapter.A2TestAdapter;
 import com.example.eng2utc.Firebase.FirebaseController;
 import com.example.eng2utc.Firebase.FirebaseDataCallback;
 import com.example.eng2utc.Model.Test;
+import com.example.eng2utc.Model.TestType;
 import com.example.eng2utc.R;
 import com.google.firebase.database.DataSnapshot;
 
@@ -27,6 +28,15 @@ public class A2Fragment extends Fragment {
     private A2TestAdapter adapter;
     private List<Test> testList;
     private FirebaseController firebaseController;
+    private String testTypeID;
+
+    public A2Fragment() {
+        // Required empty public constructor
+    }
+
+    public A2Fragment(String testTypeID) {
+        this.testTypeID = testTypeID;
+    }
 
     @Nullable
     @Override
@@ -36,12 +46,12 @@ public class A2Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_a2, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerView);
-        testList = new ArrayList<>(); // Initialize empty list
-        firebaseController = new FirebaseController(); // Initialize FirebaseController
+        testList = new ArrayList<>();
+        firebaseController = new FirebaseController();
 
-        // Setup RecyclerView
+        // Setup RecyclerView with GridLayoutManager and adapter
         adapter = new A2TestAdapter(testList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
 
         // Fetch data from Firebase
@@ -51,8 +61,9 @@ public class A2Fragment extends Fragment {
                 testList.clear(); // Clear the list before adding new items
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Test test = snapshot.getValue(Test.class); // Parse each item to Test model
-                    if (test != null) {
-                        testList.add(test); // Add to list
+                    // Check if the test is not null and has the same TEST_TYPE_ID
+                    if (test != null && test.getTEST_TYPE_ID().equals(testTypeID)) {
+                        testList.add(test);
                     }
                 }
                 adapter.notifyDataSetChanged(); // Notify adapter of data change

@@ -1,5 +1,6 @@
 package com.example.eng2utc;
 
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -21,14 +22,18 @@ import com.example.eng2utc.Model.PartDetail;
 import com.example.eng2utc.Model.PartDetailResponse;
 import com.example.eng2utc.Model.Question;
 import com.example.eng2utc.Retrofit.RetrofitController;
-import com.example.eng2utc.TestFragment.MultipleFragment;
-import com.example.eng2utc.TestFragment.ReadingFragment;
+import com.example.eng2utc.TestFragment.TestMultipleFragment;
+import com.example.eng2utc.TestFragment.TestReadingFragment;
 import com.example.eng2utc.TestFragment.TestListeningFragment;
+import com.example.eng2utc.TestFragment.TestRewriteFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -47,6 +52,15 @@ public class TestExerciseActivity extends AppCompatActivity {
     private List<MediaPlayer> mediaPlayers = new ArrayList<>();
     private List<Fragment> fragments = new ArrayList<>();
     private int currentTestIndex = 0;
+    private Map<Question, Boolean> answeredQuestions = new HashMap();
+
+    public Map<Question, Boolean> getAnsweredQuestions() {
+        return answeredQuestions;
+    }
+
+    public void setAnsweredQuestions(Map<Question, Boolean> answeredQuestions) {
+        this.answeredQuestions = answeredQuestions;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,11 +144,11 @@ public class TestExerciseActivity extends AppCompatActivity {
     private void createPartLayout(PartDetail partDetail) {
         LinearLayout partLayout = new LinearLayout(this);
         partLayout.setOrientation(LinearLayout.VERTICAL);
-        partLayout.setPadding(16, 16, 16, 16);
+        partLayout.setPadding(16, 0, 16, 16);
 
         TextView partTitle = new TextView(this);
         partTitle.setText("Part " + partDetail.getOrder());
-        partTitle.setTextSize(18);
+        partTitle.setTextSize(20);
         partLayout.addView(partTitle);
 
         partLayout.setOnClickListener(v -> showPartDetailFragment(partDetail));
@@ -147,28 +161,71 @@ public class TestExerciseActivity extends AppCompatActivity {
     }
 
     private void createQuestionButtons(PartDetail partDetail, LinearLayout questionLayout) {
-        for (int i = 0; i < partDetail.getQuestions().size(); i++) {
+        List<Question> questions = partDetail.getQuestions();
+        int questionCount = questions.size();
+        for (int i = 0; i < questionCount; i++) {
+
             Button questionButton = new Button(this);
-            // Thiết lập kích thước cho button
             questionButton.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
-            questionButton.setText(String.valueOf(i + 1));
+            questionButton.setText(questions.get(i).getOrder() + "");
             questionButton.setTextSize(20);
-            questionButton.setBackgroundResource(R.drawable.circle_background);
-
-            // Thiết lập margins cho button
+            questionButton.setBackgroundResource(R.color.white);
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) questionButton.getLayoutParams();
-            layoutParams.setMargins(16, 16, 16, 16); // Thay đổi giá trị này để điều chỉnh khoảng cách
+            layoutParams.setMargins(16, 16, 16, 16);
             questionButton.setLayoutParams(layoutParams);
-
-            final int finalIndex = i;
-            questionButton.setOnClickListener(v -> onQuestionClick(partDetail, finalIndex));
+            questionButton.setOnClickListener(v -> showPartDetailFragment(partDetail));
             questionLayout.addView(questionButton);
+        }
+    }
+
+    public void updateSidebarButtonColor(Question question) {
+        int partIndex = -1;
+        int questionIndex = -1;
+
+        // Find the part and question index
+        for (int i = 0; i < partDetails.size(); i++) {
+            PartDetail partDetail = partDetails.get(i);
+            if (partDetail.getQuestions().contains(question)) {
+                partIndex = i;
+                questionIndex = partDetail.getQuestions().indexOf(question);
+                break;
+            }
+        }
+
+        if (partIndex != -1 && questionIndex != -1) {
+            View partView = sidebarLayout.getChildAt(partIndex+1);
+            if (partView instanceof LinearLayout) {
+                LinearLayout partLayout = (LinearLayout) partView;
+                if (partLayout.getChildCount() > 1) {
+                    View questionView = partLayout.getChildAt(1);
+                    if (questionView instanceof LinearLayout) {
+                        LinearLayout questionLayout = (LinearLayout) questionView;
+                        View buttonView = questionLayout.getChildAt(questionIndex);
+                        if (buttonView instanceof Button) {
+                            Button questionButton = (Button) buttonView;
+
+                            // Update button color based on whether the question is answered
+                            if (answeredQuestions.getOrDefault(question, false)) {
+                                questionButton.setBackgroundColor(Color.GREEN); // Change to desired color
+                            } else {
+                                questionButton.setBackgroundColor(Color.RED); // Change to desired color
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
     private void showPartDetailFragment(PartDetail partDetail) {
         int index = partDetails.indexOf(partDetail);
         System.out.println(index);
+
+        if (index == currentTestIndex) {
+            // If the selected part is already displayed, do nothing
+            return;
+        }
+
         if (index != -1 && index < fragments.size()) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -197,8 +254,10 @@ public class TestExerciseActivity extends AppCompatActivity {
             // Nếu fragment là TestListeningFragment, bắt đầu phát audio tương ứng
             if (selectedFragment instanceof TestListeningFragment && index < mediaPlayers.size()) {
                 MediaPlayer mediaPlayer = mediaPlayers.get(index);
-                mediaPlayer.start();
-                ((TestListeningFragment) selectedFragment).updateUI(mediaPlayer);
+                if (mediaPlayer != null) {
+                    mediaPlayer.start();
+                    ((TestListeningFragment) selectedFragment).updateUI(mediaPlayer);
+                }
             }
 
             currentTestIndex = index;
@@ -274,11 +333,14 @@ public class TestExerciseActivity extends AppCompatActivity {
     private Fragment createFragmentForPartDetail(PartDetail partDetail, int index) {
         if (partDetail.getAudioLink() != null) {
             MediaPlayer mediaPlayer = mediaPlayers.get(index);
-            return TestListeningFragment.newInstance(mediaPlayer);
+            return TestListeningFragment.newInstance(mediaPlayer, partDetail.getQuestions());
         } else if (partDetail.getContent() != null) {
-            return ReadingFragment.newInstance(partDetail.getContent());
+            return TestReadingFragment.newInstance(partDetail.getContent(), partDetail.getQuestions());
         } else {
-            return MultipleFragment.newInstance(partDetail);
+            if (index != 7) {
+                return TestMultipleFragment.newInstance(partDetail.getQuestions());
+            }
+            return TestRewriteFragment.newInstance(partDetail.getQuestions());
         }
     }
 

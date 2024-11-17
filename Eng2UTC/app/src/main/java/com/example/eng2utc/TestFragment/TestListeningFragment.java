@@ -1,21 +1,28 @@
 package com.example.eng2utc.TestFragment;
 
-import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.eng2utc.Model.Answer;
+import com.example.eng2utc.Model.Question;
 import com.example.eng2utc.R;
+import com.example.eng2utc.TestExerciseActivity;
+import com.squareup.picasso.Picasso;
 
+import java.util.List;
 import java.util.Locale;
 
 public class TestListeningFragment extends Fragment {
@@ -24,15 +31,18 @@ public class TestListeningFragment extends Fragment {
     private Button playButton;
     private SeekBar seekBar;
     private TextView currentTimeTextView, totalTimeTextView;
+    private LinearLayout questionContainer;
     private Handler handler = new Handler();
+    private List<Question> questions;
 
     public TestListeningFragment() {
         // Required empty public constructor
     }
 
-    public static TestListeningFragment newInstance(MediaPlayer mediaPlayer) {
+    public static TestListeningFragment newInstance(MediaPlayer mediaPlayer, List<Question> questions) {
         TestListeningFragment fragment = new TestListeningFragment();
         fragment.setMediaPlayer(mediaPlayer); // Gán mediaPlayer vào fragment
+        fragment.questions = questions;
         return fragment;
     }
 
@@ -48,14 +58,41 @@ public class TestListeningFragment extends Fragment {
         seekBar = view.findViewById(R.id.seekBar);
         currentTimeTextView = view.findViewById(R.id.currentTimeTextView);
         totalTimeTextView = view.findViewById(R.id.totalTimeTextView);
+        questionContainer = view.findViewById(R.id.questionContainer);
 
-        System.out.println("oncreateView");
         // Kiểm tra nếu mediaPlayer không null để thiết lập
         if (mediaPlayer != null) {
             setupMediaPlayer();
         } else {
             // Nếu mediaPlayer là null, đảm bảo button có icon play
             playButton.setBackgroundResource(R.drawable.baseline_play_circle_outline_24);
+        }
+
+        // Thêm các câu hỏi vào questionContainer
+        for (Question question : questions) {
+            View questionView = inflater.inflate(R.layout.question_layout, questionContainer, false);
+            TextView questionTextView = questionView.findViewById(R.id.tv_question);
+            ImageView questionImageView = questionView.findViewById(R.id.img_question);
+            RadioGroup questionRG = questionView.findViewById(R.id.gr_btn_question);
+
+            questionTextView.setText(question.getOrder() + "." + question.getContent());
+            if (question.getImageLink() != null) {
+                Picasso.get().load(question.getImageLink()).into(questionImageView);
+            } else {
+                questionImageView.setVisibility(View.GONE);
+            }
+
+            for (Answer answer : question.getAnswers()) {
+                RadioButton radioButton = new RadioButton(getContext());
+                radioButton.setText(answer.getContent());
+                radioButton.setOnClickListener(v -> {
+                    ((TestExerciseActivity) getActivity()).getAnsweredQuestions().put(question, true);
+                    ((TestExerciseActivity) getActivity()).updateSidebarButtonColor(question);
+                });
+                questionRG.addView(radioButton);
+            }
+
+            questionContainer.addView(questionView);
         }
 
         return view;

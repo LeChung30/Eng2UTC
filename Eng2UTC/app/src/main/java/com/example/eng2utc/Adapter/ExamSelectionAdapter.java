@@ -5,37 +5,29 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.eng2utc.Fragments.A2Fragment;
+import com.example.eng2utc.Model.TestType;
+
+import java.util.List;
 
 public class ExamSelectionAdapter extends FragmentStateAdapter {
 
-    public ExamSelectionAdapter(@NonNull Fragment fragment) {
+    private final List<TestType> testTypes;
+
+    public ExamSelectionAdapter(@NonNull Fragment fragment, List<TestType> testTypes) {
         super(fragment);
+        this.testTypes = testTypes;
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        // Tạo fragment tương ứng cho mỗi cấp độ
-        switch (position) {
-            case 0:
-                return new A2Fragment();
-            case 1:
-                return new A2Fragment();
-            case 2:
-                return new A2Fragment();
-            case 3:
-                return new A2Fragment();
-            case 4:
-                return new A2Fragment();
-            case 5:
-                return new A2Fragment();
-            default:
-                return new A2Fragment();  // Mặc định là A1Fragment
-        }
+        // Get TEST_TYPE_ID for the current position
+        String testTypeId = testTypes.get(position).getTEST_TYPE_ID();
+        return new A2Fragment(testTypeId);  // Pass TEST_TYPE_ID to the fragment
     }
 
     @Override
     public int getItemCount() {
-        return 6;  // Có 6 cấp độ
+        return testTypes.size();  // Number of test types determines the count
     }
 }

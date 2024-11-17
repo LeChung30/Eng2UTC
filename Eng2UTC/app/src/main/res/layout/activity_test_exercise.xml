@@ -94,26 +94,32 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Sidebar layout -->
-    <LinearLayout
-        android:id="@+id/sidebar_layout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#80FFFAFA"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <!-- Close Button for Sidebar -->
-        <ImageButton
-            android:id="@+id/btn_close_sidebar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="10dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/baseline_close_24"
-            android:contentDescription="Close Sidebar"
-            android:layout_gravity="end"
-            android:layout_margin="8dp"/>
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sidebar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="#B8B8B8"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Close Button for Sidebar -->
+            <ImageButton
+                android:id="@+id/btn_close_sidebar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_close_24"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,13 +12,17 @@ public class Answer {
     @SerializedName("IMAGE_LINK")
     private String imageLink;
 
+    @SerializedName("ORDER")
+    private int order;
+
     public Answer() {
     }
 
-    public Answer(String answerId, String content, String imageLink) {
+    public Answer(String answerId, String content, String imageLink, int order) {
         this.answerId = answerId;
         this.content = content;
         this.imageLink = imageLink;
+        this.order = order;
     }
 
     public String getAnswerId() {
@@ -43,5 +47,13 @@ public class Answer {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 }
