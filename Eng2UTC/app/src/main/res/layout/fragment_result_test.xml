@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/white"> <!-- Semi-transparent background -->
+
+    <!-- CardView for the result content -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:padding="16dp"
+        android:radius="12dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <!-- Score TextView -->
+            <TextView
+                android:id="@+id/scoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score: 30/40"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#404040"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Time Taken TextView -->
+            <TextView
+                android:id="@+id/timeTakenTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Time Taken: 05:30 mins"
+                android:textSize="16sp"
+                android:textColor="#505050"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Current Time TextView -->
+            <TextView
+                android:id="@+id/currentTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Time: 10:00 mins"
+                android:textSize="16sp"
+                android:textColor="#606060" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Navigation buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <!-- Review Button -->
+        <TextView
+            android:id="@+id/reviewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem lại"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginEnd="16dp"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"/>
+
+        <!-- Close Button -->
+        <TextView
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đóng"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"/>
+    </LinearLayout>
+</LinearLayout>

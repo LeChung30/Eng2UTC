@@ -26,15 +26,39 @@
             android:layout_marginBottom="8dp"
             android:gravity="center"/>
 
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <!-- TextView ở bên trái -->
         <TextView
             android:id="@+id/score"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="47/50"
-            android:textSize="18sp"
-            style="@style/TEXT"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"/>
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_gravity="start" />
+
+        <!-- Khoảng trống linh hoạt giữa TextView và ImageButton -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- ImageButton ở bên phải -->
+        <ImageButton
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/baseline_history_24"
+            android:background="@null"
+            android:contentDescription="View History"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +74,13 @@
                 android:layout_marginEnd="16dp"
                 android:text="Hoàn thành"
                 android:textColor="@color/MintGreen"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="start"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/retry"

@@ -1,6 +1,7 @@
 package com.example.eng2utc;
 
 import android.graphics.Color;
+import android.icu.text.SimpleDateFormat;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -11,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -22,6 +24,7 @@ import com.example.eng2utc.Model.PartDetail;
 import com.example.eng2utc.Model.PartDetailResponse;
 import com.example.eng2utc.Model.Question;
 import com.example.eng2utc.Retrofit.RetrofitController;
+import com.example.eng2utc.TestFragment.ResultTestFragment;
 import com.example.eng2utc.TestFragment.TestMultipleFragment;
 import com.example.eng2utc.TestFragment.TestReadingFragment;
 import com.example.eng2utc.TestFragment.TestListeningFragment;
@@ -29,11 +32,11 @@ import com.example.eng2utc.TestFragment.TestRewriteFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -45,20 +48,22 @@ public class TestExerciseActivity extends AppCompatActivity {
     private LinearLayout sidebarLayout;
     private TextView timerTextView;
     private ImageButton btnSidebar, btnCloseSidebar;
+    private TextView btnSubmit;
     private CountDownTimer countDownTimer;
     private static final long START_TIME_IN_MILLIS = 60 * 60 * 1000;
+    private long timeLeftInMillis = START_TIME_IN_MILLIS;
 
     private List<PartDetail> partDetails = new ArrayList<>();
     private List<MediaPlayer> mediaPlayers = new ArrayList<>();
     private List<Fragment> fragments = new ArrayList<>();
-    private int currentTestIndex = 0;
-    private Map<Question, Boolean> answeredQuestions = new HashMap();
+    private int currentTestIndex = 0, questionCount = 0;
+    private Map<Question, String> answeredQuestions = new HashMap();
 
-    public Map<Question, Boolean> getAnsweredQuestions() {
+    public Map<Question, String> getAnsweredQuestions() {
         return answeredQuestions;
     }
 
-    public void setAnsweredQuestions(Map<Question, Boolean> answeredQuestions) {
+    public void setAnsweredQuestions(Map<Question, String> answeredQuestions) {
         this.answeredQuestions = answeredQuestions;
     }
 
@@ -78,6 +83,7 @@ public class TestExerciseActivity extends AppCompatActivity {
         sidebarLayout = findViewById(R.id.sidebar_layout);
         btnCloseSidebar = findViewById(R.id.btn_close_sidebar);
         btnSidebar = findViewById(R.id.btn_sidebar);
+        btnSubmit = findViewById(R.id.btn_submit_test);
         timerTextView = findViewById(R.id.timerTextView);
     }
 
@@ -163,6 +169,7 @@ public class TestExerciseActivity extends AppCompatActivity {
     private void createQuestionButtons(PartDetail partDetail, LinearLayout questionLayout) {
         List<Question> questions = partDetail.getQuestions();
         int questionCount = questions.size();
+        this.questionCount += questionCount;
         for (int i = 0; i < questionCount; i++) {
 
             Button questionButton = new Button(this);
@@ -205,10 +212,10 @@ public class TestExerciseActivity extends AppCompatActivity {
                             Button questionButton = (Button) buttonView;
 
                             // Update button color based on whether the question is answered
-                            if (answeredQuestions.getOrDefault(question, false)) {
+                            if (!answeredQuestions.getOrDefault(question, "").isEmpty()) {
                                 questionButton.setBackgroundColor(Color.GREEN); // Change to desired color
                             } else {
-                                questionButton.setBackgroundColor(Color.RED); // Change to desired color
+                                questionButton.setBackgroundColor(Color.YELLOW); // Change to desired color
                             }
                         }
                     }
@@ -354,11 +361,13 @@ public class TestExerciseActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 timerTextView.setText("Time's up!");
+                submitTest();
             }
         }.start();
     }
 
     private void updateTimerUI(long millisUntilFinished) {
+        timeLeftInMillis = millisUntilFinished;
         int secondsRemaining = (int) (millisUntilFinished / 1000);
         timerTextView.setText(String.format("%02d:%02d", secondsRemaining / 60, secondsRemaining % 60));
     }
@@ -373,6 +382,31 @@ public class TestExerciseActivity extends AppCompatActivity {
     private void setupSidebarButtonListeners() {
         btnSidebar.setOnClickListener(v -> sidebarLayout.setVisibility(View.VISIBLE));
         btnCloseSidebar.setOnClickListener(v -> sidebarLayout.setVisibility(View.GONE));
+        btnSubmit.setOnClickListener(v -> submitTest());
+    }
+
+    private void submitTest() {
+        countDownTimer.cancel();
+        sidebarLayout.setVisibility(View.GONE);
+
+        // Tính điểm
+        int totalScore = 0;
+        for (Map.Entry<Question, String> entry : answeredQuestions.entrySet()) {
+            Question question = entry.getKey();
+            String answer = entry.getValue();
+            if(question.getCorrectAnswerId().equals(answer) ||
+                question.getAnswers().get(0).getContent().toLowerCase().equals(answer)) {
+                totalScore++;
+            }
+        }
+        // Thời gian làm bài ngày giờ hiện tại lúc ấn
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        String currentTime = sdf.format(new Date());
+
+        // Hiển thị kết quả
+        ResultTestFragment resultTestFragment = ResultTestFragment.newInstance(totalScore, questionCount, START_TIME_IN_MILLIS - timeLeftInMillis, "60", currentTime);
+        resultTestFragment.show(getSupportFragmentManager(), "resultTestDialog");
+        Toast.makeText(this, "Submit: " + totalScore, Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -109,24 +109,46 @@ public class TestRewriteFragment extends Fragment {
         button.setLayoutParams(params);
 
         button.setOnClickListener(v -> {
-            moveToResultLayout(button, layoutWordsToArrange, layoutResult);
-            ((TestExerciseActivity) getActivity()).getAnsweredQuestions().put(question, true);
-            ((TestExerciseActivity) getActivity()).updateSidebarButtonColor(question);
+            moveToResultLayout(button, layoutWordsToArrange, layoutResult, question);
         });
 
         return button;
     }
 
-    private void moveToResultLayout(Button button, FlexboxLayout layoutWordsToArrange, FlexboxLayout layoutResult) {
+    private void moveToResultLayout(Button button, FlexboxLayout layoutWordsToArrange, FlexboxLayout layoutResult, Question question) {
         layoutWordsToArrange.removeView(button);
         layoutResult.addView(button);
-        button.setOnClickListener(v -> moveToWordsToArrangeLayout(button, layoutWordsToArrange, layoutResult));
+        button.setOnClickListener(v -> moveToWordsToArrangeLayout(button, layoutWordsToArrange, layoutResult, question));
+        updateAnsweredQuestions(layoutResult, question);
     }
 
-    private void moveToWordsToArrangeLayout(Button button, FlexboxLayout layoutWordsToArrange, FlexboxLayout layoutResult) {
+    private void moveToWordsToArrangeLayout(Button button, FlexboxLayout layoutWordsToArrange, FlexboxLayout layoutResult, Question question) {
         layoutResult.removeView(button);
         layoutWordsToArrange.addView(button);
-        button.setOnClickListener(v -> moveToResultLayout(button, layoutWordsToArrange, layoutResult));
+        button.setOnClickListener(v -> moveToResultLayout(button, layoutWordsToArrange, layoutResult, question));
+        updateAnsweredQuestions(layoutResult, question);
+    }
+
+    private void updateAnsweredQuestions(FlexboxLayout layoutResult, Question question) {
+        StringBuilder answerBuilder = new StringBuilder();
+        int childCount = layoutResult.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            Button wordButton = (Button) layoutResult.getChildAt(i);
+            String word = wordButton.getText().toString().trim();
+            if (word.equals(".") || word.equals(",") || word.equals("!") || word.equals("?")) {
+                // Append punctuation directly without space
+                if (answerBuilder.length() > 0) {
+                    answerBuilder.setLength(answerBuilder.length() - 1); // Remove trailing space
+                }
+                answerBuilder.append(word).append(" ");
+            } else {
+                answerBuilder.append(word).append(" ");
+            }
+        }
+
+        String answer = answerBuilder.toString().trim();
+        ((TestExerciseActivity) getActivity()).getAnsweredQuestions().put(question, answer);
+        ((TestExerciseActivity) getActivity()).updateSidebarButtonColor(question);
     }
 
     private LinearLayout.LayoutParams createLayoutParams(int margin) {

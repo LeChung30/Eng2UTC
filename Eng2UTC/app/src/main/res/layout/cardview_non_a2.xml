@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        style="@style/Home_Blue_Default"
+        android:gravity="center">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTestName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đề số 10"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Button-like Text -->
+        <TextView
+            android:id="@+id/tv_open_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vào thi ngay"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="@drawable/dotted_border"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

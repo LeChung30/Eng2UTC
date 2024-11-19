@@ -72,7 +72,7 @@ public class TestReadingFragment extends Fragment {
                     RadioButton radioButton = new RadioButton(getContext());
                     radioButton.setText(answer.getContent());
                     radioButton.setOnClickListener(v -> {
-                        ((TestExerciseActivity) getActivity()).getAnsweredQuestions().put(question, true);
+                        ((TestExerciseActivity) getActivity()).getAnsweredQuestions().put(question, answer.getAnswerId());
                         ((TestExerciseActivity) getActivity()).updateSidebarButtonColor(question);
                     });
                     rgAnswers.addView(radioButton);

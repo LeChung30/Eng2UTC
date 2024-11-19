@@ -5,8 +5,9 @@ import com.example.eng2utc.Model.PartDetailResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiService {
-    @GET("/data/{test_id}")
-    Call<PartDetailResponse> getPartDetails(@Path("test_id") String testId);
+    @GET("/tests/")
+    Call<PartDetailResponse> getPartDetails(@Query("test_id") String testId);
 }

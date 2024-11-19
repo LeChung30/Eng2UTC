@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".TestExerciseActivity">
 
+    <FrameLayout
+        android:id="@+id/fragment_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
     <!-- Top navigation bar -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_nav_bar"
@@ -110,16 +117,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Close Button for Sidebar -->
-            <ImageButton
-                android:id="@+id/btn_close_sidebar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/baseline_close_24"
-                android:layout_gravity="end"/>
+            <!-- Close Button and Submit Button in a ConstraintLayout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <!-- Close Button for Sidebar -->
+                <ImageButton
+                    android:id="@+id/btn_close_sidebar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/baseline_close_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <!-- Submit Button -->
+                <TextView
+                    android:id="@+id/btn_submit_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:textSize="16sp"
+                    android:textColor="#404040"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:layout_margin="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
