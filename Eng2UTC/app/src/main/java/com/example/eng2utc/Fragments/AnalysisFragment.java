@@ -8,45 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.graphics.Color;
 import android.widget.TextView;
 
 import com.example.eng2utc.Model.MemoryLevel;
 import com.example.eng2utc.R;
 
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.RadarChart;
-import com.github.mikephil.charting.charts.BubbleChart;
-import com.github.mikephil.charting.charts.ScatterChart;
-import com.github.mikephil.charting.charts.CandleStickChart;
-import com.github.mikephil.charting.charts.CombinedChart;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.RadarEntry;
-import com.github.mikephil.charting.data.RadarData;
-import com.github.mikephil.charting.data.RadarDataSet;
-import com.github.mikephil.charting.data.BubbleEntry;
-import com.github.mikephil.charting.data.BubbleData;
-import com.github.mikephil.charting.data.BubbleDataSet;
-import com.github.mikephil.charting.data.CandleEntry;
-import com.github.mikephil.charting.data.CandleData;
-import com.github.mikephil.charting.data.CandleDataSet;
-import com.github.mikephil.charting.data.ScatterData;
-import com.github.mikephil.charting.data.ScatterDataSet;
-import com.github.mikephil.charting.data.CombinedData;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
@@ -172,12 +146,12 @@ public class AnalysisFragment extends Fragment {
 
     public void displayStreaks() {
         //display streaks
-        RetrofitController.getApiService().postStreak(body).enqueue(new Callback<Integer>() {
+        RetrofitController.getApiService().getStreak("00a287f7-cc71-4c8c-b957-07b80fd92b28", "2024-09-08").enqueue(new Callback<Integer>() {
             @Override
             public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if (response.isSuccessful()) {
-                    Integer streaks = response.body();
-                    streaksTextView.setText("Streaks: " + streaks.toString());
+                    Integer streak = response.body();
+                    streaksTextView.setText("Streaks: " + streak.toString());
                 } else {
                     System.out.printf("Failed to get streaks");
                     //print error message
@@ -196,7 +170,7 @@ public class AnalysisFragment extends Fragment {
 
     private void show_total_studied_words() {
         //display total studied words
-        RetrofitController.getApiService().postTotalWords(body).enqueue(new Callback<Integer>() {
+        RetrofitController.getApiService().getTotalWords("00a287f7-cc71-4c8c-b957-07b80fd92b28").enqueue(new Callback<Integer>() {
             @Override
             public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if (response.isSuccessful()) {
@@ -216,12 +190,13 @@ public class AnalysisFragment extends Fragment {
                 System.out.printf(t.getMessage());
             }
         });
+
     }
 
     private void display_bar_chart_memory() {
         // Initialize BarChart
         final ArrayList<MemoryLevel>[] memoryLevels = new ArrayList[]{null};
-        RetrofitController.getApiService().postMemoryLevel(body).enqueue(new Callback<List<MemoryLevel>>() {
+        RetrofitController.getApiService().getMemoryLevel("00a287f7-cc71-4c8c-b957-07b80fd92b28").enqueue(new Callback<List<MemoryLevel>>() {
             @Override
             public void onResponse(Call<List<MemoryLevel>> call, Response<List<MemoryLevel>> response) {
                 if (response.isSuccessful()) {
@@ -287,8 +262,6 @@ public class AnalysisFragment extends Fragment {
         description.setText("Memory Level of Words");
         description.setTextSize(12f); // Đặt kích thước văn bản là 12sp
         memoryBarChart.setDescription(description);
-
-
         memoryBarChart.invalidate(); // refresh
     }
 
