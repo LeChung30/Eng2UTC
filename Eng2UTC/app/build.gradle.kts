@@ -54,5 +54,9 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.google.android.flexbox:flexbox:3.0.0")
+    //Translate library
+    implementation ("com.google.firebase:firebase-ml-natural-language:22.0.0")
+    implementation("com.google.firebase:firebase-ml-natural-language-language-id-model")
+    implementation("com.google.firebase:firebase-ml-natural-language-translate-model")
 
 }
