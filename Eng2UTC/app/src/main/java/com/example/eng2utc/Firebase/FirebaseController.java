@@ -74,7 +74,6 @@ public class FirebaseController {
                     callback.onFailure("Không tìm thấy dữ liệu");
                 }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 callback.onFailure(databaseError.getMessage());
