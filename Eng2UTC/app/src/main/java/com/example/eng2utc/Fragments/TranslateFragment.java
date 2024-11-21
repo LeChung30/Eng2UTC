@@ -4,22 +4,33 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.eng2utc.R;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage;
 
 public class TranslateFragment extends Fragment {
-    private LinearLayout parentLayout;
-    private LinearLayout engTranslate;
-    private LinearLayout vietnameseTranslate;
-    private CardView englishCardView;
-    private CardView vietnameseCardView;
-    private boolean isEnglishFirst = true;
+    private Spinner translate_spinner_from;
+    private Spinner translate_spinner_to;
+    private TextInputEditText edt_translate;
+    private ImageView translate_mic;
+    private TextView tv_translate_result;
+
+    String[] fromLanguage = {"English", "Vietnamese"};
+    String[] toLanguage = {"English", "Vietnamese"};
+    private static final int  REQUEST_PERMISSION_CODE = 1;
+    int languageCode, fromLanguageCode, toLanguageCode = 0;
+
 
     @Nullable
     @Override
@@ -28,71 +39,62 @@ public class TranslateFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_translate, container, false);
 
-        //Reference all views in Xml
-        engTranslate = view.findViewById(R.id.eng_translate);
-        vietnameseTranslate = view.findViewById(R.id.vietnamese_translate);
-        englishCardView = view.findViewById(R.id.english_card_view);
-        vietnameseCardView = view.findViewById(R.id.vietnamese_card_view);
-        parentLayout = view.findViewById(R.id.parent_layout); // Make sure to set an id in your XML
-        ImageView btn_switch_language = view.findViewById(R.id.btn_switch_language);
+        translate_spinner_from = view.findViewById(R.id.translate_spinner_from);
+        translate_spinner_to = view.findViewById(R.id.translate_spinner_to);
+        edt_translate = view.findViewById(R.id.edt_translate);
+        translate_mic = view.findViewById(R.id.translate_mic);
+        tv_translate_result = view.findViewById(R.id.tv_translate_result);
 
-        // switch language Listener
-        btn_switch_language.setOnClickListener(new View.OnClickListener() {
+        translate_spinner_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
             @Override
-            public void onClick(View view) {
-                swapLanguages();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                fromLanguageCode = getLanguageCode(fromLanguage[position]);
+
             }
-            });
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ArrayAdapter fromAdapter = new ArrayAdapter(this.getContext(), R.layout.spinner_item, fromLanguage);
+        fromAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        translate_spinner_from.setAdapter(fromAdapter);
+
+        translate_spinner_to.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                toLanguageCode = getLanguageCode(toLanguage[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ArrayAdapter toAdapter = new ArrayAdapter(this.getContext(), R.layout.spinner_item, toLanguage);
+        toAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        translate_spinner_to.setAdapter(toAdapter);
+
+
+
+
         return view;
     }
 
-    private void swapLanguages() {
-        ViewGroup parentLayout = (ViewGroup) engTranslate.getParent();
-        ViewGroup cardParentLayout = (ViewGroup) englishCardView.getParent();
+    private int getLanguageCode(String language) {
+        int languageCode = 0;
+        switch (language) {
+            case "Vietnamese":
+                languageCode = FirebaseTranslateLanguage.VI;
+                break;
+            case "English":
+                languageCode = FirebaseTranslateLanguage.EN;
+                break;
 
-        // Check the initial positions
-        int engIndex = parentLayout.indexOfChild(engTranslate);
-        int vietIndex = parentLayout.indexOfChild(vietnameseTranslate);
-        int englishCardIndex = cardParentLayout.indexOfChild(englishCardView);
-        int vietnameseCardIndex = cardParentLayout.indexOfChild(vietnameseCardView);
-
-        // Swap positions of engTranslate and vietnameseTranslate
-        if (isEnglishFirst) {
-            // Remove views
-            parentLayout.removeView(engTranslate);
-            parentLayout.removeView(vietnameseTranslate);
-
-            // Add views in swapped order
-            parentLayout.addView(vietnameseTranslate, engIndex);
-            parentLayout.addView(engTranslate, vietIndex);
-
-            // Swap positions of englishCardView and vietnameseCardView
-            cardParentLayout.removeView(englishCardView);
-            cardParentLayout.removeView(vietnameseCardView);
-
-            // Add views in swapped order
-            cardParentLayout.addView(vietnameseCardView, englishCardIndex);
-            cardParentLayout.addView(englishCardView, vietnameseCardIndex);
-        } else {
-            // Remove views
-            parentLayout.removeView(vietnameseTranslate);
-            parentLayout.removeView(engTranslate);
-
-            // Add views back to original order
-            parentLayout.addView(engTranslate, vietIndex);
-            parentLayout.addView(vietnameseTranslate, engIndex);
-
-            // Swap positions of englishCardView and vietnameseCardView
-            cardParentLayout.removeView(vietnameseCardView);
-            cardParentLayout.removeView(englishCardView);
-
-            // Add views back to original order
-            cardParentLayout.addView(englishCardView, vietnameseCardIndex);
-            cardParentLayout.addView(vietnameseCardView, englishCardIndex);
         }
-
-        // Update flag
-        isEnglishFirst = !isEnglishFirst;
+        return languageCode;
     }
-
 }
