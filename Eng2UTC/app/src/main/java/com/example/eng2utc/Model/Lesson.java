@@ -1,5 +1,7 @@
 package com.example.eng2utc.Model;
 
+import java.util.List;
+
 public class Lesson {
     private String CERT_LEVEL_ID;
     private String CERT_LEVEL_NAME;
@@ -10,11 +12,12 @@ public class Lesson {
     private Integer ORDER;
     private String TOPIC_ID;
     private String TOPIC_NAME;
+    private List<Vocabulary> VOCABULARY;
 
     public Lesson() {
     }
 
-    public Lesson(String CERT_LEVEL_ID, String CERT_LEVEL_NAME, String IMAGE_LINK, Integer IS_VOCAB, String LESSON_ID, String NAME_OF_LESSON, Integer ORDER, String TOPIC_ID, String TOPIC_NAME) {
+    public Lesson(String CERT_LEVEL_ID, String CERT_LEVEL_NAME, String IMAGE_LINK, Integer IS_VOCAB, String LESSON_ID, String NAME_OF_LESSON, Integer ORDER, String TOPIC_ID, String TOPIC_NAME, List<Vocabulary> VOCABBULARY) {
         this.CERT_LEVEL_ID = CERT_LEVEL_ID;
         this.CERT_LEVEL_NAME = CERT_LEVEL_NAME;
         this.IMAGE_LINK = IMAGE_LINK;
@@ -24,6 +27,15 @@ public class Lesson {
         this.ORDER = ORDER;
         this.TOPIC_ID = TOPIC_ID;
         this.TOPIC_NAME = TOPIC_NAME;
+        this.VOCABULARY = VOCABBULARY;
+    }
+
+    public List<Vocabulary> getVOCABULARY() {
+        return VOCABULARY;
+    }
+
+    public void setVOCABULARY(List<Vocabulary> VOCABULARY) {
+        this.VOCABULARY = VOCABULARY;
     }
 
     public String getCERT_LEVEL_ID() {

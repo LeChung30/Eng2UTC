@@ -21,6 +21,7 @@ import com.example.eng2utc.Firebase.FirebaseController;
 import com.example.eng2utc.Firebase.FirebaseDataCallback;
 import com.example.eng2utc.Model.CertLevel;
 import com.example.eng2utc.Model.Lesson;
+import com.example.eng2utc.Model.Vocabulary;
 import com.example.eng2utc.R;
 import com.google.firebase.database.DataSnapshot;
 import com.squareup.picasso.Picasso;
@@ -36,6 +37,7 @@ public class LessonFragment extends Fragment {
     private List<Lesson> listLesson;
     private ImageView btnBack;
     private ImageView imgLevel;
+    private List<Vocabulary> vocabs;
 
     public LessonFragment(String CertLevelID) {
         // Required empty public constructor
@@ -55,6 +57,33 @@ public class LessonFragment extends Fragment {
         lessonAdapter = new LessonAdapter(getContext(), listLesson );
         lessonRcl.setAdapter(lessonAdapter);
 
+        lessonAdapter.setOnItemClickListener(new LessonAdapter.OnItemClickListenerLesson() {
+            @Override
+            public void onItemClick(List<Vocabulary> vocabs) {
+                System.out.println("LessonFragment" + vocabs.size());
+                VocabularyForFragment vocabularyForFragment = new VocabularyForFragment(vocabs);
+
+                // Use getParentFragmentManager or getChildFragmentManager
+                getParentFragmentManager().beginTransaction()
+                        .replace(R.id.frameLayoutContainer, vocabularyForFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+//        lessonAdapter.setOnItemClickListener(new lessonAdapter.OnItemClickListenerLesson() {
+//            @Override
+//            public void onItemClick(List<Vocabulary> vocabs) {
+//                VocabularyForFragment vocabularyForFragment = new VocabularyForFragment(vocabs);
+//
+//                // Use getParentFragmentManager or getChildFragmentManager
+//                getParentFragmentManager().beginTransaction()
+//                        .replace(R.id.frameLayoutContainer, vocabularyForFragment)
+//                        .addToBackStack(null)
+//                        .commit();
+//            }
+//        });
+
         // Firebase data retrieval
         firebaseController = new FirebaseController();
         firebaseController.getData("LESSON", new FirebaseDataCallback() {
@@ -64,7 +93,7 @@ public class LessonFragment extends Fragment {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Lesson lesson = snapshot.getValue(Lesson.class);
-                    if (lesson != null) {
+                    if (lesson != null && CertLevelID.equals(lesson.getCERT_LEVEL_ID())) {
                         listLesson.add(lesson);
                     }
                 }

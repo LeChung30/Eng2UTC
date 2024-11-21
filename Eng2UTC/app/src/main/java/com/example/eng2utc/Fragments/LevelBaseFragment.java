@@ -20,10 +20,12 @@ import com.example.eng2utc.Adapter.LevelAdapter;
 import com.example.eng2utc.Firebase.FirebaseController;
 import com.example.eng2utc.Firebase.FirebaseDataCallback;
 import com.example.eng2utc.Model.CertLevel;
+import com.example.eng2utc.Model.Vocabulary;
 import com.example.eng2utc.R;
 import com.google.firebase.database.DataSnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class LevelBaseFragment extends Fragment {
@@ -50,14 +52,31 @@ public class LevelBaseFragment extends Fragment {
             @Override
             public void onItemClick(String certLevelId) {
                 LessonFragment lessonFragment = new LessonFragment(certLevelId);
-
+//
                 // Use getParentFragmentManager or getChildFragmentManager
                 getParentFragmentManager().beginTransaction()
                         .replace(R.id.frameLayoutContainer, lessonFragment)
                         .addToBackStack(null)
                         .commit();
             }
+
+            @Override
+            public void onItemClick(List<Vocabulary> vocabs) {
+
+            }
         });
+//        levelAdapter.setOnItemClickListener(new LevelAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(String certLevelId) {
+//                LessonFragment lessonFragment = new LessonFragment(certLevelId);
+//
+//                // Use getParentFragmentManager or getChildFragmentManager
+//                getParentFragmentManager().beginTransaction()
+//                        .replace(R.id.frameLayoutContainer, lessonFragment)
+//                        .addToBackStack(null)
+//                        .commit();
+//            }
+//        });
 
         // Firebase data retrieval
         firebaseController = new FirebaseController();

@@ -1,12 +1,9 @@
 package com.example.eng2utc.Adapter;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,19 +12,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.eng2utc.Model.Lesson;
 import com.example.eng2utc.Model.Vocabulary;
 import com.example.eng2utc.R;
-import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonViewHolder> {
+    public interface OnItemClickListenerLesson {
+        void onItemClick(List<Vocabulary> vocabs);
+    }
+
     private Context context;
     private List<Lesson> listLesson;
+    private OnItemClickListenerLesson listener; // Sửa kiểu thành OnItemClickListenerLesson
 
     public LessonAdapter(Context context, List<Lesson> listLesson) {
         this.context = context;
         this.listLesson = listLesson;
+    }
+
+    public void setOnItemClickListener(OnItemClickListenerLesson listener) {
+        this.listener = listener; // Sửa kiểu khớp với interface
     }
 
     @NonNull
@@ -42,6 +45,15 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         Lesson lesson = listLesson.get(position);
         holder.lessonTitle.setText(lesson.getNAME_OF_LESSON());
         holder.lessonDesc.setText(lesson.getTOPIC_NAME());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    System.out.println("Lesson Adapter " + lesson.getVOCABULARY().size());
+                    listener.onItemClick(lesson.getVOCABULARY());
+                }
+            }
+        });
     }
 
     @Override

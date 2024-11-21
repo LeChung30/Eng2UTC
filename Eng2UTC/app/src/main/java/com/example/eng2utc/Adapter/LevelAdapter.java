@@ -20,7 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHolder>{
-    public interface OnItemClickListener {
+    public interface OnItemClickListener extends LessonAdapter.OnItemClickListenerLesson {
         void onItemClick(String certLevelId);
     }
     private Context context;
