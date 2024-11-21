@@ -41,7 +41,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.firebase.messaging)
+
     implementation(libs.firebase.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
@@ -51,8 +51,13 @@ dependencies {
     implementation ("com.google.firebase:firebase-database:20.3.0")
     implementation ("com.google.firebase:firebase-auth:21.0.1")
     implementation ("com.squareup.picasso:picasso:2.71828")
+    implementation ("com.google.android.flexbox:flexbox:3.0.0")
+    // API for dictionary
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.google.android.flexbox:flexbox:3.0.0")
 
+    //API for translation
+    implementation ("com.google.firebase:firebase-ml-natural-language:22.0.0")
+    implementation("com.google.firebase:firebase-ml-natural-language-language-id-model:20.0.7")
+    implementation("com.google.firebase:firebase-ml-natural-language-translate-model:20.0.8")
 }
