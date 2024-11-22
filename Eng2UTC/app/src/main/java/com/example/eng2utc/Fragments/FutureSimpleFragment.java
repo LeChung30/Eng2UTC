@@ -26,7 +26,7 @@ public class FutureSimpleFragment extends Fragment {
             TenseFragment tenseFragment = new TenseFragment();
             // Thực hiện FragmentTransaction để thay thế Fragments.TenseFragment bằng Fragments.GrammarFragment
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.replace(R.id.frameLayout, tenseFragment); // Thay thế bằng Fragments.GrammarFragment
+            transaction.replace(R.id.frameLayoutContainer, tenseFragment); // Thay thế bằng Fragments.GrammarFragment
             transaction.addToBackStack(null); // Thêm vào back stack nếu cần thiết
             transaction.commit();
         });

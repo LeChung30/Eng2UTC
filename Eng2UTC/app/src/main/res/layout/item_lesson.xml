@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lesson_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
@@ -15,44 +16,35 @@
         android:padding="8dp">
 
         <!-- Hình ảnh của cấp độ từ vựng -->
-        <ImageView
-            android:id="@+id/word_level_img"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/word_thumnail"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/image_rounded_corners" />
 
         <!-- Thông tin của cấp độ từ -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:layout_gravity="center_vertical">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/lesson_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Danh sách từ cấp độ A1"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:paddingEnd="8dp"
+                android:ellipsize="end"
                 android:maxLines="1"
-                android:ellipsize="end" />
+                android:paddingEnd="8dp"
+                android:text="Lesson 1"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lesson_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Danh sách từ vựng A1 bao gồm bài học được phân loại theo chủ đề, độ khó và cách sử dụng theo CERF."
-                android:textSize="14sp"
+                android:paddingTop="4dp"
+                android:text="Hello and goodbye"
                 android:textColor="@color/black"
-                android:paddingTop="4dp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
     </LinearLayout>

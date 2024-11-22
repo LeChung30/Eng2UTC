@@ -12,67 +12,73 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.eng2utc.Adapter.LessonAdapter;
 import com.example.eng2utc.Adapter.LevelAdapter;
+import com.example.eng2utc.Adapter.VocabularyAdapter;
 import com.example.eng2utc.Firebase.FirebaseController;
 import com.example.eng2utc.Firebase.FirebaseDataCallback;
 import com.example.eng2utc.Model.CertLevel;
+import com.example.eng2utc.Model.Lesson;
 import com.example.eng2utc.Model.Vocabulary;
 import com.example.eng2utc.R;
 import com.google.firebase.database.DataSnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class LevelBaseFragment extends Fragment {
-
-    private RecyclerView levelRcl;
-    private LevelAdapter levelAdapter;
+public class LessonFragment extends Fragment {
+    private RecyclerView lessonRcl;
+    private LessonAdapter lessonAdapter;
     private FirebaseController firebaseController;
-    private ArrayList<CertLevel> certLevelArrayList = new ArrayList<>();
+    private String CertLevelID;
+    private List<Lesson> listLesson;
     private ImageView btnBack;
+    private ImageView imgLevel;
+    private List<Vocabulary> vocabs;
+
+    public LessonFragment(String CertLevelID) {
+        // Required empty public constructor
+        this.CertLevelID = CertLevelID;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_level_base, container, false);
-        levelRcl = view.findViewById(R.id.recyclerViewWordLevel);
+        View view = inflater.inflate(R.layout.fragment_lesson, container, false);
+        lessonRcl = view.findViewById(R.id.recyclerViewLesson);
 
+        listLesson = new ArrayList<>();
         // Initialize RecyclerView
-        levelRcl.setLayoutManager(new LinearLayoutManager(getContext()));
-        levelAdapter = new LevelAdapter(getContext(), certLevelArrayList );
-        levelRcl.setAdapter(levelAdapter);
+        lessonRcl.setLayoutManager(new LinearLayoutManager(getContext()));
+        lessonAdapter = new LessonAdapter(getContext(), listLesson );
+        lessonRcl.setAdapter(lessonAdapter);
 
-        levelAdapter.setOnItemClickListener(new LevelAdapter.OnItemClickListener() {
+        lessonAdapter.setOnItemClickListener(new LessonAdapter.OnItemClickListenerLesson() {
             @Override
-            public void onItemClick(String certLevelId) {
-                LessonFragment lessonFragment = new LessonFragment(certLevelId);
-//
+            public void onItemClick(List<Vocabulary> vocabs) {
+                System.out.println("LessonFragment" + vocabs.size());
+                VocabularyForFragment vocabularyForFragment = new VocabularyForFragment(vocabs);
+
                 // Use getParentFragmentManager or getChildFragmentManager
                 getParentFragmentManager().beginTransaction()
-                        .replace(R.id.frameLayoutContainer, lessonFragment)
+                        .replace(R.id.frameLayoutContainer, vocabularyForFragment)
                         .addToBackStack(null)
                         .commit();
             }
-
-            @Override
-            public void onItemClick(List<Vocabulary> vocabs) {
-
-            }
         });
-//        levelAdapter.setOnItemClickListener(new LevelAdapter.OnItemClickListener() {
+
+//        lessonAdapter.setOnItemClickListener(new lessonAdapter.OnItemClickListenerLesson() {
 //            @Override
-//            public void onItemClick(String certLevelId) {
-//                LessonFragment lessonFragment = new LessonFragment(certLevelId);
+//            public void onItemClick(List<Vocabulary> vocabs) {
+//                VocabularyForFragment vocabularyForFragment = new VocabularyForFragment(vocabs);
 //
 //                // Use getParentFragmentManager or getChildFragmentManager
 //                getParentFragmentManager().beginTransaction()
-//                        .replace(R.id.frameLayoutContainer, lessonFragment)
+//                        .replace(R.id.frameLayoutContainer, vocabularyForFragment)
 //                        .addToBackStack(null)
 //                        .commit();
 //            }
@@ -80,36 +86,32 @@ public class LevelBaseFragment extends Fragment {
 
         // Firebase data retrieval
         firebaseController = new FirebaseController();
-        firebaseController.getLevelData(new FirebaseDataCallback() {
+        firebaseController.getData("LESSON", new FirebaseDataCallback() {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {
-                // Clear the list before adding new data
-                certLevelArrayList.clear();
+                listLesson.clear();
 
-                // Iterate through the snapshot and populate the certLevelArrayList
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    CertLevel certLevel = snapshot.getValue(CertLevel.class);
-                    if (certLevel != null) {
-                        certLevelArrayList.add(certLevel);
+                    Lesson lesson = snapshot.getValue(Lesson.class);
+                    if (lesson != null && CertLevelID.equals(lesson.getCERT_LEVEL_ID())) {
+                        listLesson.add(lesson);
                     }
                 }
-                certLevelArrayList.sort((cert1, cert2) -> cert1.getCERT_LEVEL_NAME().compareToIgnoreCase(cert2.getCERT_LEVEL_NAME()));
-                // Notify the adapter of data changes
-                levelAdapter.notifyDataSetChanged();
+
+                lessonAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onFailure(String errorMessage) {
-                // Handle the error (e.g., show a Toast or log the error)
-                Log.e("LevelBaseFragment", "Error retrieving data: " + errorMessage);
+
             }
         });
 
-        btnBack = view.findViewById(R.id.btn_back_level);
+        btnBack = view.findViewById(R.id.btn_back_lesson);
         btnBack.setOnClickListener(v -> {
             FragmentManager fragmentManager = getParentFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayoutContainer, new VocabularyFragment()); // Thay  frameLayout2 bằng ID của layout chứa fragment
+            fragmentTransaction.replace(R.id.frameLayoutContainer, new LevelBaseFragment());
             fragmentTransaction.commit();
         });
 

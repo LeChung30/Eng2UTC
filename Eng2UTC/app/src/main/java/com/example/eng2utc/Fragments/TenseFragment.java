@@ -31,7 +31,7 @@ public class TenseFragment extends Fragment {
 
            // Thực hiện FragmentTransaction để thay thế Fragments.TenseFragment bằng Fragments.GrammarFragment
            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-           transaction.replace(R.id.frameLayout, grammarFragment); // Thay thế bằng Fragments.GrammarFragment
+           transaction.replace(R.id.frameLayoutContainer, grammarFragment); // Thay thế bằng Fragments.GrammarFragment
            transaction.addToBackStack(null); // Thêm vào back stack nếu cần thiết
            transaction.commit();
        });
@@ -42,7 +42,7 @@ public class TenseFragment extends Fragment {
                 // Thay thế TenseFragment bằng PresentSimpleFragment
                 Fragment presentSimpleFragment = new PresentSimpleFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.frameLayout, presentSimpleFragment);
+                transaction.replace(R.id.frameLayoutContainer, presentSimpleFragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -55,7 +55,7 @@ public class TenseFragment extends Fragment {
                 //
                 Fragment pastSimpleFragment = new PastSimpleFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.frameLayout, pastSimpleFragment);
+                transaction.replace(R.id.frameLayoutContainer, pastSimpleFragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -68,7 +68,7 @@ public class TenseFragment extends Fragment {
                 //
                 Fragment futureSimpleFragment = new FutureSimpleFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.frameLayout, futureSimpleFragment);
+                transaction.replace(R.id.frameLayoutContainer, futureSimpleFragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

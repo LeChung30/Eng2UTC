@@ -29,7 +29,7 @@ public class GrammarFragment extends Fragment {
         backBtn.setOnClickListener(v -> {
             FragmentManager fragmentManager = getParentFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout, new HomeFragment()); // Thay  frameLayout2 bằng ID của layout chứa fragment
+            fragmentTransaction.replace(R.id.frameLayoutContainer, new HomeFragment()); // Thay  frameLayout2 bằng ID của layout chứa fragment
             fragmentTransaction.commit();
         });
 
@@ -38,7 +38,7 @@ public class GrammarFragment extends Fragment {
             // Chuyển sang Fragments.TenseFragment khi nhấn vào CardView
             TenseFragment tenseFragment = new TenseFragment();
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.replace(R.id.frameLayout, tenseFragment);
+            transaction.replace(R.id.frameLayoutContainer, tenseFragment);
             transaction.addToBackStack(null); // Để có thể quay lại fragment trước đó
             transaction.commit();
         });
