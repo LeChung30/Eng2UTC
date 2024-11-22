@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.eng2utc.Fragments.A2Fragment;
+import com.example.eng2utc.Fragments.ExamForLevelFragment;
 import com.example.eng2utc.Model.TestType;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class ExamSelectionAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         // Get TEST_TYPE_ID for the current position
         String testTypeId = testTypes.get(position).getTEST_TYPE_ID();
-        return new A2Fragment(testTypeId);  // Pass TEST_TYPE_ID to the fragment
+        return new ExamForLevelFragment(testTypeId);  // Pass TEST_TYPE_ID to the fragment
     }
 
     @Override

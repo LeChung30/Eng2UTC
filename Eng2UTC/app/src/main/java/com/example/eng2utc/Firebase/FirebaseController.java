@@ -1,5 +1,7 @@
 package com.example.eng2utc.Firebase;
 
+import com.example.eng2utc.Model.UserAnswer;
+import com.example.eng2utc.Model.UserTest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -80,5 +82,26 @@ public class FirebaseController {
                 callback.onFailure(databaseError.getMessage());
             }
         });
+    }
+
+    // Method to add UserTest data to Firebase
+    public void addUserTest(UserTest userTest, FirebaseDataCallback callback) {
+        String userTestId = databaseReference.child("USER_TEST").push().getKey();
+        if (userTestId != null) {
+            userTest.setUSER_TEST_ID(userTestId);
+            databaseReference.child("USER_TEST").child(userTestId).setValue(userTest)
+                    .addOnSuccessListener(aVoid -> callback.onSuccess(null))
+                    .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
+        } else {
+            callback.onFailure("Failed to generate unique key for USER_TEST");
+        }
+    }
+
+    public void addUserAnswer(UserAnswer userAnswer, FirebaseDataCallback callback) {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("USER_ANSWER");
+        String userAnswerId = userAnswer.getUSER_ANSWER_ID();
+        databaseReference.child(userAnswerId).setValue(userAnswer)
+                .addOnSuccessListener(aVoid -> callback.onSuccess(null))
+                .addOnFailureListener(e -> callback.onFailure(e.getMessage()));
     }
 }

@@ -1,6 +1,7 @@
 package com.example.eng2utc.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +37,13 @@ public class LogInActivity extends BaseActivity {
             if (!email.isEmpty() && !password.isEmpty()){
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LogInActivity.this, task -> {
                     if (task.isSuccessful()){
+                        // save user data to shared preferences
+                        String userId = mAuth.getCurrentUser().getUid();
+                        SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("userId", userId);
+                        editor.apply();
+
                         startActivity(new Intent(LogInActivity.this, MainActivity.class));
                     } else {
                         // In ra lỗi cụ thể

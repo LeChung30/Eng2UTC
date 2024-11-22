@@ -49,7 +49,6 @@ dependencies {
     // Firebase dependencies
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
-    implementation("com.google.firebase:firebase-messaging")
 
     // ML Kit dependencies (ensure compatibility with BOM)
     implementation ("com.google.firebase:firebase-ml-natural-language:22.0.0")

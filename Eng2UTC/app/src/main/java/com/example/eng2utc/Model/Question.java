@@ -5,6 +5,9 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Question {
+    @SerializedName("QUESTION_ID")
+    private String QUESTION_ID;
+
     @SerializedName("CONTENT")
     private String content;
 
@@ -23,12 +26,21 @@ public class Question {
     public Question() {
     }
 
-    public Question(String content, String correctAnswerId, String imageLink, int order, List<Answer> answers) {
+public Question(String QUESTION_ID,String content, String correctAnswerId, String imageLink, int order, List<Answer> answers) {
+        this.QUESTION_ID = QUESTION_ID;
         this.content = content;
         this.correctAnswerId = correctAnswerId;
         this.imageLink = imageLink;
         this.order = order;
         this.answers = answers;
+    }
+
+    public String getQUESTION_ID() {
+        return QUESTION_ID;
+    }
+
+    public void setQUESTION_ID(String QUESTION_ID) {
+        this.QUESTION_ID = QUESTION_ID;
     }
 
     public String getContent() {

@@ -20,7 +20,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text="A2 Test"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:layout_marginBottom="8dp"
@@ -51,6 +51,7 @@
 
         <!-- ImageButton ở bên phải -->
         <ImageButton
+            android:id="@+id/history"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/baseline_history_24"

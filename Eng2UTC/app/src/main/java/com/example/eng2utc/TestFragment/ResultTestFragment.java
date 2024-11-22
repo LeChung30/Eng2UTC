@@ -16,10 +16,10 @@ public class ResultTestFragment extends DialogFragment {
 
     private int score;
     private int totalQuestions;
-    private long timeTaken;
+    private String timeTaken;
     private String startTime, duration;
 
-    public static ResultTestFragment newInstance(int score, int totalQuestions, long timeTaken, String duration, String startTime) {
+    public static ResultTestFragment newInstance(int score, int totalQuestions, String timeTaken, String duration, String startTime) {
         ResultTestFragment fragment = new ResultTestFragment();
         fragment.score = score;
         fragment.totalQuestions = totalQuestions;
@@ -43,7 +43,7 @@ public class ResultTestFragment extends DialogFragment {
         if (getArguments() != null) {
             score = getArguments().getInt("score");
             totalQuestions = getArguments().getInt("totalQuestions");
-            timeTaken = getArguments().getLong("timeTaken");
+            timeTaken = getArguments().getString("timeTaken");
             startTime = getArguments().getString("startTime");
         }
 
@@ -54,7 +54,7 @@ public class ResultTestFragment extends DialogFragment {
         TextView closeButton = view.findViewById(R.id.closeButton);
 
         scoreTextView.setText("Điểm: " + score + "/" + totalQuestions);
-        timeTakenTextView.setText("Thời gian làm bài: " + formatDuration(timeTaken) + "/" + duration + ":00");
+        timeTakenTextView.setText("Thời gian làm bài: " + timeTaken + "/" + duration + ":00");
         currentTimeTextView.setText("Thời gian thực hiện: " + startTime);
 
         reviewButton.setOnClickListener(v -> {
@@ -67,11 +67,5 @@ public class ResultTestFragment extends DialogFragment {
         });
 
         return view;
-    }
-
-    private String formatDuration(long duration) {
-        int minutes = (int) (duration / 1000) / 60;
-        int seconds = (int) (duration / 1000) % 60;
-        return String.format("%02d:%02d", minutes, seconds);
     }
 }
