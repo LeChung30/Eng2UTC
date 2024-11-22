@@ -34,7 +34,7 @@
                 android:id="@+id/translate_spinner_from"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                 />
+                />
         </LinearLayout>
 
         <ImageView
@@ -88,6 +88,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/translateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Translate"
@@ -116,7 +117,7 @@
         android:textAlignment="center"
         android:visibility="gone"
         />
-    
+
     <ImageView
         android:id="@+id/translate_mic"
         android:layout_width="50dp"
