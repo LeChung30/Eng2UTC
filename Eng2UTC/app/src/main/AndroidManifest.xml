@@ -25,6 +25,9 @@
         android:theme="@style/Theme.Eng2UTC"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.SearchedWordActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.TestActivity"
             android:exported="false" />
         <activity
@@ -32,44 +35,31 @@
             android:exported="false" />
         <activity
             android:name=".TestExerciseActivity"
-            android:exported="false" />
-
-        <!-- Rate Activity -->
+            android:exported="false" /> <!-- Rate Activity -->
         <activity
             android:name=".Activity.RateActivity"
-            android:exported="false" />
-
-        <!-- Setting Activity -->
+            android:exported="false" /> <!-- Setting Activity -->
         <activity
             android:name=".Activity.SettingActivity"
-            android:exported="false" />
-
-        <!-- Main Activity (just a "normal" activity, no  intent-filter) -->
+            android:exported="false" /> <!-- Main Activity (just a "normal" activity, no  intent-filter) -->
         <activity
             android:name=".Activity.MainActivity"
-            android:exported="true" />
-
-        <!-- SignUp Activity -->
+            android:exported="true" /> <!-- SignUp Activity -->
         <activity
             android:name=".Activity.SignUpActivity"
-            android:exported="false" />
-
-        <!-- Login Activity -->
+            android:exported="false" /> <!-- Login Activity -->
         <activity
             android:name=".Activity.LogInActivity"
-            android:exported="false" />
-
-        <!-- Base Activity -->
+            android:exported="false" /> <!-- Base Activity -->
         <activity
             android:name=".Activity.BaseActivity"
-            android:exported="false" />
-
-        <!-- Intro Activity (initialized when first launch ) -->
+            android:exported="false" /> <!-- Intro Activity (initialized when first launch ) -->
         <activity
             android:name=".Activity.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
