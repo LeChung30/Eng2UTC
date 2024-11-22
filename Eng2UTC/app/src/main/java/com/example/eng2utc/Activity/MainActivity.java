@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.eng2utc.Fragments.AnalysisFragment;
 import com.example.eng2utc.R;
 
 import com.example.eng2utc.Fragments.ExamFragment;
@@ -18,11 +19,12 @@ public class MainActivity extends BaseActivity {
 
     HomeFragment homeFragment;
     //   Fragments.TranslateFragment translateFragment;
-        ExamFragment examFragment;
+    ExamFragment examFragment;
     //    StatisticsFragment statisticsFragment;
     //    UserFragment userFragment;
 
     ActivityMainBinding binding;
+    AnalysisFragment analysisFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class MainActivity extends BaseActivity {
         setContentView(binding.getRoot());
         homeFragment = new HomeFragment();
         examFragment = new ExamFragment();
+        analysisFragment = new AnalysisFragment();
+
         replaceFragment(homeFragment);
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             int id =item.getItemId();
@@ -45,7 +49,7 @@ public class MainActivity extends BaseActivity {
                 replaceFragment(examFragment);
             }
             else if (id == R.id.bottom_nav_statistics) {
-                replaceFragment(homeFragment);
+                replaceFragment(analysisFragment);
             }
 
             return true;
