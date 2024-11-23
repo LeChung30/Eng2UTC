@@ -3,6 +3,7 @@ package com.example.eng2utc.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -28,12 +29,19 @@ public class SignUpActivity extends BaseActivity {
 
     ActivitySignUpBinding binding;
     FirebaseAuth mAuth;
+    private TextView login_transferBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        login_transferBtn = findViewById(R.id.login_transfer_Btn);
+        login_transferBtn.setOnClickListener(v -> {
+            startActivity(new Intent(SignUpActivity.this, LogInActivity.class));
+            finish();
+        });
 
         // Khởi tạo FirebaseAuth
         mAuth = FirebaseAuth.getInstance();

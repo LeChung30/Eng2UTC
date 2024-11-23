@@ -3,7 +3,7 @@
     <string name="app_name">Eng2UTC</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="forget_password" translatable="false">Forget Password?</string>
-    <string name="login" translatable="false">Login</string>
+    <string name="login" translatable="false">Log In</string>
     <string name="signup" translatable="false">Sign up</string>
     <string name="eng2utc" translatable="false">ENG2 UTC</string>
     <!--Setting Activity-->
