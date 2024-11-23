@@ -1,9 +1,11 @@
 package com.example.eng2utc.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.eng2utc.Model.Lesson;
 import com.example.eng2utc.Model.Vocabulary;
 import com.example.eng2utc.R;
+import com.example.eng2utc.TestFragment.ViewWordTestActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonViewHolder> {
@@ -49,9 +53,18 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
             @Override
             public void onClick(View v) {
                 if (listener != null) {
-                    System.out.println("Lesson Adapter " + lesson.getVOCABULARY().size());
                     listener.onItemClick(lesson.getVOCABULARY());
                 }
+            }
+        });
+
+        holder.btnLessonClipboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // open fragment ViewWordTestActivity
+                Intent intent = new Intent(context, ViewWordTestActivity.class);
+                intent.putExtra("vocabularyList", (Serializable) lesson.getVOCABULARY());
+                context.startActivity(intent);
             }
         });
     }
@@ -63,11 +76,14 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
 
     static class LessonViewHolder extends RecyclerView.ViewHolder {
         TextView lessonTitle, lessonDesc;
+        ImageView btnLessonFlashcard, btnLessonClipboard;
 
         public LessonViewHolder(@NonNull View itemView) {
             super(itemView);
             lessonTitle = itemView.findViewById(R.id.lesson_title);
             lessonDesc = itemView.findViewById(R.id.lesson_desc);
+            btnLessonFlashcard = itemView.findViewById(R.id.btn_lesson_flashcard);
+            btnLessonClipboard = itemView.findViewById(R.id.btn_lesson_clipboard);
         }
     }
 }
