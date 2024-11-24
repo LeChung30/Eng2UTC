@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.eng2utc.Model.Vocabulary;
 import com.example.eng2utc.R;
@@ -161,6 +162,7 @@ public class WordTestFragment extends Fragment {
                 parentActivity.startWordTest(currentWordIndex + 1);
             }
         });
+        getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         resultFragment.show(getFragmentManager(), "resultBottomSheet");
     }
 }

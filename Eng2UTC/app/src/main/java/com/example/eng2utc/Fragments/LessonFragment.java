@@ -39,6 +39,10 @@ public class LessonFragment extends Fragment {
     private ImageView imgLevel;
     private List<Vocabulary> vocabs;
 
+    public LessonFragment() {
+        // Required empty public constructor
+    }
+
     public LessonFragment(String CertLevelID) {
         // Required empty public constructor
         this.CertLevelID = CertLevelID;
