@@ -1,5 +1,6 @@
 package com.example.eng2utc.Retrofit;
 
+import com.example.eng2utc.Model.MarkOfTest;
 import com.example.eng2utc.Model.MemoryLevel;
 import com.example.eng2utc.Model.PartDetailResponse;
 
@@ -26,4 +27,7 @@ public interface ApiService {
     //with 2 input is user_id
     @GET("/users/user_vocabs/total_words")
     Call<Integer> getTotalWords(@Query("user_id") String userId);
+
+    @GET("/users/tests/mark_of_test")
+    Call<List<MarkOfTest>> getMarkOfTest(@Query("user_id") String userId);
 }

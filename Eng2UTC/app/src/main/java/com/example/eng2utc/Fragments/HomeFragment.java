@@ -18,8 +18,6 @@ import com.example.eng2utc.Activity.SearchedWordActivity;
 import com.example.eng2utc.Activity.SettingActivity;
 import com.example.eng2utc.R;
 
-import java.util.ArrayList;
-
 public class HomeFragment extends Fragment {
 
     public HomeFragment() {
