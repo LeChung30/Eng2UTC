@@ -42,12 +42,10 @@
             android:name=".Activity.RateActivity"
             android:exported="false" />
 
-        <!-- Setting Activity -->
         <activity
             android:name=".Activity.SettingActivity"
             android:exported="false" />
 
-        <!-- Main Activity (just a "normal" activity, no  intent-filter) -->
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true" />

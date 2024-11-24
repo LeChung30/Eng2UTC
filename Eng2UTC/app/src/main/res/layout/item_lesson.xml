@@ -47,6 +47,26 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btn_lesson_flashcard"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_flashcard"/>
+
+            <ImageView
+                android:id="@+id/btn_lesson_clipboard"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_clipboard"/>
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
