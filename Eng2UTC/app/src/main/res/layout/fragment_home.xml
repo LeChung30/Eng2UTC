@@ -44,29 +44,34 @@
                     android:background="@drawable/icon_background"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/searchEdt"
+                    <SearchView
+                        android:id="@+id/search_dictionary"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_margin="4dp"
-                        android:layout_weight="1"
                         android:background="@color/grey"
-
-                        android:hint="@string/search"
+                        android:queryHint="@string/search"
                         android:inputType="text"
                         android:padding="8dp"
                         android:textAlignment="center"
-                        android:textColor="@color/blue_grey"
+                        android:textColor="@color/black"
                         android:textColorHint="@color/blue_grey" />
+                    <ProgressBar
+                        android:id="@+id/progressBar_search"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="4dp"
+                        android:visibility="gone"
+                        />
 
-                    <ImageView
-                        android:id="@+id/searchBtn"
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:padding="4dp"
-                        app:srcCompat="@drawable/ic_home_search" />
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/searchBtn"-->
+                    <!--                        android:layout_width="50dp"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        android:layout_gravity="center"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:padding="4dp"-->
+                    <!--                        app:srcCompat="@drawable/ic_home_search" />-->
                 </LinearLayout>
 
                 <ImageView
@@ -79,7 +84,7 @@
                     android:backgroundTint="@color/grey"
                     android:padding="12dp"
                     android:src="@drawable/ic_home_scanner"
-                     />
+                    />
             </LinearLayout>
 
             <LinearLayout
