@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.SearchView;
 
+import com.example.eng2utc.Activity.SearchedWordActivity;
 import com.example.eng2utc.Activity.SettingActivity;
 import com.example.eng2utc.R;
 
