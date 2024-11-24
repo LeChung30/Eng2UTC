@@ -49,11 +49,11 @@ public class ViewWordTestActivity extends AppCompatActivity {
             // Chuyển đến WordTestFragment
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_word_test, fragment)
-                    .addToBackStack(null)
                     .commit();
         } else {
             // Thông báo khi hoàn thành bài kiểm tra
             Toast.makeText(this, "Bài kiểm tra đã hoàn thành!", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 }
