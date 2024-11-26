@@ -47,7 +47,7 @@ public class RequestManager {
                 @Override
                 public void onResponse(Call<List<WordItem>> call, Response<List<WordItem>> response) {
                     if (!response.isSuccessful()) {
-                        Toast.makeText(context, "Error!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Word not found", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     listener.onFetchData(response.body().get(0), response.message());
